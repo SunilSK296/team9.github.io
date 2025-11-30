@@ -3,3 +3,99 @@
 /team/saanvi.html
 /team/ramya.html
 assets/style.css
+/* assets/style.css - main site styles */
+:root{
+  --sidebar-width: 300px;
+  --accent: #05e0e8; /* turquoise */
+  --bg: #111;
+  --card: #0a0a0a;
+  --text: #fff;
+  --muted: #ddd;
+  --radius: 18px;
+  --font: 'Poppins', sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family:var(--font); background:var(--bg); color:var(--text);}
+
+/* Sidebar */
+.sidebar{
+  width:var(--sidebar-width);
+  background:var(--accent);
+  height:100vh;
+  position:fixed;
+  left:0;
+  top:0;
+  padding:36px 28px;
+  overflow:auto;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.brand{
+  font-weight:700;
+  font-size:36px;
+  line-height:0.9;
+  margin-bottom:20px;
+  color:#002;
+  letter-spacing:1px;
+}
+
+.navlink{
+  display:block;
+  margin:10px 0;
+  font-weight:600;
+  font-size:22px;
+  color:#002;
+  text-decoration:none;
+}
+
+/* active look */
+.navlink.active{
+  text-decoration:underline;
+  text-underline-offset:6px;
+}
+
+/* Page content area */
+.content{
+  margin-left:calc(var(--sidebar-width) + 24px);
+  padding:36px;
+  max-width:900px;
+}
+
+/* Card style like in screenshot (black rounded box) */
+.card{
+  background:linear-gradient(180deg,#0b0b0b,#111);
+  padding:28px;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.6);
+  color:var(--text);
+  font-size:20px;
+  line-height:1.5;
+}
+
+/* Team grid */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:18px;
+}
+
+.team-card{
+  background:#fff;
+  color:#002;
+  padding:14px;
+  border-radius:12px;
+  text-align:center;
+  font-weight:700;
+}
+
+/* Mobile adjustments */
+@media(max-width:860px){
+  .sidebar{ position:relative; width:100%; height:auto; display:flex; flex-direction:row; gap:12px; overflow:auto; padding:18px;}
+  .brand{font-size:20px}
+  .navlink{font-size:16px}
+  .content{margin-left:0; padding:20px;}
+}
