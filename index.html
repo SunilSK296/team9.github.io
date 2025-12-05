@@ -12,199 +12,209 @@
     body {
         margin: 0;
         font-family: 'Poppins', sans-serif;
-        background: #f5f7fa;
-        color: #222;
-        display: flex;
+        background: #f4f6fb;
     }
 
-    /* Sidebar */
-    .sidebar {
-        width: 240px;
-        background: #ffffff;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding-top: 30px;
-        border-right: 1px solid #ddd;
-    }
-
-    .sidebar h2 {
+    /* HEADER HERO SECTION */
+    .hero {
+        background: linear-gradient(135deg, #0d1f3f, #1e3c72);
+        padding: 100px 20px;
         text-align: center;
-        color: #333;
-        margin-bottom: 25px;
-        font-size: 22px;
-        font-weight: 700;
-    }
-
-    .sidebar a {
-        display: block;
-        padding: 12px 30px;
-        color: #333;
-        text-decoration: none;
-        font-size: 17px;
-        font-weight: 500;
-        transition: 0.2s;
-        border-left: 4px solid white;
-    }
-
-    .sidebar a:hover {
-        background: #e9ecef;
-        border-left: 4px solid #333;
-    }
-
-    /* Main Content */
-    .main {
-        margin-left: 240px;
-        padding: 40px;
-        width: calc(100% - 240px);
-    }
-
-    h1 {
-        text-align: center;
-        font-size: 36px;
-        font-weight: 700;
-        color: #222;
-    }
-
-    .tagline {
-        text-align: center;
-        font-size: 18px;
-        margin-top: -5px;
-        color: #555;
-    }
-
-    /* Card */
-    .card {
-        background: black;
-        padding: 25px;
-        border-radius: 12px;
-        margin: 30px auto;
-        width: 85%;
-        border: 1px solid #e0e0e0;
-    }
-
-    h2 {
-        text-align: center;
-        color: #222;
-        font-weight: 700;
-    }
-
-    .card p {
-        text-align: center;
-        font-size: 17px;
-        font-weight: 500;
-        color: #444;
-    }
-
-    /* Table */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
-
-    th {
-        background: #333;
         color: white;
-        padding: 12px;
-        font-size: 17px;
     }
 
-    td {
-        padding: 12px;
-        background: #fafafa;
-        border-bottom: 1px solid #ddd;
-        text-align: center;
-        font-size: 17px;
+    .hero h1 {
+        font-size: 50px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .hero p {
+        font-size: 20px;
+        opacity: 0.9;
+    }
+
+    /* NAVIGATION */
+    nav {
+        background: #0d1f3f;
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+    }
+
+    nav a {
+        text-decoration: none;
+        padding: 0 15px;
+        color: white;
         font-weight: 500;
+        transition: 0.3s;
     }
 
-    /* Buttons in One Row */
-    .btn-container {
+    nav a:hover {
+        color: #4fc3f7;
+    }
+
+    /* SECTION STYLE */
+    section {
+        padding: 60px 8%;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        color: #0d1f3f;
+    }
+
+    /* INFO GRID */
+    .info-grid {
         display: flex;
         justify-content: center;
-        gap: 20px;
-        margin-top: 35px;
+        gap: 30px;
         flex-wrap: wrap;
     }
 
-    .btn {
-        padding: 12px 22px;
-        border-radius: 8px;
-        border: none;
-        background: #333;
-        color: white;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: 0.2s;
+    .info-box {
+        background: white;
+        width: 280px;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
     }
 
-    .btn:hover {
-        background: #555;
+    .info-box h3 {
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .info-box p {
+        font-size: 15px;
+        color: #555;
+    }
+
+    /* TEAM SECTION */
+    .team-grid {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .team-box {
+        width: 200px;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .team-box h4 {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .footer {
+        background: #0d1f3f;
+        padding: 30px;
+        color: white;
+        text-align: center;
+        margin-top: 40px;
     }
 </style>
-
 </head>
+
 <body>
 
-<!-- Sidebar -->
-<div class="sidebar">
-    <h2>Smart City</h2>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Project</a>
-    <a href="#">Sushant</a>
-    <a href="sunil.html">Sunil</a>
-    <a href="#">Vaishnavi</a>
-    <a href="#">Vijayalaxmi</a>
-    <a href="#">Collabz</a>
+<!-- NAVBAR -->
+<nav>
+    <h2 style="margin:0;">SMART CITY</h2>
+    <div>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#team">Team</a>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <h1>SMART CITY DESIGN</h1>
+    <p>Algorithmic Approach for Modern Urban Development</p>
 </div>
 
-<!-- MAIN CONTENT -->
-<div class="main">
-    <h1>SMART CITY DESIGN</h1>
-    <p class="tagline">Algorithmic Approach for Modern Urban Development</p>
+<!-- ABOUT SECTION -->
+<section id="about">
+    <h2 class="title">What We Are</h2>
 
-    <!-- Intro -->
-    <div class="card">
-        <h2>Introduction</h2>
-        <p><b>Course:</b> Design and Analysis of Algorithms (DAA)</p>
-        <p><b>Course Code:</b> 24ECSC205</p>
-        <p><b>Course Instructor:</b> Prof. Prakash Hegade</p>
-        <p><b>University:</b> KLE Technological University</p>
-        <p><b>Topic:</b> City Design</p>
+    <div class="info-grid">
+        <div class="info-box">
+            <h3>Course</h3>
+            <p>Design & Analysis of Algorithms (DAA)</p>
+        </div>
+        <div class="info-box">
+            <h3>Instructor</h3>
+            <p>Prof. Prakash Hegade</p>
+        </div>
+        <div class="info-box">
+            <h3>University</h3>
+            <p>KLE Technological University</p>
+        </div>
     </div>
+</section>
 
-    <p style="text-align:center; font-size: 17px; width:85%; margin:auto; color:#555;">
-        This project explores how algorithmic problem-solving can improve smart city planning,
-        enabling efficient roads, optimized traffic flow, better resource usage, and automation.
-    </p>
+<!-- GALLERY / ICON SECTION -->
+<section id="gallery" style="background:#eaf1ff;">
+    <h2 class="title">City Development Areas</h2>
 
-    <!-- Team -->
-    <div class="card">
-        <h2>Team Members</h2>
-
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>USN</th>
-            </tr>
-            <tr><td>Vaishnavi</td><td>01FE24BCS295</td></tr>
-            <tr><td>Vijayalaxmi</td><td>01FE24BCS292</td></tr>
-            <tr><td>Sushant</td><td>01FE24BCS293</td></tr>
-            <tr><td>Sunil</td><td>01FE24BCS296</td></tr>
-        </table>
+    <div class="info-grid">
+        <div class="info-box">
+            <h3>Traffic Management</h3>
+            <p>Algorithms to reduce congestion.</p>
+        </div>
+        <div class="info-box">
+            <h3>Smart Roads</h3>
+            <p>Better routing & pathfinding.</p>
+        </div>
+        <div class="info-box">
+            <h3>Automation</h3>
+            <p>IoT & automated monitoring.</p>
+        </div>
     </div>
+</section>
 
-    <!-- Buttons in One Row -->
-    <div class="btn-container">
-        <a href="vaishnavi.html"><button class="btn">Vaishnavi</button></a>
-        <a href="vijayalaxmi.html"><button class="btn">Vijayalaxmi</button></a>
-        <a href="sushant.html"><button class="btn">Sushant</button></a>
-        <a href="sunil.html"><button class="btn">Sunil</button></a>
+<!-- TEAM SECTION -->
+<section id="team">
+    <h2 class="title">Team Members</h2>
+
+    <div class="team-grid">
+        <div class="team-box">
+            <h4>Vaishnavi</h4>
+            <p>01FE24BCS295</p>
+        </div>
+        <div class="team-box">
+            <h4>Vijayalaxmi</h4>
+            <p>01FE24BCS292</p>
+        </div>
+        <div class="team-box">
+            <h4>Sushant</h4>
+            <p>01FE24BCS293</p>
+        </div>
+        <div class="team-box">
+            <h4>Sunil</h4>
+            <p>01FE24BCS296</p>
+        </div>
     </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2025 Smart City Project - KLE Technological University
 </div>
 
 </body>
