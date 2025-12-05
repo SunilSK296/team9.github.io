@@ -1,156 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Smart City Design</title>
 
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        background: #f5f7fa;
-        color: #222;
-        display: flex;
-    }
+  :root{
+    --bg:#f5f7fa;
+    --muted:#6b7280;
+    --accent:#111827;
+    --card-bg:#ffffff;
+    --card-border:#e6e9ee;
+    --btn-bg:#111827;
+    --btn-hover:#374151;
+  }
 
-    /* Sidebar */
-    .sidebar {
-        width: 240px;
-        background: #ffffff;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding-top: 30px;
-        border-right: 1px solid #ddd;
-    }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color: #222;
+  }
 
-    .sidebar h2 {
-        text-align: center;
-        color: #333;
-        margin-bottom: 25px;
-        font-size: 22px;
-        font-weight: 700;
-    }
+  /* Sidebar (unchanged style) */
+  .sidebar{
+    width:240px;
+    background:var(--card-bg);
+    height:100vh;
+    position:fixed;
+    top:0; left:0;
+    padding-top:30px;
+    border-right:1px solid #ddd;
+  }
+  .sidebar h2{
+    text-align:center;
+    color:#333;
+    margin-bottom:25px;
+    font-size:22px;
+    font-weight:700;
+  }
+  .sidebar a{
+    display:block;
+    padding:12px 30px;
+    color:#333;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:500;
+    transition:0.15s;
+    border-left:4px solid transparent;
+  }
+  .sidebar a:hover{ background:#f3f4f6; border-left:4px solid #333; }
 
-    .sidebar a {
-        display: block;
-        padding: 12px 30px;
-        color: #333;
-        text-decoration: none;
-        font-size: 17px;
-        font-weight: 500;
-        transition: 0.2s;
-        border-left: 4px solid white;
-    }
+  /* Main content */
+  .main{
+    margin-left:240px;
+    width:calc(100% - 240px);
+    min-height:100vh;
+  }
 
-    .sidebar a:hover {
-        background: #e9ecef;
-        border-left: 4px solid #333;
-    }
+  /* Header area uses your first photo as the background. No box around the title. */
+  .hero{
+    width:100%;
+    height:380px; /* adjust if needed */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    color:white;
+    background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+                      url('path/to/your-first-photo.jpg'); /* <- REPLACE with your first photo path */
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    padding:40px 20px;
+  }
 
-    /* Main Content */
-    .main {
-        margin-left: 240px;
-        padding: 40px;
-        width: calc(100% - 240px);
-    }
+  .hero h1{
+    margin:0;
+    font-size:44px;
+    letter-spacing:1px;
+    font-weight:800;
+    text-transform:uppercase;
+    line-height:1;
+  }
 
-    h1 {
-        text-align: center;
-        font-size: 36px;
-        font-weight: 700;
-        color: #222;
-    }
+  .hero .tagline{
+    margin-top:12px;
+    font-size:18px;
+    color:rgba(255,255,255,0.92);
+    font-weight:500;
+  }
 
-    .tagline {
-        text-align: center;
-        font-size: 18px;
-        margin-top: -5px;
-        color: #555;
-    }
+  /* Intro block below hero — kept simple and not boxed */
+  .intro {
+    max-width:880px;
+    margin:28px auto 12px;
+    padding:0 20px;
+    color:#222;
+  }
+  .intro p.lead{
+    text-align:center;
+    color:var(--muted);
+    font-size:17px;
+    margin:12px 0 28px;
+  }
 
-    /* Card */
-    .card {
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        margin: 30px auto;
-        width: 85%;
-        border: 1px solid #e0e0e0;
-    }
+  /* Info list (compact, inline labels) */
+  .info-row {
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+  }
+  .info-item{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    padding:12px 16px;
+    border-radius:10px;
+    min-width:220px;
+    box-shadow: 0 1px 4px rgba(16,24,40,0.04);
+    text-align:center;
+  }
+  .info-item b{ display:block; margin-bottom:6px; color:var(--accent); }
 
-    h2 {
-        text-align: center;
-        color: #222;
-        font-weight: 700;
-    }
+  /* Team members area */
+  .team-section{
+    max-width:1100px;
+    margin:30px auto 60px;
+    padding:0 20px;
+  }
+  .team-section h2{
+    text-align:center;
+    font-size:24px;
+    margin-bottom:18px;
+    color:var(--accent);
+    font-weight:700;
+  }
 
-    .card p {
-        text-align: center;
-        font-size: 17px;
-        font-weight: 500;
-        color: #444;
-    }
+  /* Grid of member cards */
+  .member-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:20px;
+    align-items:start;
+  }
 
-    /* Table */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
+  .member-card{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:12px;
+    padding:18px;
+    text-align:center;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .member-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(16,24,40,0.08);
+  }
+  .member-name{
+    font-size:18px;
+    font-weight:700;
+    color:var(--accent);
+    margin-bottom:8px;
+  }
+  .member-usn{
+    font-size:14px;
+    color:var(--muted);
+    margin-bottom:14px;
+    letter-spacing:0.6px;
+  }
 
-    th {
-        background: #333;
-        color: white;
-        padding: 12px;
-        font-size: 17px;
-    }
+  /* Downward button inside the card */
+  .member-card .btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:10px 16px;
+    border-radius:10px;
+    border:none;
+    background:var(--btn-bg);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    text-decoration:none;
+    transition:background .12s ease, transform .12s ease;
+    font-size:15px;
+  }
+  .member-card .btn:hover{ background:var(--btn-hover); transform: translateY(-2px); }
 
-    td {
-        padding: 12px;
-        background: #fafafa;
-        border-bottom: 1px solid #ddd;
-        text-align: center;
-        font-size: 17px;
-        font-weight: 500;
-    }
+  /* small arrow icon */
+  .arrow{
+    font-size:15px;
+    line-height:1;
+  }
 
-    /* Buttons in One Row */
-    .btn-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 35px;
-        flex-wrap: wrap;
-    }
-
-    .btn {
-        padding: 12px 22px;
-        border-radius: 8px;
-        border: none;
-        background: #333;
-        color: white;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: 0.2s;
-    }
-
-    .btn:hover {
-        background: #555;
-    }
+  /* bottom spacing and responsive tweaks */
+  @media (max-width:620px){
+    .hero{height:300px; padding:30px;}
+    .hero h1{font-size:30px;}
+    .info-item{min-width:180px}
+  }
 </style>
-
 </head>
 <body>
 
-<!-- Sidebar -->
-<div class="sidebar">
+  <!-- Sidebar -->
+  <div class="sidebar">
     <h2>Smart City</h2>
     <a href="#">Home</a>
     <a href="#">About</a>
@@ -160,52 +224,76 @@
     <a href="#">Vaishnavi</a>
     <a href="#">Vijayalaxmi</a>
     <a href="#">Collabz</a>
-</div>
+  </div>
 
-<!-- MAIN CONTENT -->
-<div class="main">
-    <h1>SMART CITY DESIGN</h1>
-    <p class="tagline">Algorithmic Approach for Modern Urban Development</p>
+  <!-- Main -->
+  <div class="main">
 
-    <!-- Intro -->
-    <div class="card">
-        <h2>Introduction</h2>
-        <p><b>Course:</b> Design and Analysis of Algorithms (DAA)</p>
-        <p><b>Course Code:</b> 24ECSC205</p>
-        <p><b>Course Instructor:</b> Prof. Prakash Hegade</p>
-        <p><b>University:</b> KLE Technological University</p>
-        <p><b>Topic:</b> City Design</p>
-    </div>
+    <!-- HERO with background image (no boxes around title) -->
+    <header class="hero" role="banner" aria-label="Project header">
+      <h1>SMART CITY DESIGN</h1>
+      <div class="tagline">Algorithmic Approach for Modern Urban Development</div>
+    </header>
 
-    <p style="text-align:center; font-size: 17px; width:85%; margin:auto; color:#555;">
+    <!-- Intro (kept simple / not boxed) -->
+    <section class="intro" aria-label="Introduction">
+      <div class="info-row" role="list">
+        <div class="info-item" role="listitem"><b>Course</b>Design and Analysis of Algorithms (DAA)</div>
+        <div class="info-item" role="listitem"><b>Course Code</b>24ECSC205</div>
+        <div class="info-item" role="listitem"><b>Instructor</b>Prof. Prakash Hegade</div>
+        <div class="info-item" role="listitem"><b>University</b>KLE Technological University</div>
+        <div class="info-item" role="listitem"><b>Topic</b>City Design</div>
+      </div>
+
+      <p class="lead">
         This project explores how algorithmic problem-solving can improve smart city planning,
         enabling efficient roads, optimized traffic flow, better resource usage, and automation.
-    </p>
+      </p>
+    </section>
 
-    <!-- Team -->
-    <div class="card">
-        <h2>Team Members</h2>
+    <!-- Team Members as attractive boxes (cards) -->
+    <section class="team-section" aria-label="Team">
+      <h2>Team Members</h2>
 
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>USN</th>
-            </tr>
-            <tr><td>Vaishnavi</td><td>01FE24BCS295</td></tr>
-            <tr><td>Vijayalaxmi</td><td>01FE24BCS292</td></tr>
-            <tr><td>Sushant</td><td>01FE24BCS293</td></tr>
-            <tr><td>Sunil</td><td>01FE24BCS296</td></tr>
-        </table>
-    </div>
+      <div class="member-grid">
+        <!-- Member 1 -->
+        <div class="member-card">
+          <div class="member-name">Vaishnavi</div>
+          <div class="member-usn">01FE24BCS295</div>
+          <a class="btn" href="vaishnavi.html" aria-label="Expand Vaishnavi details">
+            Details <span class="arrow">↓</span>
+          </a>
+        </div>
 
-    <!-- Buttons in One Row -->
-    <div class="btn-container">
-        <a href="vaishnavi.html"><button class="btn">Vaishnavi</button></a>
-        <a href="vijayalaxmi.html"><button class="btn">Vijayalaxmi</button></a>
-        <a href="sushant.html"><button class="btn">Sushant</button></a>
-        <a href="sunil.html"><button class="btn">Sunil</button></a>
-    </div>
-</div>
+        <!-- Member 2 -->
+        <div class="member-card">
+          <div class="member-name">Vijayalaxmi</div>
+          <div class="member-usn">01FE24BCS292</div>
+          <a class="btn" href="vijayalaxmi.html" aria-label="Expand Vijayalaxmi details">
+            Details <span class="arrow">↓</span>
+          </a>
+        </div>
 
+        <!-- Member 3 -->
+        <div class="member-card">
+          <div class="member-name">Sushant</div>
+          <div class="member-usn">01FE24BCS293</div>
+          <a class="btn" href="sushant.html" aria-label="Expand Sushant details">
+            Details <span class="arrow">↓</span>
+          </a>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="member-card">
+          <div class="member-name">Sunil</div>
+          <div class="member-usn">01FE24BCS296</div>
+          <a class="btn" href="sunil.html" aria-label="Expand Sunil details">
+            Details <span class="arrow">↓</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
 </body>
 </html>
