@@ -1,321 +1,211 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>City Design — Smart City Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart City Design</title>
 
-<!-- Poppins font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-  :root{
-    --bg: #f6f8fb;
-    --card:#ffffff;
-    --muted:#6b7280;
-    --text:#0f1724;
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #f5f7fa;
+        color: #222;
+        display: flex;
+    }
 
-    /* standout gradient: blue -> purple */
-    --g1: #00C2FF;
-    --g2: #6C5CE7;
-    --accent: linear-gradient(135deg, var(--g1), var(--g2));
+    /* Sidebar */
+    .sidebar {
+        width: 240px;
+        background: #ffffff;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 30px;
+        border-right: 1px solid #ddd;
+    }
 
-    --glass: rgba(255,255,255,0.6);
-    --radius-lg: 18px;
-  }
+    .sidebar h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 25px;
+        font-size: 22px;
+        font-weight: 700;
+    }
 
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-    background: linear-gradient(180deg,#fbfcff 0%, #f4f7fb 60%);
-    color:var(--text);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.45;
-  }
+    .sidebar a {
+        display: block;
+        padding: 12px 30px;
+        color: #333;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 500;
+        transition: 0.2s;
+        border-left: 4px solid white;
+    }
 
-  /* NAV */
-  .nav-wrap{
-    position:sticky; top:0; z-index:100;
-    background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.5));
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(20,30,60,0.04);
-  }
-  .nav{
-    max-width:1160px;
-    margin:0 auto;
-    padding:12px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-  }
-  .brand{
-    display:flex; align-items:center; gap:12px;
-    text-decoration:none; color:var(--text);
-  }
-  .brand .logo {
-    width:44px; height:44px; border-radius:10px;
-    background:var(--accent); display:inline-grid; place-items:center; color:white; font-weight:800;
-    box-shadow: 0 8px 24px rgba(108,92,231,0.14);
-  }
-  .brand h3{margin:0; font-size:16px; font-weight:800; letter-spacing:0.4px;}
+    .sidebar a:hover {
+        background: #e9ecef;
+        border-left: 4px solid #333;
+    }
 
-  .nav-links{
-    display:flex; gap:12px; align-items:center; flex-wrap:wrap;
-  }
-  .nav-links a{
-    color:rgba(10,20,30,0.85);
-    text-decoration:none; font-weight:600; padding:8px 12px; border-radius:10px;
-    transition: all .18s ease;
-  }
-  .nav-links a:hover{ transform: translateY(-3px); background: rgba(12,20,60,0.04); }
+    /* Main Content */
+    .main {
+        margin-left: 240px;
+        padding: 40px;
+        width: calc(100% - 240px);
+    }
 
-  /* CTA on nav */
-  .nav .cta{
-    padding:8px 14px; border-radius:12px;
-    background:var(--accent); color:white; font-weight:800; box-shadow: 0 8px 26px rgba(108,92,231,0.14);
-    text-decoration:none;
-  }
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: 700;
+        color: #222;
+    }
 
-  /* HERO */
-  .hero{
-    max-width:1160px; margin:28px auto 6px; padding:36px 20px;
-    border-radius:var(--radius-lg);
-    display:grid;
-    grid-template-columns: 1fr 420px;
-    gap:24px;
-    align-items:center;
-  }
+    .tagline {
+        text-align: center;
+        font-size: 18px;
+        margin-top: -5px;
+        color: #555;
+    }
 
-  .hero-card{
-    background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.70));
-    padding:28px; border-radius:16px;
-    box-shadow: 0 20px 50px rgba(12,18,40,0.06);
-    border: 1px solid rgba(14,20,30,0.03);
-  }
+    /* Card */
+    .card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        margin: 30px auto;
+        width: 85%;
+        border: 1px solid #e0e0e0;
+    }
 
-  .title{
-    font-size:44px; margin:0 0 8px; font-weight:800; color:var(--g2);
-  }
-  .subtitle{ color:var(--muted); margin:0 0 18px; font-size:15px }
+    h2 {
+        text-align: center;
+        color: #222;
+        font-weight: 700;
+    }
 
-  /* small badges */
-  .badges{ display:flex; gap:10px; flex-wrap:wrap; margin-top:6px }
-  .pill{ padding:8px 12px; border-radius:999px; background:linear-gradient(90deg, rgba(108,92,231,0.12), rgba(0,194,255,0.08)); color:var(--text); font-weight:700; font-size:13px }
+    .card p {
+        text-align: center;
+        font-size: 17px;
+        font-weight: 500;
+        color: #444;
+    }
 
-  /* right side mini-panel with image/visual */
-  .visual{
-    height:100%;
-    background: linear-gradient(180deg, rgba(108,92,231,0.06), rgba(0,194,255,0.04));
-    border-radius:14px;
-    padding:22px;
-    display:flex; flex-direction:column; justify-content:space-between;
-    border:1px solid rgba(14,20,30,0.03);
-  }
-  .visual .frame{
-    border-radius:12px; overflow:hidden; height:220px; display:flex; align-items:center; justify-content:center;
-    background:
-      radial-gradient(1200px 400px at 10% 20%, rgba(108,92,231,0.09), transparent 8%),
-      radial-gradient(900px 300px at 90% 80%, rgba(0,194,255,0.06), transparent 6%),
-      linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
-  }
-  .mock{
-    width:100%; height:100%;
-    display:flex; align-items:center; justify-content:center; color:var(--muted);
-    font-weight:700;
-  }
+    /* Table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
 
-  /* course info compact */
-  .course{
-    margin-top:18px; display:flex; flex-direction:column; gap:10px;
-  }
-  .row{ display:flex; gap:14px; align-items:start }
-  .label{ width:140px; font-weight:800; color:var(--g2) }
-  .value{ color:var(--muted); font-weight:600 }
+    th {
+        background: #333;
+        color: white;
+        padding: 12px;
+        font-size: 17px;
+    }
 
-  /* TEAM GRID */
-  .section{
-    max-width:1160px; margin:22px auto 90px; padding:0 20px;
-  }
-  .section h2{ font-size:22px; margin:8px 0 16px; text-align:center; color:var(--g2) }
+    td {
+        padding: 12px;
+        background: #fafafa;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 500;
+    }
 
-  .grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap:18px;
-  }
+    /* Buttons in One Row */
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 35px;
+        flex-wrap: wrap;
+    }
 
-  .member{
-    background:var(--card);
-    border-radius:14px;
-    padding:16px;
-    text-align:center;
-    border:1px solid rgba(12,20,40,0.03);
-    box-shadow: 0 10px 24px rgba(20,30,60,0.04);
-    transition: transform .18s ease, box-shadow .18s ease;
-  }
-  .member:hover{ transform: translateY(-8px); box-shadow: 0 20px 36px rgba(20,30,60,0.08); }
+    .btn {
+        padding: 12px 22px;
+        border-radius: 8px;
+        border: none;
+        background: #333;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+    }
 
-  .avatar{
-    width:60px; height:60px; border-radius:12px; display:inline-grid; place-items:center; color:white; font-weight:800;
-    background:var(--accent); margin:auto;
-  }
-  .mname{ margin-top:12px; font-weight:800; color:var(--text) }
-  .musn{ color:var(--muted); font-size:13px; margin:8px 0 14px }
-
-  .actions{ display:flex; gap:10px; justify-content:center; }
-  .btn{
-    padding:10px 14px; border-radius:12px; border:none; color:white; background:var(--accent); font-weight:800; cursor:pointer;
-    text-decoration:none; display:inline-flex; align-items:center; gap:8px;
-  }
-  .btn.secondary{ background: linear-gradient(135deg,#fff, #fafafa); color:var(--g2); border:1px solid rgba(108,92,231,0.08); font-weight:700; }
-
-  /* footer */
-  .footer{ text-align:center; color:var(--muted); padding:40px 20px 60px; font-size:14px }
-
-  /* responsive */
-  @media (max-width:980px){
-    .hero{ grid-template-columns: 1fr; padding:18px; gap:16px }
-    .visual{ order: -1 } /* visual can be above on small screens */
-  }
-  @media (max-width:520px){
-    .title{ font-size:30px }
-    .brand h3{ font-size:14px }
-    .nav{ padding:10px 12px }
-    .label{ width:120px }
-  }
+    .btn:hover {
+        background: #555;
+    }
 </style>
+
 </head>
 <body>
 
-  <!-- NAV -->
-  <div class="nav-wrap">
-    <nav class="nav" role="navigation">
-      <a class="brand" href="index.html">
-        <div class="logo">CD</div>
-        <h3>City Design</h3>
-      </a>
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>Smart City</h2>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Project</a>
+    <a href="#">Sushant</a>
+    <a href="#">Sunil</a>
+    <a href="#">Vaishnavi</a>
+    <a href="#">Vijayalaxmi</a>
+    <a href="#">Collabz</a>
+</div>
 
-      <div class="nav-links" role="menubar" aria-label="Main Navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="project.html">Project</a>
-        <a href="vaishnavi.html">Vaishnavi</a>
-        <a href="vijayalaxmi.html">Vijayalaxmi</a>
-        <a href="sushant.html">Sushant</a>
-        <a href="sunil.html">Sunil</a>
-        <a href="collabz.html" class="cta">Collabz</a>
-      </div>
-    </nav>
-  </div>
+<!-- MAIN CONTENT -->
+<div class="main">
+    <h1>SMART CITY DESIGN</h1>
+    <p class="tagline">Algorithmic Approach for Modern Urban Development</p>
 
-  <!-- HERO -->
-  <header class="hero" role="banner">
-    <div class="hero-card">
-      <h1 class="title">CITY DESIGN</h1>
-      <p class="subtitle">Smart City Business Ideas — sector-focused planning, algorithmic solutions, and scalable prototypes.</p>
-
-      <div class="badges">
-        <div class="pill">Design & Analysis of Algorithms</div>
-        <div class="pill">KLE Technological University</div>
-        <div class="pill">Project: Smart City Business</div>
-      </div>
-
-      <div class="course">
-        <div class="row"><div class="label">Course</div><div class="value">Design & Analysis of Algorithms (DAA)</div></div>
-        <div class="row"><div class="label">Course Code</div><div class="value">24ECSC205</div></div>
-        <div class="row"><div class="label">Instructor</div><div class="value">Prof. Prakash Hegade</div></div>
-        <div class="row"><div class="label">Topic</div><div class="value">City Business & Sector Planning</div></div>
-      </div>
+    <!-- Intro -->
+    <div class="card">
+        <h2>Introduction</h2>
+        <p><b>Course:</b> Design and Analysis of Algorithms (DAA)</p>
+        <p><b>Course Code:</b> 24ECSC205</p>
+        <p><b>Course Instructor:</b> Prof. Prakash Hegade</p>
+        <p><b>University:</b> KLE Technological University</p>
+        <p><b>Topic:</b> City Design</p>
     </div>
 
-    <aside class="visual" aria-hidden="true">
-      <div class="frame">
-        <div class="mock">Your city image or diagram</div>
-      </div>
+    <p style="text-align:center; font-size: 17px; width:85%; margin:auto; color:#555;">
+        This project explores how algorithmic problem-solving can improve smart city planning,
+        enabling efficient roads, optimized traffic flow, better resource usage, and automation.
+    </p>
 
-      <div style="display:flex; gap:12px; align-items:center; justify-content:space-between; margin-top:12px;">
-        <div>
-          <div style="font-weight:800; color:var(--g2)">Smart City Score</div>
-          <div style="color:var(--muted)">Sustainability · Mobility · Tech</div>
-        </div>
-        <div style="text-align:right">
-          <div style="font-weight:800; font-size:22px; color:var(--g1)">87%</div>
-          <div style="font-size:12px; color:var(--muted)">project readiness</div>
-        </div>
-      </div>
-    </aside>
-  </header>
+    <!-- Team -->
+    <div class="card">
+        <h2>Team Members</h2>
 
-  <!-- TEAM -->
-  <main class="section" role="main">
-    <h2>Team Members</h2>
-
-    <div class="grid" role="list">
-      <!-- Vaishnavi -->
-      <article class="member" role="listitem">
-        <div class="avatar">V</div>
-        <div class="mname">Vaishnavi</div>
-        <div class="musn">01FE24BCS295</div>
-        <div class="actions">
-          <a class="btn" href="vaishnavi.html">Open</a>
-          <a class="btn secondary" href="project.html#vaishnavi">Projects</a>
-        </div>
-      </article>
-
-      <!-- Vijayalaxmi -->
-      <article class="member">
-        <div class="avatar">VJ</div>
-        <div class="mname">Vijayalaxmi</div>
-        <div class="musn">01FE24BCS292</div>
-        <div class="actions">
-          <a class="btn" href="vijayalaxmi.html">Open</a>
-          <a class="btn secondary" href="project.html#vijayalaxmi">Projects</a>
-        </div>
-      </article>
-
-      <!-- Sushant -->
-      <article class="member">
-        <div class="avatar">S</div>
-        <div class="mname">Sushant</div>
-        <div class="musn">01FE24BCS293</div>
-        <div class="actions">
-          <a class="btn" href="sushant.html">Open</a>
-          <a class="btn secondary" href="project.html#sushant">Projects</a>
-        </div>
-      </article>
-
-      <!-- Sunil -->
-      <article class="member">
-        <div class="avatar">SU</div>
-        <div class="mname">Sunil</div>
-        <div class="musn">01FE24BCS296</div>
-        <div class="actions">
-          <a class="btn" href="sunil.html">Open</a>
-          <a class="btn secondary" href="project.html#sunil">Projects</a>
-        </div>
-      </article>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>USN</th>
+            </tr>
+            <tr><td>Vaishnavi</td><td>01FE24BCS295</td></tr>
+            <tr><td>Vijayalaxmi</td><td>01FE24BCS292</td></tr>
+            <tr><td>Sushant</td><td>01FE24BCS293</td></tr>
+            <tr><td>Sunil</td><td>01FE24BCS296</td></tr>
+        </table>
     </div>
-  </main>
 
-  <footer class="footer">
-    © <strong>Smart City — City Design</strong> • Built by your team • Keep it creative ✨
-  </footer>
+    <!-- Buttons in One Row -->
+    <div class="btn-container">
+        <a href="vaishnavi.html"><button class="btn">Vaishnavi</button></a>
+        <a href="vijayalaxmi.html"><button class="btn">Vijayalaxmi</button></a>
+        <a href="sushant.html"><button class="btn">Sushant</button></a>
+        <a href="sunil.html"><button class="btn">Sunil</button></a>
+    </div>
+</div>
 
-<!-- Small script: optionally replace mock with your image -->
-<script>
-  // If you want to show your header city photo instead of "Your city image or diagram",
-  // place the image file in same folder and set path here:
-  // const imgPath = 'images/header.jpg';
-  // then replace innerHTML of .mock with <img ...>
-  (function(){
-    const mock = document.querySelector('.mock');
-    // Example: uncomment and set your image path to use a real image:
-    // mock.innerHTML = '<img src="images/header.jpg" alt="City" style="width:100%;height:100%;object-fit:cover">';
-  })();
-</script>
 </body>
 </html>
