@@ -12,6 +12,11 @@
 }
 
 /* Base */
+.overlay{
+  width:100%;
+  min-height:100vh;
+  background:rgba(0,0,0,0.45); /* 🔥 TRANSPARENT DARK – keeps bg visible */
+}
 *{box-sizing:border-box}
 html,body{height:100%}
 body {
@@ -23,14 +28,6 @@ body {
     color:#eaf6ff;
     overflow-x:hidden;
 }
-
-/* DARK OVERLAY – LIGHT TRANSPARENT */
-.overlay{
-  width:100%;
-  min-height:100vh;
-  background:rgba(0,0,0,0.45); /* 🔥 TRANSPARENT DARK – keeps bg visible */
-}
-
 /* Sidebar */
 .sidebar{
   width:240px;
