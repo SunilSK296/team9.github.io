@@ -1,4 +1,4 @@
-/* ---------- style.css - Blue/Purple Premium Theme ---------- */
+/* ---------- style.css - Blue/Purple Premium Theme (fixed) ---------- */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
@@ -21,23 +21,24 @@ body {
   -webkit-font-smoothing:antialiased;
 }
 
-/* BACKGROUND IMAGE LAYER */
+/* BACKGROUND IMAGE LAYER (change URL below if you want another image) */
 .bg-city {
     position: fixed;
     inset: 0;
-    background-image: url("https://images.pexels.com/photos/3584436/pexels-photo-3584436.jpeg");
+    /* cleaner neutral skyline — replace this URL with any you prefer */
+    background-image: url("https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     z-index: -5;
-    opacity: 0.35;
+    opacity: 0.30; /* reduce if image too strong, increase up to 1 for stronger */
 }
 
-/* LIGHT WHITE OVERLAY FOR READABILITY */
+/* LIGHT WHITE OVERLAY FOR READABILITY (wraps page content) */
 .overlay {
     width: 100%;
     min-height: 100vh;
-    background: rgba(255,255,255,0.78);
+    background: rgba(255,255,255,0.86); /* semi-transparent to keep city visible but text readable */
 }
 
 /* Sidebar (left) */
@@ -145,13 +146,13 @@ h1{
   gap: 20px;
 }
 
-/* Each team box */
+/* Each team box (kept and restored) */
 .team-box{
   display:flex;
   align-items:center;
   justify-content:center;
   flex-direction:column;
-  padding: 22px;
+  padding: 26px;
   border-radius: 14px;
   color: white;
   font-weight:700;
@@ -159,30 +160,30 @@ h1{
   text-align:center;
   cursor:pointer;
   transition: transform .2s ease, box-shadow .2s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.10);
   border: 1px solid rgba(255,255,255,0.06);
 }
 
-/* Individual color themes (gradients) */
+/* Individual color themes (gradients) — visible & bright */
 .team-vaishnavi{
   background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
 }
-.team-vaishnavi:hover{ box-shadow: 0 16px 36px rgba(255,110,150,0.25); transform: translateY(-8px); }
+.team-vaishnavi:hover{ box-shadow: 0 18px 40px rgba(255,110,150,0.30); transform: translateY(-8px); }
 
 .team-vijayalaxmi{
   background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
 }
-.team-vijayalaxmi:hover{ box-shadow: 0 16px 36px rgba(60,80,240,0.25); transform: translateY(-8px); }
+.team-vijayalaxmi:hover{ box-shadow: 0 18px 40px rgba(60,80,240,0.30); transform: translateY(-8px); }
 
 .team-sushant{
   background: linear-gradient(135deg, #ff9a44 0%, #fc6076 100%);
 }
-.team-sushant:hover{ box-shadow: 0 16px 36px rgba(255,110,100,0.25); transform: translateY(-8px); }
+.team-sushant:hover{ box-shadow: 0 18px 40px rgba(255,110,100,0.30); transform: translateY(-8px); }
 
 .team-sunil{
   background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
 }
-.team-sunil:hover{ box-shadow: 0 16px 36px rgba(60,220,170,0.22); transform: translateY(-8px); }
+.team-sunil:hover{ box-shadow: 0 18px 40px rgba(60,220,170,0.28); transform: translateY(-8px); }
 
 /* Small text under name (USN) */
 .team-sub{
