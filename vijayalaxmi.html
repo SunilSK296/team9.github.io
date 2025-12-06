@@ -24,7 +24,6 @@ body {
   box-shadow: 2px 0 5px rgba(0,0,0,0.5);
   z-index: 1;
 }
-
 .sidebar h2 { color:#ffcc00; text-align:center; }
 .sidebar a { display:block; color:#fff; text-decoration:none; margin:10px 0; padding:8px 10px; border-radius:6px; transition:background 0.3s; }
 .sidebar a:hover { background-color:#2a2a72; }
@@ -63,56 +62,62 @@ body {
 }
 .float-box:hover { transform: translateY(-10px); }
 
-/* Single Black SDG Box */
+/* SDG Box */
 .sdg-box {
   background-color:#1a1a1a;
   color:#ffcc00;
   padding:20px 25px;
   border-radius:12px;
   box-shadow:0 5px 15px rgba(0,0,0,0.4);
-  max-width:700px;
+  max-width:400px;
   margin:40px auto;
   position: relative;
   left:-20px; /* slightly left */
 }
 
+/* SDG Item */
 .sdg-item {
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-  gap:15px;
   margin:15px 0;
+  padding:10px;
   cursor:pointer;
   position:relative;
 }
 
-.arrow {
-  color:#ff9900;
-  font-size:20px;
-  opacity:0;
-  transition: opacity 0.3s;
-}
-
-.sdg-item:hover .arrow { opacity:1; }
-
-.sdg-desc {
+/* Arrow and Description container */
+.sdg-desc-container {
   position:absolute;
-  left:110%;
+  left:420px; /* in front of black box */
   top:0;
-  color:#f8f8f8;
   max-width:400px;
+  display:none;
+  flex-direction:column;
+  gap:10px;
 }
 
-.desc {
+.sdg-desc-container p {
+  margin:0;
+  background-color:#2a2a2a;
+  color:#ffcc00;
+  padding:10px 15px;
+  border-radius:8px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.4);
+  display:flex;
+  align-items:center;
+  gap:10px;
   opacity:0;
   transform:translateX(-20px);
-  margin:5px 0;
-  transition:all 0.5s ease;
+  animation-fill-mode: forwards;
 }
 
-.sdg-item:hover .desc { 
-  opacity:1;
-  transform:translateX(0);
+.arrow-mark {
+  color:#ff9900;
+  font-size:18px;
+}
+
+/* Animation */
+@keyframes slideIn {
+  0% { opacity:0; transform:translateX(-20px); }
+  100% { opacity:1; transform:translateX(0); }
 }
 
 </style>
@@ -148,69 +153,18 @@ body {
     </div>
   </div>
 
-  <!-- Single Black SDG Box -->
-  <div class="sdg-box">
-    <div class="sdg-item">
-      SDG 8 – Decent Work and Economic Growth
-      <span class="arrow">➤</span>
-      <span class="arrow">➤</span>
-      <div class="sdg-desc">
-        <p class="desc">Tourism creates jobs in hotels, transport, cultural sites, and local businesses.</p>
-        <p class="desc">Promotes entrepreneurship and income generation in communities.</p>
-      </div>
-    </div>
-
-    <div class="sdg-item">
-      SDG 11 – Sustainable Cities and Communities
-      <span class="arrow">➤</span>
-      <span class="arrow">➤</span>
-      <div class="sdg-desc">
-        <p class="desc">Tourism encourages preservation of cultural heritage and historical sites.</p>
-        <p class="desc">Promotes smart city solutions to manage tourist flows, reduce congestion, and improve infrastructure.</p>
-      </div>
-    </div>
-
-    <div class="sdg-item">
-      SDG 12 – Responsible Consumption and Production
-      <span class="arrow">➤</span>
-      <span class="arrow">➤</span>
-      <div class="sdg-desc">
-        <p class="desc">Encourages eco-friendly tourism practices (e.g., reducing plastic, energy-efficient hotels).</p>
-        <p class="desc">Promotes sustainable local products and services.</p>
-      </div>
-    </div>
-
-    <div class="sdg-item">
-      SDG 14 – Life Below Water
-      <span class="arrow">➤</span>
-      <span class="arrow">➤</span>
-      <div class="sdg-desc">
-        <p class="desc">Coastal and marine tourism can support conservation of marine ecosystems if managed sustainably.</p>
-        <p class="desc">Initiatives like eco-tourism protect coral reefs and aquatic life.</p>
-      </div>
-    </div>
-
-    <div class="sdg-item">
-      SDG 15 – Life on Land
-      <span class="arrow">➤</span>
-      <span class="arrow">➤</span>
-      <div class="sdg-desc">
-        <p class="desc">Eco-tourism in forests, parks, and wildlife areas can fund conservation.</p>
-        <p class="desc">Helps maintain biodiversity and protect endangered species.</p>
-      </div>
-    </div>
-
-    <div class="sdg-item">
-      SDG 17 – Partnerships for the Goals
-      <span class="arrow">➤</span>
-      <span class="arrow">➤</span>
-      <div class="sdg-desc">
-        <p class="desc">Tourism often requires collaboration between governments, businesses, and communities.</p>
-        <p class="desc">Promotes international partnerships and knowledge sharing for sustainable tourism development.</p>
-      </div>
-    </div>
-
+  <!-- Single SDG Box -->
+  <div class="sdg-box" id="sdgBox">
+    <div class="sdg-item" data-desc1="Tourism creates jobs in hotels, transport, cultural sites, and local businesses." data-desc2="Promotes entrepreneurship and income generation in communities.">SDG 8 – Decent Work and Economic Growth</div>
+    <div class="sdg-item" data-desc1="Tourism encourages preservation of cultural heritage and historical sites." data-desc2="Promotes smart city solutions to manage tourist flows, reduce congestion, and improve infrastructure.">SDG 11 – Sustainable Cities and Communities</div>
+    <div class="sdg-item" data-desc1="Encourages eco-friendly tourism practices (e.g., reducing plastic, energy-efficient hotels)." data-desc2="Promotes sustainable local products and services.">SDG 12 – Responsible Consumption and Production</div>
+    <div class="sdg-item" data-desc1="Coastal and marine tourism can support conservation of marine ecosystems if managed sustainably." data-desc2="Initiatives like eco-tourism protect coral reefs and aquatic life.">SDG 14 – Life Below Water</div>
+    <div class="sdg-item" data-desc1="Eco-tourism in forests, parks, and wildlife areas can fund conservation." data-desc2="Helps maintain biodiversity and protect endangered species.">SDG 15 – Life on Land</div>
+    <div class="sdg-item" data-desc1="Tourism often requires collaboration between governments, businesses, and communities." data-desc2="Promotes international partnerships and knowledge sharing for sustainable tourism development.">SDG 17 – Partnerships for the Goals</div>
   </div>
+
+  <!-- Description Container -->
+  <div class="sdg-desc-container" id="sdgDescContainer"></div>
 </div>
 
 <script>
@@ -223,7 +177,7 @@ const touristPlaces = [
 
 function toggleButtons(box) {
   const container = box.querySelector('.buttons-container');
-  if(container.style.display === 'none' || container.style.display==='') {
+  if(container.style.display==='none' || container.style.display==='') {
     container.style.display='flex';
     container.innerHTML='';
     touristPlaces.forEach(place=>{
@@ -234,6 +188,31 @@ function toggleButtons(box) {
     });
   } else { container.style.display='none'; }
 }
+
+// SDG hover functionality
+const sdgItems = document.querySelectorAll('.sdg-item');
+const sdgDescContainer = document.getElementById('sdgDescContainer');
+
+sdgItems.forEach(item=>{
+  item.addEventListener('mouseenter', ()=>{
+    sdgDescContainer.innerHTML='';
+    sdgDescContainer.style.display='flex';
+    const desc1 = document.createElement('p');
+    desc1.className='desc';
+    desc1.style.animation='slideIn 0.5s forwards';
+    desc1.innerHTML='<span class="arrow-mark">➤</span>'+item.dataset.desc1;
+    const desc2 = document.createElement('p');
+    desc2.className='desc';
+    desc2.style.animation='slideIn 0.5s 0.3s forwards';
+    desc2.innerHTML='<span class="arrow-mark">➤</span>'+item.dataset.desc2;
+    sdgDescContainer.appendChild(desc1);
+    sdgDescContainer.appendChild(desc2);
+  });
+  item.addEventListener('mouseleave', ()=>{
+    sdgDescContainer.innerHTML='';
+    sdgDescContainer.style.display='none';
+  });
+});
 </script>
 
 </body>
