@@ -14,14 +14,25 @@
 /* Base */
 *{box-sizing:border-box}
 html,body{height:100%}
-body {
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    background: url('city.png') center center fixed;
-    background-size: cover;   /* THIS makes image fill full screen */
-    background-repeat: no-repeat;
-    color:#eaf6ff;
-    overflow-x:hidden;
+body{
+  margin:0;
+  font-family:"Poppins",sans-serif;
+  background:#0f0f17;         /* 🔥 DARK BASE */
+  color:var(--text-light);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* BACKGROUND IMAGE – NOW CRYSTAL CLEAR (NO BLUR - NO WHITE OVERLAY) */
+.bg-city{
+  position:fixed;
+  inset:0;
+  background-image:url("https://www.gettyimages.in/detail/illustration/futuristic-blue-smart-city-background-royalty-free-illustration/1267063724");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  z-index:-10;
+  opacity:0.85;              /* 🔥 MUCH MORE VISIBLE */
+  filter: brightness(1.2) contrast(1.15);
 }
 
 /* DARK OVERLAY – LIGHT TRANSPARENT */
