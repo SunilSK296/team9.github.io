@@ -199,12 +199,16 @@ h1{
   .card, .btn-row{ width:92%; }
   .main{ padding: 22px; }
 }
+/* Add background image without affecting other colors */
 body {
-    font-family: Arial, sans-serif;
-    background: url("https://images.pexels.com/photos/3584436/pexels-photo-3584436.jpeg") no-repeat center center fixed;
+    background-image: url("https://images.pexels.com/photos/3584436/pexels-photo-3584436.jpeg");
     background-size: cover;
-    color: #333;
-    margin: 0;
-    padding: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
+/* Light white layer to keep text readable */
+.overlay {
+    background: rgba(255,255,255,0.78);
+    min-height: 100vh;
+}
