@@ -1,219 +1,242 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vijayalaxmi - CITY DESIGN</title>
-<style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #121212;
-  color: #fff;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vijayalaxmi - CITY DESIGN</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #fff;
+    }
 
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 200px;
-  height: 100%;
-  background-color: #1a1a1a;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-  z-index: 1;
-}
-.sidebar h2 { color:#ffcc00; text-align:center; }
-.sidebar a { display:block; color:#fff; text-decoration:none; margin:10px 0; padding:8px 10px; border-radius:6px; transition:background 0.3s; }
-.sidebar a:hover { background-color:#2a2a72; }
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #1a1a1a;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+      z-index: 1;
+    }
 
-/* Main content */
-.main { padding: 30px; margin-left:220px; }
+    .sidebar h2 {
+      margin-top: 0;
+      color: #ffcc00;
+      text-align: center;
+    }
 
-/* Tourism Card */
-.tourism-card {
-  background-color:#1a1a1a;
-  color:#f8f8f8;
-  padding:40px 20px;
-  border-radius:16px;
-  max-width:700px;
-  margin:40px auto;
-  box-shadow:0 8px 20px rgba(0,0,0,0.4);
-  text-align:center;
-}
-.tourism-card h2 { color:#ffcc00; }
-.tourism-card p { font-size:16px; line-height:1.6; }
+    .sidebar a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin: 10px 0;
+      padding: 8px 10px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
 
-/* Floating Blue Button */
-.float-box {
-  background-color:#2a2a72;
-  color:#fff;
-  padding:20px 30px;
-  border-radius:12px;
-  cursor:pointer;
-  min-width:200px;
-  text-align:center;
-  margin:30px auto;
-  border:3px solid #2a2a72;
-  box-shadow:0 0 15px rgba(42,42,114,0.5),0 0 30px rgba(42,42,114,0.3);
-  background-image: radial-gradient(circle at top left, #2a2a72, #3b3bd1, #2a2a72);
-  transition: transform 0.3s;
-}
-.float-box:hover { transform: translateY(-10px); }
+    .sidebar a:hover {
+      background-color: #2a2a72;
+    }
 
-/* SDG Box */
-.sdg-box {
-  background-color:#1a1a1a;
-  color:#ffcc00;
-  padding:20px 25px;
-  border-radius:12px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.4);
-  max-width:400px;
-  margin:40px auto;
-  position: relative;
-  left:-20px; /* slightly left */
-}
+    /* Main content */
+    .main {
+      padding: 30px;
+      margin-left: 220px;
+    }
 
-/* SDG Item */
-.sdg-item {
-  margin:15px 0;
-  padding:10px;
-  cursor:pointer;
-  position:relative;
-}
+    /* Tourism Card */
+    .tourism-card {
+      background-color:#1a1a1a;
+      color:#f8f8f8;
+      padding:40px 20px;
+      border-radius:16px;
+      max-width:700px;
+      margin:40px auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      text-align:center;
+    }
 
-/* Arrow and Description container */
-.sdg-desc-container {
-  position:absolute;
-  left:420px; /* in front of black box */
-  top:0;
-  max-width:400px;
-  display:none;
-  flex-direction:column;
-  gap:10px;
-}
+    .tourism-card h2 {
+      color:#ffcc00;
+    }
 
-.sdg-desc-container p {
-  margin:0;
-  background-color:#2a2a2a;
-  color:#ffcc00;
-  padding:10px 15px;
-  border-radius:8px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.4);
-  display:flex;
-  align-items:center;
-  gap:10px;
-  opacity:0;
-  transform:translateX(-20px);
-  animation-fill-mode: forwards;
-}
+    .tourism-card p {
+      font-size:16px;
+      line-height:1.6;
+    }
 
-.arrow-mark {
-  color:#ff9900;
-  font-size:18px;
-}
+    /* Floating Blue Button */
+    .float-box {
+      background-color:#2a2a72;
+      color:#fff;
+      padding:20px 30px;
+      border-radius:12px;
+      cursor:pointer;
+      min-width:200px;
+      text-align:center;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+      border: 3px solid #2a2a72;
+      box-shadow: 0 0 15px rgba(42,42,114,0.5), 0 0 30px rgba(42,42,114,0.3);
+      background-image: radial-gradient(circle at top left, #2a2a72, #3b3bd1, #2a2a72);
+    }
 
-/* Animation */
-@keyframes slideIn {
-  0% { opacity:0; transform:translateX(-20px); }
-  100% { opacity:1; transform:translateX(0); }
-}
+    .float-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(42,42,114,0.8), 0 0 40px rgba(42,42,114,0.6);
+      border: 3px solid #3b3bd1;
+    }
 
-</style>
+    .buttons-container {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      margin-top:15px;
+    }
+
+    .place-btn {
+      background-color:#ffcc00;
+      color:#1a1a1a;
+      padding:12px 20px;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      width:220px;
+      font-size:16px;
+      transition: background 0.3s;
+    }
+
+    .place-btn:hover {
+      background-color:#e6b800;
+    }
+
+    /* SDGs Card (Static, no animation) */
+    .sdg-card {
+      background-color: #2a2a2a;
+      color: #f8f8f8;
+      padding: 30px 20px;
+      border-radius: 16px;
+      max-width: 700px;
+      margin: 40px auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      text-align: left;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .sdg-card h2 {
+      color: #00cc99;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sdg-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sdg-card ul li {
+      margin: 10px 0;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .sdg-card ul li::before {
+      content: "✔";
+      color: #00cc99;
+      position: absolute;
+      left: 0;
+    }
+
+    .sdg-card ul li:hover {
+      color: #00ff99;
+      font-weight: 600;
+      transform: translateX(5px);
+      transition: color 0.3s, transform 0.3s;
+    }
+  </style>
 </head>
 <body>
 
-<div class="sidebar">
-  <h2>Smart City</h2>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="project.html">Project</a>
-  <a href="vaishnavi.html">Vaishnavi</a>
-  <a href="vijayalaxmi.html">Vijayalaxmi</a>
-  <a href="sushant.html">Sushant</a>
-  <a href="sunil.html">Sunil</a>
-  <a href="collabz.html">Collabz</a>
-</div>
+  <div class="sidebar">
+    <h2>Smart City</h2>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="project.html">Project</a>
+    <a href="vaishnavi.html">Vaishnavi</a>
+    <a href="vijayalaxmi.html">Vijayalaxmi</a>
+    <a href="sushant.html">Sushant</a>
+    <a href="sunil.html">Sunil</a>
+    <a href="collabz.html">Collabz</a>
+  </div>
 
-<div class="main">
-  <h1>Vijayalaxmi</h1>
+  <div class="main">
+    <h1>Vijayalaxmi</h1>
 
-  <!-- Tourism Card -->
-  <div class="tourism-card">
-    <h2>Why I Chose the Tourism Sector</h2>
-    <p>
-      Tourism drives economic growth, creates jobs, and promotes culture. 
-      In smart cities, technology enhances tourist experiences by optimizing routes 
-      and managing attractions efficiently.
-    </p>
-    <div class="float-box" onclick="toggleButtons(this)">
-      Tourist Places in City
-      <div class="buttons-container" style="display:none;"></div>
+    <!-- Tourism Card -->
+    <div class="tourism-card">
+      <h2>Why I Chose the Tourism Sector</h2>
+      <p>
+        Tourism drives economic growth, creates jobs, and promotes culture. 
+        In smart cities, technology enhances tourist experiences by optimizing routes 
+        and managing attractions efficiently. This sector demonstrates how smart solutions 
+        can make cities more attractive and livable for residents and visitors alike.
+      </p>
+
+      <!-- Floating Blue Button BELOW description -->
+      <div style="display:flex; justify-content:center; margin:30px 0;">
+        <div class="float-box" onclick="toggleButtons(this)">
+          Tourist Places in City
+          <div class="buttons-container" style="display:none;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SDGs Card -->
+    <div class="sdg-card">
+      <h2>Tourism & SDGs</h2>
+      <ul>
+        <li>SDG 8 – Decent Work and Economic Growth</li>
+        <li>SDG 11 – Sustainable Cities and Communities</li>
+        <li>SDG 12 – Responsible Consumption and Production</li>
+        <li>SDG 14 – Life Below Water</li>
+        <li>SDG 15 – Life on Land</li>
+      </ul>
     </div>
   </div>
 
-  <!-- Single SDG Box -->
-  <div class="sdg-box" id="sdgBox">
-    <div class="sdg-item" data-desc1="Tourism creates jobs in hotels, transport, cultural sites, and local businesses." data-desc2="Promotes entrepreneurship and income generation in communities.">SDG 8 – Decent Work and Economic Growth</div>
-    <div class="sdg-item" data-desc1="Tourism encourages preservation of cultural heritage and historical sites." data-desc2="Promotes smart city solutions to manage tourist flows, reduce congestion, and improve infrastructure.">SDG 11 – Sustainable Cities and Communities</div>
-    <div class="sdg-item" data-desc1="Encourages eco-friendly tourism practices (e.g., reducing plastic, energy-efficient hotels)." data-desc2="Promotes sustainable local products and services.">SDG 12 – Responsible Consumption and Production</div>
-    <div class="sdg-item" data-desc1="Coastal and marine tourism can support conservation of marine ecosystems if managed sustainably." data-desc2="Initiatives like eco-tourism protect coral reefs and aquatic life.">SDG 14 – Life Below Water</div>
-    <div class="sdg-item" data-desc1="Eco-tourism in forests, parks, and wildlife areas can fund conservation." data-desc2="Helps maintain biodiversity and protect endangered species.">SDG 15 – Life on Land</div>
-    <div class="sdg-item" data-desc1="Tourism often requires collaboration between governments, businesses, and communities." data-desc2="Promotes international partnerships and knowledge sharing for sustainable tourism development.">SDG 17 – Partnerships for the Goals</div>
-  </div>
+  <script>
+    const touristPlaces = [
+      "Cultural Emblem at Lake",
+      "Etruna Studio",
+      "Filmy City Rajpuri",
+      "Vrindhara Palace & National Parks"
+    ];
 
-  <!-- Description Container -->
-  <div class="sdg-desc-container" id="sdgDescContainer"></div>
-</div>
-
-<script>
-const touristPlaces = [
-  "Cultural Emblem at Lake",
-  "Etruna Studio",
-  "Filmy City Rajpuri",
-  "Vrindhara Palace & National Parks"
-];
-
-function toggleButtons(box) {
-  const container = box.querySelector('.buttons-container');
-  if(container.style.display==='none' || container.style.display==='') {
-    container.style.display='flex';
-    container.innerHTML='';
-    touristPlaces.forEach(place=>{
-      const btn=document.createElement('button');
-      btn.innerText=place;
-      btn.className='place-btn';
-      container.appendChild(btn);
-    });
-  } else { container.style.display='none'; }
-}
-
-// SDG hover functionality
-const sdgItems = document.querySelectorAll('.sdg-item');
-const sdgDescContainer = document.getElementById('sdgDescContainer');
-
-sdgItems.forEach(item=>{
-  item.addEventListener('mouseenter', ()=>{
-    sdgDescContainer.innerHTML='';
-    sdgDescContainer.style.display='flex';
-    const desc1 = document.createElement('p');
-    desc1.className='desc';
-    desc1.style.animation='slideIn 0.5s forwards';
-    desc1.innerHTML='<span class="arrow-mark">➤</span>'+item.dataset.desc1;
-    const desc2 = document.createElement('p');
-    desc2.className='desc';
-    desc2.style.animation='slideIn 0.5s 0.3s forwards';
-    desc2.innerHTML='<span class="arrow-mark">➤</span>'+item.dataset.desc2;
-    sdgDescContainer.appendChild(desc1);
-    sdgDescContainer.appendChild(desc2);
-  });
-  item.addEventListener('mouseleave', ()=>{
-    sdgDescContainer.innerHTML='';
-    sdgDescContainer.style.display='none';
-  });
-});
-</script>
+    function toggleButtons(box) {
+      const container = box.querySelector('.buttons-container');
+      if (container.style.display === 'none' || container.style.display === '') {
+        container.style.display = 'flex';
+        container.innerHTML = '';
+        touristPlaces.forEach(place => {
+          const btn = document.createElement('button');
+          btn.innerText = place;
+          btn.className = 'place-btn';
+          container.appendChild(btn);
+        });
+      } else {
+        container.style.display = 'none';
+      }
+    }
+  </script>
 
 </body>
 </html>
