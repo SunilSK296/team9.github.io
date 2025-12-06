@@ -84,7 +84,7 @@ body{
 .main{
   margin-left:240px;
   padding:40px 48px;
-  width:calc(100% - 240px);
+  width:auto;
 }
 
 /* Title */
