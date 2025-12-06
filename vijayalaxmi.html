@@ -6,6 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vijayalaxmi - CITY DESIGN</title>
   <style>
+    /* Main card for tourism section */
+    .tourism-card {
+      background-color:#1a1a1a;
+      color:#f8f8f8;
+      padding:40px 20px;
+      border-radius:16px;
+      max-width:700px;
+      margin:40px auto;
+      font-family:'Poppins', sans-serif;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      text-align:center;
+    }
+
     /* Floating Box Styles */
     .float-box {
       background-color:#2a2a72; /* blue background */
@@ -45,6 +58,7 @@
       60% { transform: translateY(-3px); }
     }
 
+    /* Vertical buttons inside floating box */
     .buttons-container {
       display:flex;
       flex-direction:column;
@@ -68,19 +82,6 @@
     .place-btn:hover {
       background-color:#e6b800;
     }
-
-    /* Main card for tourism section */
-    .tourism-card {
-      background-color:#1a1a1a;
-      color:#f8f8f8;
-      padding:40px 20px;
-      border-radius:16px;
-      max-width:700px;
-      margin:40px auto;
-      font-family:'Poppins', sans-serif;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-      text-align:center;
-    }
   </style>
 </head>
 <body>
@@ -102,21 +103,24 @@
     <!-- Tourism Sector Section -->
     <div class="tourism-card">
 
-      <!-- Single Floating Box ABOVE paragraph -->
-      <div style="display:flex; justify-content:center; margin:30px 0;">
+      <h2 style="color:#ffcc00; font-size:28px; margin-bottom:20px;">Why I Chose the Tourism Sector</h2>
+
+      <!-- Description / guides / content -->
+      <p style="font-size:16px; line-height:1.6; margin-bottom:30px;">
+        Tourism drives economic growth, creates jobs, and promotes culture. 
+        In smart cities, technology enhances tourist experiences by optimizing routes 
+        and managing attractions efficiently. This sector demonstrates how smart solutions 
+        can make cities more attractive and livable for residents and visitors alike.
+      </p>
+
+      <!-- Floating Box BELOW description -->
+      <div style="display:flex; justify-content:center; margin:0 auto;">
         <div class="float-box" onclick="toggleButtons(this)">
           Tourist Places in City
           <div class="buttons-container" style="display:none;"></div>
         </div>
       </div>
 
-      <h2 style="color:#ffcc00; font-size:28px; margin-bottom:20px;">Why I Chose the Tourism Sector</h2>
-      <p style="font-size:16px; line-height:1.6;">
-        Tourism drives economic growth, creates jobs, and promotes culture. 
-        In smart cities, technology enhances tourist experiences by optimizing routes 
-        and managing attractions efficiently. This sector demonstrates how smart solutions 
-        can make cities more attractive and livable for residents and visitors alike.
-      </p>
     </div>
   </div>
 
