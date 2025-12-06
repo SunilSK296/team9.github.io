@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Smart City Design</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
+  <!-- LEFT SIDEBAR -->
+  <div class="sidebar">
     <h2>Smart City</h2>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -20,48 +19,77 @@
     <a href="sushant.html">Sushant</a>
     <a href="sunil.html">Sunil</a>
     <a href="collabz.html">Collabz</a>
-</div>
+  </div>
 
-<!-- MAIN CONTENT -->
-<div class="main">
-
+  <!-- MAIN CONTENT -->
+  <div class="main">
     <h1>SMART CITY DESIGN</h1>
     <p class="tagline">Algorithmic Approach for Modern Urban Development</p>
 
     <!-- COURSE CARD -->
-    <div class="card">
-        <h2>Course Information</h2>
-        <p><b>Course:</b> Design and Analysis of Algorithms (DAA)</p>
-        <p><b>Course Code:</b> 24ECSC205</p>
-        <p><b>Instructor:</b> Prof. Prakash Hegade</p>
-        <p><b>University:</b> KLE Technological University</p>
-        <p><b>Topic:</b> Smart City Design</p>
-    </div>
+    <section class="card" aria-labelledby="course-heading">
+      <h2 id="course-heading">Course Information</h2>
+      <p><strong>Course:</strong> Design and Analysis of Algorithms (DAA)</p>
+      <p><strong>Course Code:</strong> 24ECSC205</p>
+      <p><strong>Instructor:</strong> Prof. Prakash Hegade</p>
+      <p><strong>University:</strong> KLE Technological University</p>
+      <p><strong>Topic:</strong> Smart City Design</p>
+    </section>
 
     <!-- ABOUT CARD -->
-    <div class="card">
-        <h2>About</h2>
-        <p>This webpage presents an algorithmic perspective on Smart City design, focusing on efficient planning, traffic optimization, and resource management.</p>
-    </div>
+    <section class="card" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>This project applies algorithmic methods to urban problems — traffic optimization, resource allocation, and smarter infrastructure to improve city life and tourism experience.</p>
+    </section>
 
     <!-- PROJECT CARD -->
-    <div class="card">
-        <h2>Project Overview</h2>
-        <p>Our project integrates real-world urban challenges with algorithmic problem-solving strategies to design an efficient and sustainable smart city model.</p>
+    <section class="card" aria-labelledby="project-heading">
+      <h2 id="project-heading">Project Overview</h2>
+      <p>We combine shortest-path algorithms, greedy heuristics, and optimization techniques to model efficient routing, tourist flows, and smart sensor placement for urban monitoring.</p>
+    </section>
+
+    <!-- TEAM CARD with Gradient Boxes -->
+    <section class="card" aria-labelledby="team-heading">
+      <h2 id="team-heading">Team Members</h2>
+
+      <div class="team-grid">
+        <a href="vaishnavi.html" style="text-decoration:none;">
+          <div class="team-box team-vaishnavi">
+            Vaishnavi
+            <div class="team-sub">01FE24BCS295</div>
+          </div>
+        </a>
+
+        <a href="vijayalaxmi.html" style="text-decoration:none;">
+          <div class="team-box team-vijayalaxmi">
+            Vijayalaxmi
+            <div class="team-sub">01FE24BCS292</div>
+          </div>
+        </a>
+
+        <a href="sushant.html" style="text-decoration:none;">
+          <div class="team-box team-sushant">
+            Sushant
+            <div class="team-sub">01FE24BCS293</div>
+          </div>
+        </a>
+
+        <a href="sunil.html" style="text-decoration:none;">
+          <div class="team-box team-sunil">
+            Sunil
+            <div class="team-sub">01FE24BCS296</div>
+          </div>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- optionally: CTA / buttons -->
+    <div class="btn-row">
+      <a class="btn" href="project.html">View Project</a>
     </div>
 
-    <!-- TEAM MEMBERS -->
-    <div class="card">
-        <h2>Team Members</h2>
-        <div class="btn-container">
-            <a href="vaishnavi.html"><div class="team-card">Vaishnavi</div></a>
-            <a href="vijayalaxmi.html"><div class="team-card">Vijayalaxmi</div></a>
-            <a href="sushant.html"><div class="team-card">Sushant</div></a>
-            <a href="sunil.html"><div class="team-card">Sunil</div></a>
-        </div>
-    </div>
-
-</div>
+  </div>
 
 </body>
 </html>
