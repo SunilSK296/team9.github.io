@@ -16,10 +16,28 @@ html,body{height:100%}
 body {
   margin: 0;
   font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: var(--bg);
   color: #1f2937;
   display: flex;
   -webkit-font-smoothing:antialiased;
+}
+
+/* BACKGROUND IMAGE LAYER */
+.bg-city {
+    position: fixed;
+    inset: 0;
+    background-image: url("https://images.pexels.com/photos/3584436/pexels-photo-3584436.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -5;
+    opacity: 0.35;
+}
+
+/* LIGHT WHITE OVERLAY FOR READABILITY */
+.overlay {
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(255,255,255,0.78);
 }
 
 /* Sidebar (left) */
@@ -174,7 +192,7 @@ h1{
   opacity:0.95;
 }
 
-/* Buttons row (if used) */
+/* Buttons row */
 .btn-row{
   width:85%;
   margin: 18px auto;
@@ -198,15 +216,4 @@ h1{
   .team-grid{ grid-template-columns: repeat(1,1fr); width:92%; }
   .card, .btn-row{ width:92%; }
   .main{ padding: 22px; }
-}
-/* FULL-SCREEN BACKGROUND LAYER */
-.bg-city {
-    position: fixed;
-    inset: 0;
-    background-image: url("https://images.pexels.com/photos/3584436/pexels-photo-3584436.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    z-index: -5;
-    opacity: 0.35; /* adjust visibility */
 }
