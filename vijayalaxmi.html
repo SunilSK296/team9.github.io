@@ -17,136 +17,33 @@
       font-family:'Poppins', sans-serif;
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
       text-align:center;
+      position: relative; /* for positioning blue button relative to card */
     }
 
-    /* Floating Box Styles */
+    /* Floating Blue Button */
     .float-box {
       background-color:#2a2a72; /* blue background */
       color:#fff;
-      padding:20px 30px;
+      padding:15px 25px;
       border-radius:12px;
       cursor:pointer;
       min-width:200px;
       text-align:center;
-      position: relative;
+      position: absolute; /* position relative to tourism card */
+      left: -240px; /* slightly to the left */
+      top: 20px; /* align with top of card */
       transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
-      
-      /* Glowing radial border effect */
       border: 3px solid #2a2a72;
       box-shadow: 0 0 15px rgba(42,42,114,0.5), 0 0 30px rgba(42,42,114,0.3);
       background-image: radial-gradient(circle at top left, #2a2a72, #3b3bd1, #2a2a72);
     }
 
     .float-box:hover {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
       box-shadow: 0 0 20px rgba(42,42,114,0.8), 0 0 40px rgba(42,42,114,0.6);
       border: 3px solid #3b3bd1;
     }
 
-    /* Add arrow mark inside */
+    /* Arrow mark orange */
     .float-box::after {
-      content: " ▼";
-      font-size: 18px;
-      margin-left: 8px;
-      color: #ffcc00;
-      animation: bounce 1.2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-6px); }
-      60% { transform: translateY(-3px); }
-    }
-
-    /* Vertical buttons inside floating box */
-    .buttons-container {
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:10px;
-      margin-top:15px;
-    }
-
-    .place-btn {
-      background-color:#ffcc00;
-      color:#1a1a1a;
-      padding:12px 20px;
-      border:none;
-      border-radius:8px;
-      cursor:pointer;
-      width:220px;
-      font-size:16px;
-      transition: background 0.3s;
-    }
-
-    .place-btn:hover {
-      background-color:#e6b800;
-    }
-  </style>
-</head>
-<body>
-  <div class="sidebar">
-    <h2>Smart City</h2>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="project.html">Project</a>
-    <a href="vaishnavi.html">Vaishnavi</a>
-    <a href="vijayalaxmi.html">Vijayalaxmi</a>
-    <a href="sushant.html">Sushant</a>
-    <a href="sunil.html">Sunil</a>
-    <a href="collabz.html">Collabz</a>
-  </div>
-
-  <div class="main">
-    <h1>Vijayalaxmi</h1>
-
-    <!-- Tourism Sector Section -->
-    <div class="tourism-card">
-
-      <h2 style="color:#ffcc00; font-size:28px; margin-bottom:20px;">Why I Chose the Tourism Sector</h2>
-
-      <!-- Description / guides / content -->
-      <p style="font-size:16px; line-height:1.6; margin-bottom:30px;">
-        Tourism drives economic growth, creates jobs, and promotes culture. 
-        In smart cities, technology enhances tourist experiences by optimizing routes 
-        and managing attractions efficiently. This sector demonstrates how smart solutions 
-        can make cities more attractive and livable for residents and visitors alike.
-      </p>
-
-      <!-- Floating Box BELOW description -->
-      <div style="display:flex; justify-content:center; margin:0 auto;">
-        <div class="float-box" onclick="toggleButtons(this)">
-          Tourist Places in City
-          <div class="buttons-container" style="display:none;"></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <script>
-    const touristPlaces = [
-      "Cultural Emblem at Lake",
-      "Etruna Studio",
-      "Filmy City Rajpuri",
-      "Vrindhara Palace & National Parks"
-    ];
-
-    function toggleButtons(box) {
-      const container = box.querySelector('.buttons-container');
-      if (container.style.display === 'none' || container.style.display === '') {
-        container.style.display = 'flex';
-        container.innerHTML = '';
-        touristPlaces.forEach(place => {
-          const btn = document.createElement('button');
-          btn.innerText = place;
-          btn.className = 'place-btn';
-          container.appendChild(btn);
-        });
-      } else {
-        container.style.display = 'none';
-      }
-    }
-  </script>
-</body>
-</html>
+      content:
