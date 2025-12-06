@@ -5,161 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smart City Design</title>
 <link rel="stylesheet" href="style.css">
-
-<style>
-/* Side Navigation */
-.sidebar {
-    width: 240px;
-    height: 100vh;
-    background: #1a1a1a;
-    position: fixed;
-    left: 0;
-    top: 0;
-    padding-top: 40px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
-}
-
-.sidebar h2 {
-    text-align: center;
-    color: white;
-    margin-bottom: 30px;
-    font-size: 24px;
-    letter-spacing: 1px;
-}
-
-.sidebar a {
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    background: #3d3d3d;
-    padding-left: 40px;
-}
-
-/* Main Page */
-.main {
-    margin-left: 240px;
-    padding: 30px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px);}
-    to { opacity: 1; transform: translateY(0);}
-}
-
-/* Section Cards */
-.section-card {
-    background: white;
-    margin: 30px auto;
-    padding: 25px;
-    border-radius: 12px;
-    width: 85%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.section-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
-.section-card h2 {
-    text-align: center;
-    color: #222;
-    margin-bottom: 15px;
-}
-
-/* Team Grid */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    width: 85%;
-    margin: auto;
-}
-
-.team-box {
-    padding: 25px;
-    text-align: center;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.team-box:hover {
-    transform: translateY(-6px);
-}
-
-/* Gradient boxes */
-.vai { background: linear-gradient(to right, #ff758c, #ff7eb3); }
-
-.vij { background: linear-gradient(to right, #6a11cb, #2575fc); }
-
-.sun { background: linear-gradient(to right, #ff9a44, #fc6076); }
-
-.sus { background: linear-gradient(to right, #11998e, #38ef7d); }
-</style>
-
 </head>
+
 <body>
 
-<!-- Sidebar -->
+<!-- SIDEBAR -->
 <div class="sidebar">
-    <h2>Navigation</h2>
+    <h2>Smart City</h2>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="project.html">Project</a>
-    <a href="vijayalaxmi.html">Vijayalaxmi</a>
     <a href="vaishnavi.html">Vaishnavi</a>
+    <a href="vijayalaxmi.html">Vijayalaxmi</a>
     <a href="sushant.html">Sushant</a>
     <a href="sunil.html">Sunil</a>
     <a href="collabz.html">Collabz</a>
 </div>
 
-<!-- Main Content -->
+<!-- MAIN CONTENT -->
 <div class="main">
-    <h1>SMART CITY DESIGN</h1>
 
-    <!-- Course Info -->
-    <div class="section-card">
+    <h1>SMART CITY DESIGN</h1>
+    <p class="tagline">Algorithmic Approach for Modern Urban Development</p>
+
+    <!-- COURSE CARD -->
+    <div class="card">
         <h2>Course Information</h2>
         <p><b>Course:</b> Design and Analysis of Algorithms (DAA)</p>
         <p><b>Course Code:</b> 24ECSC205</p>
-        <p><b>Course Instructor:</b> Prof. Prakash Hegade</p>
+        <p><b>Instructor:</b> Prof. Prakash Hegade</p>
         <p><b>University:</b> KLE Technological University</p>
-        <p><b>Topic:</b> Smart City Design Using Algorithms</p>
+        <p><b>Topic:</b> Smart City Design</p>
     </div>
 
-    <!-- About Section -->
-    <div class="section-card">
+    <!-- ABOUT CARD -->
+    <div class="card">
         <h2>About</h2>
-        <p>This project focuses on applying algorithmic techniques to improve modern city infrastructure including transportation, resource allocation, and smart automation.</p>
+        <p>This webpage presents an algorithmic perspective on Smart City design, focusing on efficient planning, traffic optimization, and resource management.</p>
     </div>
 
-    <!-- Project Section -->
-    <div class="section-card">
-        <h2>Project Information</h2>
-        <p>Our project explores how algorithms such as Dijkstra, Greedy approaches, and optimization methods can enhance tourism flow, traffic management, smart sensors, and urban decision-making.</p>
+    <!-- PROJECT CARD -->
+    <div class="card">
+        <h2>Project Overview</h2>
+        <p>Our project integrates real-world urban challenges with algorithmic problem-solving strategies to design an efficient and sustainable smart city model.</p>
     </div>
 
-    <!-- Team Member Boxes -->
-    <h2 style="text-align:center; margin-top:40px;">Team Members</h2>
-
-    <div class="team-grid">
-        <a href="vaishnavi.html" style="text-decoration:none;"><div class="team-box vai">Vaishnavi</div></a>
-        <a href="vijayalaxmi.html" style="text-decoration:none;"><div class="team-box vij">Vijayalaxmi</div></a>
-        <a href="sushant.html" style="text-decoration:none;"><div class="team-box sus">Sushant</div></a>
-        <a href="sunil.html" style="text-decoration:none;"><div class="team-box sun">Sunil</div></a>
+    <!-- TEAM MEMBERS -->
+    <div class="card">
+        <h2>Team Members</h2>
+        <div class="btn-container">
+            <a href="vaishnavi.html"><div class="team-card">Vaishnavi</div></a>
+            <a href="vijayalaxmi.html"><div class="team-card">Vijayalaxmi</div></a>
+            <a href="sushant.html"><div class="team-card">Sushant</div></a>
+            <a href="sunil.html"><div class="team-card">Sunil</div></a>
+        </div>
     </div>
 
 </div>
