@@ -1,43 +1,177 @@
-/* General page styling */
+/* ========= GLOBAL STYLES ========= */
 body {
-    font-family: Arial, sans-serif;
-    background: #f0f8ff; /* Light blue background */
-    color: #333;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 0;
+    background: #f2f6ff;
+    display: flex;
+    color: #222;
 }
 
-/* Header */
+/* ========= LEFT SIDEBAR NAVIGATION ========= */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: linear-gradient(180deg, #5a5df0, #7b5dfd);
+    padding-top: 40px;
+    box-shadow: 3px 0 12px rgba(0,0,0,0.15);
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 14px 30px;
+    color: #fff;
+    font-size: 17px;
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.15);
+    border-left: 4px solid #fff;
+}
+
+/* ========= MAIN CONTENT AREA ========= */
+.main {
+    margin-left: 240px;
+    padding: 40px;
+    width: calc(100% - 240px);
+}
+
+/* Page Title */
 h1 {
     text-align: center;
-    padding: 20px;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    color: white;
-    margin: 0;
+    background: linear-gradient(to right, #ff5f6d, #ffc371);
+    color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    font-size: 34px;
+    margin-top: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Navbar */
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-}
-
-nav a {
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    background-color: #555;
-    border-radius: 5px;
-}
-
-/* Page content */
-p {
+.tagline {
     text-align: center;
     font-size: 18px;
+    color: #666;
+    margin-top: 8px;
+}
+
+/* ========= CARD SECTIONS ========= */
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+    width: 85%;
+    margin: 30px auto;
+    border: 1px solid #e0e6ff;
+    box-shadow: 0 6px 18px rgba(130,150,255,0.15);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(100,120,255,0.25);
+}
+
+.card h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 12px;
+    background: linear-gradient(to right, #ff7eb3, #ff758c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card p {
+    text-align: center;
+    font-size: 18px;
+    color: #444;
+    font-weight: 500;
+}
+
+/* ========= TEAM MEMBER BOXES ========= */
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.team-box {
+    width: 220px;
     padding: 20px;
+    background: linear-gradient(135deg, #89cff0, #5a8dee);
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 600;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.team-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(90, 100, 200, 0.35);
+    background: linear-gradient(135deg, #5a8dee, #4263eb);
+}
+
+/* ========= TABLE ========= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background: #5a5df0;
+    color: white;
+    padding: 12px;
+    border-radius: 8px 8px 0 0;
+}
+
+td {
+    padding: 12px;
+    background: #eef1ff;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #d9ddff;
+}
+
+/* ========= BUTTONS ========= */
+.btn-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.btn {
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    border: none;
+    padding: 12px 25px;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(255, 100, 100, 0.35);
 }
