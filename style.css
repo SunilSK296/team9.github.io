@@ -82,9 +82,9 @@ body{
 
 /* Main */
 .main{
-  margin-left:240px;
-  padding:40px 48px;
-  width:auto;
+  margin-left: 240px;       
+  padding: 40px 48px;
+  width: calc(100% - 240px); 
 }
 
 /* Title */
