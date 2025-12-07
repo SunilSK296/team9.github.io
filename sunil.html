@@ -1,33 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sunil - CITY DESIGN</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CityPlan — Traffic Management</title>
+  <meta name="description" content="Traffic management sector: subsectors, algorithmic approaches, data structures, and implementation ideas." />
+
+  <style>
+    /* Simple modern stylesheet */
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa9bf;
+      --accent:#3ddc97;
+      --glass: rgba(255,255,255,0.03);
+      --glass2: rgba(255,255,255,0.02);
+      --maxw:1100px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071021 0%, #081226 40%, #071126 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:36px 20px;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap{max-width:var(--maxw); width:100%;}
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    .logo{
+      width:72px;height:72px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#43a7ff);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;color:#042024;font-size:18px;
+      box-shadow:0 6px 18px rgba(3,6,23,0.6);
+    }
+    h1{margin:0;font-size:22px}
+    p.lead{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+    nav.tags{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 26px}
+    .tag{background:var(--glass);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px;border:1px solid rgba(255,255,255,0.02)}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:900px){ .grid{grid-template-columns: 1fr 340px;} }
+
+    .card{background:linear-gradient(180deg,var(--card),#081226); padding:18px;border-radius:12px; box-shadow:0 6px 30px rgba(1,8,20,0.6); border:1px solid rgba(255,255,255,0.02)}
+    .card h2{margin:0 0 8px;font-size:16px}
+    .card small{color:var(--muted);display:block;margin-bottom:12px;font-size:13px}
+
+    .subsection{margin:12px 0;padding:12px;border-radius:8px;background:var(--glass2);border:1px solid rgba(255,255,255,0.02)}
+    .subsection h3{margin:0 0 6px;font-size:14px}
+    .subsection p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+
+    ul.list{margin:8px 0 0;padding-left:18px;color:var(--muted)}
+    pre.code{background:#07111a;padding:12px;border-radius:8px;margin-top:10px;overflow:auto;font-size:13px;color:#c6f6e8}
+    code.inline{background:#05121a;padding:2px 6px;border-radius:4px;color:#9ff3c9}
+
+    aside.right-col{position:relative}
+    .pill{display:inline-block;background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:10px;margin:6px 6px 6px 0;color:var(--muted);font-size:13px}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+
+    .examples{display:flex;flex-direction:column; gap:8px}
+    .example{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#042024;font-weight:700;text-decoration:none;margin-top:8px}
+  </style>
 </head>
-  <body>
-    <div class="sidebar">
-  <h2>Smart City</h2>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="project.html">Project</a>
-  <a href="vaishnavi.html">Vaishnavi</a>
-  <a href="vijayalaxmi.html">Vijayalaxmi</a>
-  <a href="sushant.html">Sushant</a>
-  <a href="sunil.html">Sunil</a>
-  <a href="collabz.html">Collabz</a>
-</div>
-<div class="main">
-   <h1>Sunil</h1>
-  <h2>City Planning Business Ideas</h2>
-  <ul>
-    <li>Healthcare Diagnostics and Telemedicine Centers</li>
-    <li>Real Estate and Township Development Company</li>
-    <li>Smart Traffic Management and Navigation Services</li>
-    <li>Yoga, Martial Arts, and Wellness Training Hub</li>
-    <li>Shopping, Mode Management, and Retail Operations</li>
-  </ul>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">TP</div>
+      <div>
+        <h1>CityPlan — Traffic Management</h1>
+        <p class="lead">Subsectors, algorithmic approaches, data structures and implementation notes for a smart traffic management plan.</p>
+      </div>
+    </header>
+
+    <nav class="tags">
+      <span class="tag">Traffic Signals</span>
+      <span class="tag">Congestion Control</span>
+      <span class="tag">Public Transit</span>
+      <span class="tag">Parking</span>
+      <span class="tag">Incident Detection</span>
+      <span class="tag">Routing</span>
+      <span class="tag">V2I / IoT</span>
+      <span class="tag">Pedestrian Safety</span>
+      <span class="tag">Air Quality</span>
+    </nav>
+
+    <div class="grid">
+      <main class="card">
+        <h2>Overview</h2>
+        <small>Goal: provide algorithmic designs and software/data ideas for each traffic management subsector — suitable for prototyping or coursework.</small>
+
+        <div class="subsection" id="summary">
+          <h3>Approach</h3>
+          <p>Model the city road network as a <strong>weighted graph</strong>, use shortest-path and flow algorithms for routing and capacity planning, streaming analytics for real-time detection, control theory / optimization for signal timing, and ML / CV for incident & congestion detection from camera + sensor feeds.</p>
+        </div>
+
+        <div class="subsection" id="graph-model">
+          <h3>Core model: Graphs & Time Series</h3>
+          <p>Nodes = intersections/stations/parking lots. Edges = road segments with attributes (length, lanes, capacity, speed limit). Store time-dependent weights (travel time estimates) as time series per edge and update from real-time sensors.</p>
+          <ul class="list">
+            <li><strong>Data structures:</strong> adjacency lists, segment trees (for interval updates), priority queues for shortest path, dynamic graphs for closures.</li>
+            <li><strong>Time series:</strong> sliding window aggregates, exponential smoothing (EWMA) for travel time forecasting.</li>
+          </ul>
+        </div>
+
+        <!-- Subsector entries -->
+        <div class="subsection" id="signals">
+          <h3>1. Traffic Signal Control</h3>
+          <p>Objective: minimize total delay and queue lengths at intersections.</p>
+          <ul class="list">
+            <li><strong>Algorithms:</strong> Webster's formula for cycle time; dynamic programming / reinforcement learning (DQN or policy gradient) for adaptive timing; multi-agent RL for coordinated corridors.</li>
+            <li><strong>DS/Primitives:</strong> max-queue / priority queues for vehicle phases, Kalman filter for queue length estimation from sensors, linear programming for green-time allocation.</li>
+          </ul>
+          <pre class="code">
+// Example: simplified Dijkstra-like approach to prioritize clearing busiest links
+// (pseudocode)
+while(system_running){
+  collect_queue_lengths();
+  for(each_intersection){
+    rank_phases_by(queue_length / saturation_flow);
+    allocate_green_time_using_linear_programming();
+  }
+  apply_timings();
+}
+          </pre>
+        </div>
+
+        <div class="subsection" id="congestion">
+          <h3>2. Congestion Detection & Management</h3>
+          <p>Objective: detect hotspots and trigger mitigation (signal retiming, reroute suggestions, demand management).</p>
+          <ul class="list">
+            <li><strong>Algorithms:</strong> moving-average + z-score for anomaly detection; density-based clustering (DBSCAN) for congestion hotspots; model predictive control (MPC) for short-term interventions.</li>
+            <li><strong>Sensors:</strong> loop detectors, CCTV (CV models), floating-car data (GPS from apps).</li>
+          </ul>
+          <pre class="code">
+# Example: anomaly detection on travel-time time series
+if zscore(travel_time[t]) > threshold:
+    mark_edge_as_congested()
+    notify_routing_service()
+          </pre>
+        </div>
+
+        <div class="subsection" id="routing">
+          <h3>3. Route Planning & Navigation</h3>
+          <p>Objective: recommend routes that minimize travel time or balance load across the network.</p>
+          <ul class="list">
+            <li><strong>Algorithms:</strong> Time-dependent Dijkstra / A* (with heuristics), Contraction Hierarchies, Multi-commodity Flow for fleet routing, Yen's algorithm for k-shortest paths to provide alternatives.</li>
+            <li><strong>Optimizations:</strong> incremental search (LPA*), dynamic updates with streaming travel-time data.</li>
+          </ul>
+          <pre class="code">
+// A* with time-dependent edge weights (pseudocode)
+open = priority_queue()
+open.push(start, 0 + heuristic(start,goal))
+while open not empty:
+  node = open.pop()
+  if node == goal: return reconstruct_path()
+  for neighbor in node.neighbors:
+    cost = current_time + travel_time(node,neighbor,current_time)
+    if cost < best[neighbor]:
+      best[neighbor] = cost
+      open.push(neighbor, cost + heuristic(neighbor,goal))
+          </pre>
+        </div>
+
+        <div class="subsection" id="parking">
+          <h3>4. Smart Parking & Curb Management</h3>
+          <p>Objective: reduce cruising time, enforce rules, dynamically price spaces.</p>
+          <ul class="list">
+            <li><strong>Algorithms:</strong> bipartite matching (assign vehicles to spots), auction-based pricing, greedy heuristics for near-real-time allocation.</li>
+            <li><strong>Data:</strong> occupancy sensors, camera-based plate recognition, reservation systems.</li>
+          </ul>
+        </div>
+
+        <div class="subsection" id="incident">
+          <h3>5. Incident Detection & Response</h3>
+          <p>Objective: detect accidents/breakdowns quickly and reroute traffic.</p>
+          <ul class="list">
+            <li><strong>Algorithms:</strong> Computer Vision (YOLO/SSD) for object detection + optical flow for stopped vehicles; statistical detection from speed drops; shortest path re-routing + multi-agent dispatch.</li>
+            <li><strong>DS:</strong> message queues for incident alerts, priority scheduling for emergency vehicles (green waves).</li>
+          </ul>
+        </div>
+
+        <div class="subsection" id="public-transit">
+          <h3>6. Public Transit & Fleet Management</h3>
+          <p>Objective: maintain headway, reduce bunching, improve on-time performance.</p>
+          <ul class="list">
+            <li><strong>Algorithms:</strong> headway-based control, MPC for schedule adjustments, vehicle-rescheduling via integer programming for disruptions.</li>
+            <li><strong>Tools:</strong> AVL (Automatic Vehicle Location), GTFS for schedule data, demand prediction with time-series models.</li>
+          </ul>
+        </div>
+
+        <div class="subsection" id="v2i">
+          <h3>7. V2I / IoT & Sensor Fusion</h3>
+          <p>Objective: use vehicle-to-infrastructure communication to improve safety and throughput.</p>
+          <ul class="list">
+            <li><strong>Algorithms:</strong> message filtering (Bloom filters), sensor fusion with Kalman / particle filters, event stream processing (CEP) for pattern detection.</li>
+            <li><strong>Networking:</strong> resilient telemetry ingestion (MQTT, Kafka), edge compute for latency-sensitive control.</li>
+          </ul>
+        </div>
+
+        <div class="subsection" id="pedestrian">
+          <h3>8. Pedestrian & Cyclist Safety</h3>
+          <p>Objective: protect vulnerable road users through detection, safer crosswalk timing, and physical redesign suggestions.</p>
+          <ul class="list">
+            <li><strong>Algorithms:</strong> CV-based pedestrian detection, crosswalk occupancy prediction, multi-object tracking (DeepSORT) to predict trajectories.</li>
+          </ul>
+        </div>
+
+        <div class="subsection" id="air-quality">
+          <h3>9. Air Quality & Environmental Monitoring</h3>
+          <p>Objective: correlate traffic patterns with pollution, suggest low-emission routing and congestion charge zones.</p>
+          <ul class="list">
+            <li><strong>Approach:</strong> spatial interpolation (IDW, kriging) to produce pollution heatmaps, causal analysis to evaluate interventions.</li>
+          </ul>
+        </div>
+
+        <div class="subsection" id="data-platform">
+          <h3>Data Platform & Implementation Notes</h3>
+          <ul class="list">
+            <li>Ingestion: Kafka / MQTT for streaming, APIs for historical data.</li>
+            <li>Storage: time-series DB (InfluxDB, TimescaleDB) + graph DB (Neo4j) or relational DB with adjacency tables.</li>
+            <li>Processing: Spark/Flink for batch and streaming analytics, model hosting with Docker / KFServing.</li>
+            <li>Privacy: anonymize trajectory data, aggregate small-area stats before release.</li>
+          </ul>
+        </div>
+
+        <div class="subsection" id="examples">
+          <h3>Sample Use Cases & Pseudocode</h3>
+
+          <div class="examples">
+            <div class="example">
+              <strong>Green Wave Creation (corridor coordination)</strong>
+              <p class="lead" style="color:var(--muted);margin:6px 0 0;font-size:13px">
+                Use offset calculation between intersections using average travel time to create a progressive green wave.
+              </p>
+              <pre class="code">
+# offset between intersection A and B
+offset = round(travel_time_AB / cycle_time * cycle_time)
+apply_offset(B, offset)
+              </pre>
+            </div>
+
+            <div class="example">
+              <strong>Parking Assignment (online)</strong>
+              <p style="color:var(--muted);margin:6px 0 0;font-size:13px">Greedy nearest available spot, fallback to auction when demand high.</p>
+              <pre class="code">
+for request in incoming_requests:
+  candidates = nearest_available_spots(request.location, radius)
+  if candidates:
+    assign(nearest(candidates))
+  else:
+    add_to_auction_pool(request)
+              </pre>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <aside class="card right-col">
+        <h2>Quick Links & Resources</h2>
+        <small>Use these as starting points for prototypes and assignments.</small>
+
+        <div class="subsection">
+          <h3>Subsectors (quick)</h3>
+          <div>
+            <span class="pill">Signal control</span>
+            <span class="pill">Congestion detection</span>
+            <span class="pill">Routing</span>
+            <span class="pill">Parking</span>
+            <span class="pill">Incidents</span>
+            <span class="pill">Transit</span>
+            <span class="pill">V2I</span>
+            <span class="pill">Pedestrians</span>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Algorithm Highlights</h3>
+          <ul class="list">
+            <li>Shortest path: Dijkstra / A* / CH</li>
+            <li>Optimization: LP / ILP, MPC</li>
+            <li>Detection: CNNs (YOLO), optical flow</li>
+            <li>Streaming: CEP, Kafka + Flink</li>
+          </ul>
+        </div>
+
+        <div class="subsection">
+          <h3>Example Stack</h3>
+          <p style="color:var(--muted);font-size:13px;margin:0">
+            Edge: Raspberry Pi / Jetson -> Telemetry via MQTT -> Kafka -> Flink -> Postgres/Timescale & Neo4j -> Python ML microservices -> Web dashboard (React).
+          </p>
+          <a class="btn" href="#data-platform">Start prototyping</a>
+        </div>
+
+        <div class="subsection">
+          <h3>Deployment</h3>
+          <p style="color:var(--muted);margin:0">Host this page via GitHub Pages — see README below. For prototypes, use Docker Compose with emulated sensors.</p>
+        </div>
+        <footer>
+          © CityPlan — Traffic Management • Generated for your repo
+        </footer>
+      </aside>
     </div>
+  </div>
 </body>
 </html>
