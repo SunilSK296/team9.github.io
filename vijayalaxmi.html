@@ -1,294 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vijayalaxmi - CITY DESIGN</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<style>
-/* ---------- GLOBAL ---------- */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #121212;
-  color: #fff;
-}
-
-/* ---------- SIDEBAR ---------- */
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 200px;
-  height: 100%;
-  background-color: #1a1a1a;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-  z-index: 1;
-}
-.sidebar h2 { 
-  color:#ffcc00; 
-  text-align:center; 
-  margin-bottom:30px;
-}
-.sidebar a { 
-  display:block; 
-  color:#fff; 
-  text-decoration:none; 
-  margin:10px 0; 
-  padding:8px 10px; 
-  border-radius:6px; 
-  transition: all 0.3s ease; 
-}
-.sidebar a:hover { 
-  background-color:#2a2a72; 
-  transform: scale(1.05);
-}
-
-/* ---------- MAIN ---------- */
-.main { 
-  margin-left:220px; 
-}
-
-/* ---------- PAGE SECTIONS ---------- */
-.section {
-  width: 100%;
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.grey-light { background-color: #2a2a2a; color: #fff; }
-.grey-dark { background-color: #1a1a1a; color: #fff; }
-
-/* ---------- TOURISM CARD ---------- */
-.tourism-card {
-  border: 1.5px solid rgb(233, 240, 173); 
-  background-color:#1a1a1a;
-  color:#f8f8f8;
-  padding:40px 20px;
-  border-radius:16px;
-  max-width:700px;
-  margin:20px auto;
-  box-shadow:0 8px 20px rgba(0,0,0,0.4);
-  text-align:center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.tourism-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(255,204,0,0.4);
-}
-.tourism-card h2 { color:#ffcc00; }
-.tourism-card p { font-size:16px; line-height:1.6; }
-
-/* ---------- INFO BOX ---------- */
-.info-box {
-  width: 90%;
-  max-width:650px;
-  background:#1a1a1a;
-  border:2px solid #ffcc00;
-  border-radius:12px;
-  padding:25px 30px;
-  margin:20px auto;
-  color:white;
-  line-height:1.7;
-  box-shadow:0 0 15px rgba(255,204,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.info-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255,204,0,0.3);
-}
-.info-box h2 { color:#ffcc00; text-align:center; margin-bottom:15px; }
-
-/* ---------- PROBLEMS SECTION ---------- */
-.problems-section {
-  display:flex; 
-  flex-wrap:wrap;
-  justify-content:space-between; 
-  align-items:flex-start; 
-  gap:40px;
-  max-width:1100px;
-  width:100%;
-}
-.problems-section ul {
-  font-family:Poppins;
-  line-height:1.8;
-  font-size:18px;
-  margin:0;
-  padding:0;
-  list-style:none;
-}
-.problems-section ul li {
-  position:relative; 
-  padding-left:25px; 
-  margin-bottom:12px;
-}
-.problems-section ul li::before {
-  content: '➤';
-  position:absolute;
-  left:0;
-  color:#ffcc00;
-  font-weight:bold;
-}
-.problems-section img {
-  width:100%;
-  max-width:500px; 
-  border-radius:12px; 
-  box-shadow:0 0 10px rgba(0,0,0,0.5);
-}
-.problems-section .youtube-links a {
-  color:#00aaff; 
-  text-decoration:underline; 
-  display:block;
-  margin-bottom:8px;
-}
-
-/* ---------- SUB-SECTORS ---------- */
-.sub-sectors {
-  display:flex;
-  justify-content:flex-start;
-  align-items:center;
-  gap:20px;
-  flex-wrap:nowrap;
-  overflow-x:auto;
-  padding:10px;
-  scroll-behavior:smooth;
-}
-.sub-sectors div {
-  border-radius:50%; 
-  width:120px; 
-  height:120px; 
-  display:flex; 
-  align-items:center; 
-  justify-content:center; 
-  text-align:center; 
-  padding:10px; 
-  font-weight:bold; 
-  box-shadow:0 5px 15px rgba(255,204,0,0.3);
-  flex-shrink:0;
-  cursor:pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.sub-sectors div:hover {
-  transform: scale(1.1);
-  box-shadow:0 8px 20px rgba(255,204,0,0.5);
-}
-.sub-sectors div span { color:#fff; }
-
-/* ---------- TEXT ---------- */
-h1 { text-align:center; color:#ff8800; margin-bottom:10px; }
-h2 { margin-bottom:20px; text-align:center; color:#ff8800; }
-p { line-height:1.6; font-size:16px; max-width: 800px; margin:10px auto; text-align:justify; }
-
-/* ---------- RESPONSIVE ---------- */
-@media(max-width:900px){
-  .main { margin-left:0; padding:20px; }
-  .sidebar { width:100%; height:auto; position:relative; padding:10px; display:flex; flex-wrap:wrap; justify-content:center; }
-  .sidebar a { margin:5px; }
-  .problems-section { flex-direction:column; align-items:center; }
-}
-</style>
-</head>
-<body>
-
-<!-- ========================= SIDEBAR ========================= -->
-<div class="sidebar">
-  <h2>Smart City</h2>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="project.html">Project</a>
-  <a href="vaishnavi.html">Vaishnavi</a>
-  <a href="vijayalaxmi.html">Vijayalaxmi</a>
-  <a href="sushant.html">Sushant</a>
-  <a href="sunil.html">Sunil</a>
-  <a href="collabz.html">Collabz</a>
+<!-- ========================= TOURIST INFO & NAVIGATION ========================= -->
+<div class="section grey-dark">
+  <div class="info-box">
+    <h2>1. Tourist Info & Navigation</h2>
+    <p><b>Aligned SDGs:</b> 9 (Industry, Innovation, and Infrastructure), 11 (Sustainable Cities and Communities)</p>
+    <p>
+      Tourist information and navigation services help visitors explore cities efficiently, reduce overcrowding, 
+      and enhance the overall experience. Smart systems provide guidance, real-time updates, and personalized recommendations.
+    </p>
+    <h3>Contributions:</h3>
+    <ul>
+      <li>Optimizes tourist routes and reduces congestion in busy areas.</li>
+      <li>Provides real-time information about attractions, transport, and events.</li>
+      <li>Supports digital literacy and smart city infrastructure.</li>
+    </ul>
+  </div>
 </div>
 
-<!-- ========================= MAIN ========================= -->
-<div class="main">
-
-  <h1>Vijayalaxmi</h1>
-
-  <!-- ========================= TOURISM CARD SECTION ========================= -->
-  <div class="section grey-light">
-    <div class="tourism-card">
-      <h2>Why I Chose the Tourism Sector</h2>
-      <p>
-        Tourism drives economic growth, creates jobs, and promotes culture. 
-        In smart cities, technology enhances tourist experiences by optimizing routes 
-        and managing attractions efficiently.
-      </p>
-    </div>
+<!-- ========================= ACCOMMODATION ========================= -->
+<div class="section grey-dark">
+  <div class="info-box">
+    <h2>2. Accommodation</h2>
+    <p><b>Aligned SDGs:</b> 11 (Sustainable Cities and Communities), 12 (Responsible Consumption and Production)</p>
+    <p>
+      Accommodation services cater to tourists’ lodging needs while promoting sustainability and comfort. 
+      Smart and eco-friendly hotels reduce environmental impact and enhance the tourist experience.
+    </p>
+    <h3>Contributions:</h3>
+    <ul>
+      <li>Promotes eco-friendly and energy-efficient lodging.</li>
+      <li>Provides safe, affordable, and accessible housing options for tourists.</li>
+      <li>Supports local economies by connecting travelers to local stays.</li>
+    </ul>
   </div>
-
-  <!-- ========================= SDG SECTION ========================= -->
-  <div class="section grey-dark">
-    <div class="info-box">
-      <h2>Tourism Related SDGs</h2>
-      <ul style="list-style:none; padding-left:20px;">
-          <li><b>SDG 8</b> – Decent Work and Economic Growth</li>
-          <li><b>SDG 11</b> – Sustainable Cities and Communities</li>
-          <li><b>SDG 12</b> – Responsible Consumption and Production</li>
-          <li><b>SDG 13</b> – Climate Action</li>
-          <li><b>SDG 14</b> – Life Below Water</li>
-          <li><b>SDG 15</b> – Life on Land</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ========================= PROBLEMS SECTION ========================= -->
-  <div class="section grey-light">
-    <h2>CURRENT PROBLEMS IN THE TOURISM SECTOR</h2>
-    <div class="problems-section">
-      <ul>
-        <li>Overcrowding</li>
-        <li>Long queues</li>
-        <li>Safety concerns</li>
-        <li>Lack of digital systems</li>
-        <li>Waste management issues</li>
-        <li>Poor navigation & confusing signs</li>
-        <li>Disconnected local businesses</li>
-      </ul>
-      <div style="display:flex; flex-direction:column; gap:15px;">
-        <img src="crowd.png" alt="Crowd Image">
-        <div class="youtube-links">
-          <a href="#" target="_blank">▶ Overtourism & overcrowding explained – YouTube</a>
-          <a href="#" target="_blank">▶ Waste, congestion & environmental issues – YouTube</a>
-          <a href="#" target="_blank">▶ Tourist management failures & long queues – YouTube</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================= WHY INNOVATION ========================= -->
-  <div class="section grey-dark">
-    <div class="info-box">
-      <h2>⭐ WHY INNOVATION IS NEEDED</h2>
-      <p>
-        Innovation is needed in the tourism sector to make travel smoother, faster, and safer.
-        Traditional systems cannot handle overcrowding, long waits, or lack of real-time information.
-        Modern tourists expect digital services, smart navigation, and personalized guidance.
-        Smart solutions help reduce chaos, manage crowds, improve safety, and boost local businesses—making the entire sector more efficient and tourist-friendly.
-      </p>
-    </div>
-  </div>
-
-  <!-- ========================= SUB-SECTORS ========================= -->
-  <div class="section grey-light">
-    <h2>Tourism Sector Sub-Divisions</h2>
-    <div class="sub-sectors">
-      <div style="background:#222244;"><span>Tourist Info & Nav</span></div>
-      <div style="background:#224422;"><span>Accommodation</span></div>
-      <div style="background:#444422;"><span>Attractions</span></div>
-      <div style="background:#224444;"><span>Safety & Security</span></div>
-      <div style="background:#444244;"><span>Cleanliness & Sustainability</span></div>
-      <div style="background:#442244;"><span>Local Culture & Shopping</span></div>
-    </div>
-  </div>
-
 </div>
-</body>
-</html>
+
+<!-- ========================= ATTRACTIONS ========================= -->
+<div class="section grey-dark">
+  <div class="info-box">
+    <h2>3. Attractions</h2>
+    <p><b>Aligned SDGs:</b> 8 (Decent Work and Economic Growth), 11 (Sustainable Cities and Communities)</p>
+    <p>
+      Attractions include cultural, historical, and recreational sites. Technology and smart management improve visitor experience, safety, and accessibility.
+    </p>
+    <h3>Contributions:</h3>
+    <ul>
+      <li>Implements smart ticketing and crowd management systems.</li>
+      <li>Enhances visitor engagement through AR/VR experiences.</li>
+      <li>Boosts local tourism and cultural preservation.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ========================= SAFETY & SECURITY ========================= -->
+<div class="section grey-dark">
+  <div class="info-box">
+    <h2>4. Safety & Security</h2>
+    <p><b>Aligned SDGs:</b> 3 (Good Health and Well-being), 11 (Sustainable Cities and Communities)</p>
+    <p>
+      Safety and security services ensure that tourists can explore cities with confidence. Smart monitoring, emergency response, and wearable tech enhance protection.
+    </p>
+    <h3>Contributions:</h3>
+    <ul>
+      <li>Provides real-time emergency alerts and assistance.</li>
+      <li>Reduces accidents through crowd and traffic management.</li>
+      <li>Increases trust and satisfaction among tourists.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ========================= CLEANLINESS & SUSTAINABILITY ========================= -->
+<div class="section grey-dark">
+  <div class="info-box">
+    <h2>5. Cleanliness & Sustainability</h2>
+    <p><b>Aligned SDGs:</b> 11 (Sustainable Cities and Communities), 12 (Responsible Consumption and Production), 13 (Climate Action)</p>
+    <p>
+      Maintaining clean and sustainable environments improves urban livability and tourist experience. 
+      Eco-friendly initiatives and smart waste management promote sustainability.
+    </p>
+    <h3>Contributions:</h3>
+    <ul>
+      <li>Implements IoT-enabled waste management systems.</li>
+      <li>Promotes eco-tourism and responsible visitor behavior.</li>
+      <li>Reduces environmental impact through green practices.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ========================= LOCAL CULTURE & SHOPPING ========================= -->
+<div class="section grey-dark">
+  <div class="info-box">
+    <h2>6. Local Culture & Shopping</h2>
+    <p><b>Aligned SDGs:</b> 8 (Decent Work and Economic Growth), 11 (Sustainable Cities and Communities)</p>
+    <p>
+      Promoting local culture and shopping allows tourists to experience authentic experiences while supporting local artisans and businesses.
+    </p>
+    <h3>Contributions:</h3>
+    <ul>
+      <li>Provides marketplaces for local handicrafts and souvenirs.</li>
+      <li>Encourages cultural learning through workshops and tours.</li>
+      <li>Strengthens local economies and preserves cultural heritage.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ========================= TRANSPORTATION & MOBILITY ========================= -->
+<div class="section grey-dark">
+  <div class="info-box">
+    <h2>7. Transportation & Mobility</h2>
+    <p><b>Aligned SDGs:</b> 9 (Industry, Innovation, and Infrastructure), 11 (Sustainable Cities and Communities)</p>
+    <p>
+      Efficient transportation systems are key to a smart tourism experience. They reduce congestion, improve accessibility, 
+      and connect tourists to attractions seamlessly.
+    </p>
+    <h3>Contributions:</h3>
+    <ul>
+      <li>Optimizes routes using smart transport algorithms.</li>
+      <li>Encourages sustainable mobility (electric buses, bike-sharing).</li>
+      <li>Enhances accessibility for all types of travelers.</li>
+    </ul>
+  </div>
+</div>
