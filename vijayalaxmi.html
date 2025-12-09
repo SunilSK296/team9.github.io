@@ -312,81 +312,86 @@ body {
   width: 100%;
   min-height: 100vh;
   padding: 20px 30px;
-  text-align: center;  /* CENTER ALIGN EVERYTHING */
+  display: flex;
+  justify-content: center;     /* Center the paragraph block */
+  align-items: flex-start;
   box-sizing: border-box;
 }
-.section-grey p {
-  margin: 0 auto;
-  padding: 12px 0;
+.content {
+  max-width: 700px;            /* Paragraph stays centered */
+  text-align: left;            /* TEXT NOT CENTERED */
   line-height: 1.7;
-  max-width: 700px;  /* Makes centered text look clean */
-  text-align: center; /* EXTRA ENSURES CENTER */
 }
 b {
   color: #ffcc00;
+}
+p {
+  margin-bottom: 20px;
 }
 </style>
 </head>
 <body>
 
 <div class="section-grey">
+  <div class="content">
 
-  <p><b>1. Tourist Info & Navigation</b><br>
-  Aligned SDGs: 9, 11<br>
-  • Real-time routes & updates<br>
-  • Reduces overcrowding<br>
-  • Improves navigation<br>
-  <b>Algorithms:</b> Dijkstra, A*, BFS/DFS, KMP, Trie, Greedy, Dynamic Programming
-  </p>
+    <p><b>1. Tourist Info & Navigation</b><br>
+    Aligned SDGs: 9, 11<br>
+    • Real-time routes & updates<br>
+    • Reduces overcrowding<br>
+    • Improves navigation<br>
+    <b>Algorithms:</b> Dijkstra, A*, BFS/DFS, KMP, Trie, Greedy, Dynamic Programming
+    </p>
 
-  <p><b>2. Accommodation</b><br>
-  Aligned SDGs: 11, 12<br>
-  • Safe, eco-friendly stays<br>
-  • Smart booking<br>
-  • Better comfort & accessibility<br>
-  <b>Algorithms:</b> Hashing, Union-Find, Heap, Sliding Window, DP
-  </p>
+    <p><b>2. Accommodation</b><br>
+    Aligned SDGs: 11, 12<br>
+    • Safe, eco-friendly stays<br>
+    • Smart booking<br>
+    • Better comfort & accessibility<br>
+    <b>Algorithms:</b> Hashing, Union-Find, Heap, Sliding Window, DP
+    </p>
 
-  <p><b>3. Attractions</b><br>
-  Aligned SDGs: 8, 11<br>
-  • Smart ticketing<br>
-  • AR/VR enhancement<br>
-  • Crowd management<br>
-  <b>Algorithms:</b> Backtracking, Segment Tree, Fenwick Tree, Greedy, ML Prediction
-  </p>
+    <p><b>3. Attractions</b><br>
+    Aligned SDGs: 8, 11<br>
+    • Smart ticketing<br>
+    • AR/VR enhancement<br>
+    • Crowd management<br>
+    <b>Algorithms:</b> Backtracking, Segment Tree, Fenwick Tree, Greedy, ML Prediction
+    </p>
 
-  <p><b>4. Safety & Security</b><br>
-  Aligned SDGs: 3, 11<br>
-  • Real-time alerts<br>
-  • Crowd control<br>
-  • Emergency response<br>
-  <b>Algorithms:</b> BFS/DFS, Shortest Path Tree, DP Risk Score, Pattern Detection
-  </p>
+    <p><b>4. Safety & Security</b><br>
+    Aligned SDGs: 3, 11<br>
+    • Real-time alerts<br>
+    • Crowd control<br>
+    • Emergency response<br>
+    <b>Algorithms:</b> BFS/DFS, Shortest Path Tree, DP Risk Score, Pattern Detection
+    </p>
 
-  <p><b>5. Cleanliness & Sustainability</b><br>
-  Aligned SDGs: 11, 12, 13<br>
-  • Smart waste bins<br>
-  • Eco-friendly tourism<br>
-  • Pollution reduction<br>
-  <b>Algorithms:</b> Greedy Routing, DP Load Balance, Priority Queue, Segment Tree
-  </p>
+    <p><b>5. Cleanliness & Sustainability</b><br>
+    Aligned SDGs: 11, 12, 13<br>
+    • Smart waste bins<br>
+    • Eco-friendly tourism<br>
+    • Pollution reduction<br>
+    <b>Algorithms:</b> Greedy Routing, DP Load Balance, Priority Queue, Segment Tree
+    </p>
 
-  <p><b>6. Local Culture & Shopping</b><br>
-  Aligned SDGs: 8, 11<br>
-  • Supports artisans<br>
-  • Cultural experience<br>
-  • Boosts local economy<br>
-  <b>Algorithms:</b> Recommendation System, Trie, KMP, Hash Maps, Clustering
-  </p>
+    <p><b>6. Local Culture & Shopping</b><br>
+    Aligned SDGs: 8, 11<br>
+    • Supports artisans<br>
+    • Cultural experience<br>
+    • Boosts local economy<br>
+    <b>Algorithms:</b> Recommendation System, Trie, KMP, Hash Maps, Clustering
+    </p>
 
-  <p><b>7. Transportation & Mobility</b><br>
-  Aligned SDGs: 9, 11<br>
-  • Reduces congestion<br>
-  • Smooth connectivity<br>
-  • Sustainable travel<br>
-  <b>Algorithms:</b> Dijkstra, Floyd-Warshall, BFS, Priority Queue, Graph Partitioning, DP
-  </p>
+    <p><b>7. Transportation & Mobility</b><br>
+    Aligned SDGs: 9, 11<br>
+    • Reduces congestion<br>
+    • Smooth connectivity<br>
+    • Sustainable travel<br>
+    <b>Algorithms:</b> Dijkstra, Floyd-Warshall, BFS, Priority Queue, Graph Partitioning, DP
+    </p>
 
+  </div>
 </div>
 
 </body>
