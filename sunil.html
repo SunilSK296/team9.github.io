@@ -60,66 +60,14 @@
 </main>
 
 <section id="traffic-management" class="project-section" style="max-width:980px;margin:24px auto;padding:18px;background:#ffffff;border-radius:12px;box-shadow:0 6px 18px rgba(20,20,30,0.06)">
-  <div class="section-head">
-    <h2>1. Traffic Management — Interconnected Smart Traffic Signal Network</h2>
-    <div class="meta">Status: Concept / DAA project</div>
-  </div>
-
-  <p><strong>Overview:</strong> In the designed city, traffic signals are connected through a central communication graph. Each signal continuously shares data to enable local planning and cooperative decisions that avoid congestion propagation.</p>
-
-  <h3>Data shared every 2–5 seconds</h3>
-  <ul class="clean">
-    <li>Current traffic density</li>
-    <li>Queue length of vehicles</li>
-    <li>Number of vehicles arriving from each direction</li>
-    <li>Presence of emergency vehicles</li>
-    <li>Abnormal conditions (accidents, roadblocks, VIP movement)</li>
-  </ul>
-
-  <h3>System model</h3>
-  <p>The communication network forms a graph where <em>signals</em> are nodes, <em>roads</em> are edges, and edge weights represent congestion level / travel time. This enables situation awareness across the city.</p>
-
-  <h3>Predicting traffic build-up &amp; adjusting green time</h3>
-  <p>Each signal uses local and neighboring data to estimate which lane will get congested next, how long vehicles must wait, and whether to extend or reduce green time.</p>
-
-  <h4>Algorithms used to prioritize lanes</h4>
-  <ul class="clean">
-    <li><strong>Quick Sort / Merge Sort</strong> — sort directions by vehicle density so higher-density directions get earlier service.</li>
-    <li><strong>Heap (priority queue)</strong> — maintain priorities: emergency vehicles first, congested lanes next, low-density lanes last.</li>
-  </ul>
-
-  <h3>Cooperative decision-making</h3>
-  <p>Each signal predicts how its release affects adjacent signals. Example: if Signal A releases 100 vehicles, Signal B increases green time to accommodate incoming flow. This reduces pile-ups and sudden congestion spikes.</p>
-
-  <h3>Graph algorithms that help</h3>
-  <ul class="clean">
-    <li><strong>BFS / DFS</strong> — detect blocked paths and reroute traffic.</li>
-    <li><strong>Dijkstra</strong> — predict shortest travel time between signals (used for routing/emergency planning).</li>
-    <li><strong>Bellman-Ford</strong> — handle sudden change in weights (congestion) when negative edges/updates exist.</li>
-    <li><strong>Floyd–Warshall</strong> — all-pairs city-wide congestion predictions (small-medium graphs or summarized grids).</li>
-  </ul>
-
-  <h3>Emergency vehicle priority (Green Corridor)</h3>
-  <p>Flow summary:</p>
-  <ol>
-    <li>Detect emergency via RFID/GPS or camera AI.</li>
-    <li>Alert nearby signals and update graph edge weights on the route.</li>
-    <li>Run Dijkstra to find fastest path to destination (e.g., hospital).</li>
-    <li>Pre-emptively turn route signals green and pause cross traffic via a priority queue.</li>
-  </ol>
-
-  <h3>Benefits</h3>
-  <ul class="clean">
-    <li>Reduced travel time and queuing delays</li>
-    <li>Improved emergency response times</li>
-    <li>Adaptive, scalable control that coordinates across intersections</li>
-  </ul>
-
-  <div class="image-row" aria-hidden="true">
-    <img src="images/traffic-1.png" alt="Traffic sensors placeholder">
-    <img src="images/traffic-2.png" alt="Signal graph placeholder">
-    <img src="images/traffic-3.png" alt="Green corridor placeholder">
-  </div>
+<h2>Traffic Management</h2>
+<p>Concept: Interconnected Smart Traffic Signal Network In our designed city, all traffic signals are connected to each other through a central communication network. Every signal constantly shares data about: • Current traffic density • Queue length of vehicles • Number of vehicles arriving from each direction • Presence of emergency vehicles • Abnormal conditions (accidents, roadblocks, VIP movement, etc.) Using this shared real-time data, each signal creates a local plan but also adjusts it to match nearby signals, avoiding congestion moving from one junction to another.</p>
+<p>How the system works: 1. Real-Time Data Sharing Between Signals • Each traffic signal has sensors or AI cameras. • Every 2–5 seconds, each signal sends data to nearby signals. • The communication network forms a graph, where: a. Signals = Nodes b. Roads = Edges c. Edge weights = congestion level / travel time This enables situation awareness across the city.</p>
+<p>2. Predicting Traffic Build-Up & Adjusting Green Time Each signal uses the data from surrounding intersections to calculate: • Which lane will get congested next • How long the current vehicles must wait • How long the green signal should be continued • Whether the signal should be extended or reduced</p>
+<p>Algorithms Used Here Used to prioritize lanes: • Quick Sort / Merge Sort Sorts directions by highest vehicle density → highest gets priority. • Heap Sort Maintains a priority queue: o Emergency vehicles → highest priority o Congested lanes → next priority o Low-density lanes → lowest This ensures optimal order of green signals.</p>
+<p>3. Cooperative Decision-Making Between Signals Each signal predicts how its decision affects the next signal. Example: If Signal A releases 100 vehicles, Signal B increases its green time to prepare for incoming flow. This avoids: • Traffic pile-up at the next junction • Sudden congestion spikes • Unbalanced flow</p>
+<p>Graph Algorithms Here • BFS / DFS → To check if any path is blocked and traffic needs rerouting • Dijkstra’s Algorithm → Predict travel time between signals • Bellman-Ford → Adjust decisions when sudden congestion appears • Floyd-Warshall → City-wide congestion prediction</p>
+<p>4.Emergency Vehicle Priority System When an ambulance, fire truck, or police vehicle is detected: Step-by-step Algorithm Flow 1. Signal detects emergency vehicle through RFID/GPS. 2. Immediately sends alert to all nearby signals. 3. Graph is updated → weights reduced on the emergency route. 4. Dijkstra’s algorithm finds the fastest route to the hospital. 5. The route signals turn green in advance (Green Corridor). 6. All other lanes get temporary red, sorted using a priority queue. This ensures uninterrupted, fast movement for emergency services.</p>
 </section>
 
 <main class="container">
