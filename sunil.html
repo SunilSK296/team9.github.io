@@ -62,7 +62,7 @@
 <section id="traffic-management" class="project-section" style="max-width:980px;margin:24px auto;padding:18px;background:#ffffff;border-radius:12px;box-shadow:0 6px 18px rgba(20,20,30,0.06)">
 <h2><b>1. TRAFFIC MANAGEMENT</b></h2>
 
-<p><h2><b>Concept: Interconnected Smart Traffic Signal Network</b></h2><br>
+<p><h3><b>Concept: Interconnected Smart Traffic Signal Network</b></h3><br>
 In our designed city, all traffic signals are connected to each other through a central communication network. Every signal constantly shares data about:<br>
 • Current traffic density<br>
 • Queue length of vehicles<br>
@@ -73,7 +73,7 @@ Using this shared real-time data, each signal creates a local plan but also adju
 
 <p><h2><b>How the system works:</b></h2></p>
 
-<p><h2><b>1. Real-Time Data Sharing Between Signals</b></h2><br>
+<p><h3><b>1. Real-Time Data Sharing Between Signals</b></h3><br>
 • Each traffic signal has sensors or AI cameras.<br>
 • Every 2–5 seconds, each signal sends data to nearby signals.<br>
 • The communication network forms a graph, where:<br>
@@ -82,7 +82,7 @@ Using this shared real-time data, each signal creates a local plan but also adju
 &nbsp;&nbsp;c. Edge weights = congestion level / travel time<br>
 This enables situation awareness across the city.</p>
 
-<p><h2><b>2. Predicting Traffic Build-Up & Adjusting Green Time</b></h2><br>
+<p><h3><b>2. Predicting Traffic Build-Up & Adjusting Green Time</b></h3><br>
 Each signal uses the data from surrounding intersections to calculate:<br>
 • Which lane will get congested next<br>
 • How long the current vehicles must wait<br>
@@ -97,7 +97,7 @@ Used to prioritize lanes:<br>
 &nbsp;&nbsp;o Low-density lanes → lowest<br>
 This ensures optimal order of green signals.</p>
 
-<p><h2><b>3. Cooperative Decision-Making Between Signals</b></h2><br>
+<p><h3><b>3. Cooperative Decision-Making Between Signals</b></h3><br>
 Each signal predicts how its decision affects the next signal.<br>
 Example:<br>
 If Signal A releases 100 vehicles, Signal B increases its green time to prepare for incoming flow.<br>
@@ -111,7 +111,7 @@ This avoids:<br>
 • Bellman-Ford → Adjust decisions when sudden congestion appears<br>
 • Floyd-Warshall → City-wide congestion prediction</p>
 
-<p><h2><b>4. Emergency Vehicle Priority System</b></h2><br>
+<p><h3><b>4. Emergency Vehicle Priority System</b></h3><br>
 When an ambulance, fire truck, or police vehicle is detected:<br>
 <b>Step-by-step Algorithm Flow</b><br>
 1. Signal detects emergency vehicle through RFID/GPS.<br>
