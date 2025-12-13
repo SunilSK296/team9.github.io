@@ -502,35 +502,31 @@ p {
 
 
 <!-- ================= TOURIST INFO & NAVIGATION : ALGORITHMS ================= -->
-<h1 style="
-  text-align:center;
-  color:#ffcc00;
-  margin:70px 0 30px 0;
-  font-size:2.4rem;
-">
-Tourist Info & Navigation – Algorithms
-</h1>
 <div class="section-grey">
   <div class="content">
 
 <style>
+/* pastel green theme */
+.sub-head{
+  color:#9af5c4;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
 .algo-btn{
-  background:#ffcc00;
+  background:#9af5c4;
   color:#1a1a1a;
   border:none;
   padding:10px 22px;
   border-radius:8px;
   font-weight:600;
   cursor:pointer;
-  display:inline-block;
-  margin:8px 0 18px 0;
+  margin:10px 0 16px 0;
 }
-.algo-btn:hover{
-  background:#ffd84d;
-}
+
 .code-box{
   display:none;
-  background:#c8f7dc; /* pastel green */
+  background:#c8f7dc;
   color:#1a1a1a;
   padding:16px;
   border-radius:10px;
@@ -548,18 +544,17 @@ function toggleCode(id){
 </script>
 
 <!-- DIJKSTRA -->
+<p class="sub-head">Dijkstra – Shortest Path</p>
 <p>
-<b>Dijkstra – Shortest Path:</b>
-Dijkstra’s algorithm computes the shortest route from a source tourist location
-to all other places in the city, reducing travel time and improving navigation.
+Calculates the shortest route between tourist locations, reducing travel time
+and improving navigation efficiency.
 </p>
 
-<button class="algo-btn" onclick="toggleCode('dijkstra')">View Algorithm</button>
+<button class="algo-btn" onclick="toggleCode('dijkstra')">View Code</button>
 <div class="code-box" id="dijkstra">
 ALGORITHM Dijkstra(G, s)
-
 Initialize(Q)
-for every vertex v in V do
+for each v in V
   dv ← ∞
   pv ← null
   Insert(Q, v, dv)
@@ -568,25 +563,25 @@ ds ← 0
 Decrease(Q, s, ds)
 VT ← ∅
 
-for i ← 0 to |V| − 1 do
+for i ← 0 to |V| − 1
   u* ← DeleteMin(Q)
   VT ← VT ∪ {u*}
 
-  for each u adjacent to u* in V − VT do
-    if du* + w(u*, u) < du then
+  for each u adjacent to u*
+    if du* + w(u*, u) < du
       du ← du* + w(u*, u)
       pu ← u*
       Decrease(Q, u, du)
 </div>
 
 <!-- BFS & DFS -->
+<p class="sub-head">BFS & DFS – Exploration</p>
 <p>
-<b>BFS & DFS – Exploration:</b>
-BFS helps find nearby tourist attractions level by level, while DFS explores
-deep routes and connectivity among locations.
+BFS finds nearby attractions level-by-level, while DFS explores deep connectivity
+between locations.
 </p>
 
-<button class="algo-btn" onclick="toggleCode('bfsdfs')">View Algorithms</button>
+<button class="algo-btn" onclick="toggleCode('bfsdfs')">View Code</button>
 <div class="code-box" id="bfsdfs">
 BFS(G, s)
 Mark s visited
@@ -594,61 +589,60 @@ Enqueue s
 while queue not empty
   u ← dequeue
   for each v adjacent to u
-    if v not visited
+    if not visited
       mark visited
       enqueue v
 
 DFS(G, s)
 Mark s visited
 for each v adjacent to s
-  if v not visited
+  if not visited
     DFS(G, v)
 </div>
 
 <!-- TRIE & KMP -->
+<p class="sub-head">Trie & KMP – Fast Search</p>
 <p>
-<b>Trie & KMP – Fast Search:</b>
-Trie enables fast prefix-based search of tourist place names, while KMP efficiently
-searches keywords in descriptions.
+Trie enables quick prefix search of place names and KMP efficiently matches
+keywords in tourist data.
 </p>
 
-<button class="algo-btn" onclick="toggleCode('triekmp')">View Algorithms</button>
+<button class="algo-btn" onclick="toggleCode('triekmp')">View Code</button>
 <div class="code-box" id="triekmp">
 Trie Insert(word)
 for each character c in word
   if node[c] not exist
     create node[c]
   move to node[c]
-mark end of word
+mark end
 
 KMP(text, pattern)
 Compute LPS array
-Match pattern using LPS
+Pattern matching using LPS
 </div>
 
 <!-- GREEDY -->
+<p class="sub-head">Greedy – Crowd Control</p>
 <p>
-<b>Greedy – Crowd Control:</b>
-The greedy approach selects the least crowded tourist place to reduce congestion
-at popular locations.
+Selects the least crowded tourist place to avoid congestion.
 </p>
 
-<button class="algo-btn" onclick="toggleCode('greedy')">View Algorithm</button>
+<button class="algo-btn" onclick="toggleCode('greedy')">View Code</button>
 <div class="code-box" id="greedy">
 Select place with minimum crowd value
-Suggest it to tourists
+Recommend to tourists
 </div>
 
-<!-- DYNAMIC PROGRAMMING -->
+<!-- DP -->
+<p class="sub-head">Dynamic Programming – Tour Planning</p>
 <p>
-<b>Dynamic Programming – Travel Planning:</b>
-Dynamic Programming helps tourists plan visits efficiently within limited time
-by selecting the best combination of places.
+Optimizes tourist schedules by selecting the best combination of places within
+limited time.
 </p>
 
-<button class="algo-btn" onclick="toggleCode('dp')">View Algorithm</button>
+<button class="algo-btn" onclick="toggleCode('dp')">View Code</button>
 <div class="code-box" id="dp">
-DP[i][t] = maximum enjoyment
+DP[i][t] = maximum satisfaction
 DP[i][t] =
 max(DP[i-1][t],
     value[i] + DP[i-1][t - time[i]])
@@ -656,4 +650,3 @@ max(DP[i-1][t],
 
   </div>
 </div>
-
