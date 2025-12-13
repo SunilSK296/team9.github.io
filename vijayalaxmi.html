@@ -1075,3 +1075,143 @@ Trigger alert if matched
 
 </div>
 </div>
+
+    
+
+
+
+<!-- ================= CLEANLINESS & SUSTAINABILITY PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
+<div style="background:#121212; padding:40px 0 30px 0;">
+  <h1 style="
+    text-align:center;
+    color:#ffcc00;
+    margin:0;
+    font-size:2.4rem;
+  ">
+   CLEANLINESS & SUSTAINABILITY
+  </h1>
+</div>
+
+<!-- ================= STYLES ================= -->
+<style>
+.sub-head{
+  color:#5fd3a2;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+p{
+  color:#cfeee2;
+}
+
+.algo-btn{
+  background:#5fd3a2;
+  color:#1a1a1a;
+  border:none;
+  padding:10px 22px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  margin:10px 0 16px 0;
+}
+
+.code-box{
+  display:none;
+  background:#a9e7cb;
+  color:#1a1a1a;
+  padding:16px;
+  border-radius:10px;
+  font-family:monospace;
+  white-space:pre-wrap;
+  margin-bottom:35px;
+}
+
+.section-grey{
+  background:#2b2b2b;
+  padding:40px 0;
+}
+
+.content{
+  width:80%;
+  margin:auto;
+}
+</style>
+
+<!-- ================= GREY PAGE ================= -->
+<div class="section-grey">
+  <div class="content">
+<!-- INTRO DESCRIPTION -->
+<p>
+Cleanliness and sustainability are essential for maintaining healthy and attractive
+tourist destinations. Smart waste management, eco-friendly tourism practices, and
+pollution control systems help protect the environment while enhancing visitor
+experience in smart cities.
+</p>
+
+<hr>
+
+<!-- GREEDY ROUTING -->
+<p class="sub-head">Greedy Routing – Smart Waste Collection</p>
+<p>
+Greedy routing selects the nearest waste bin or collection point to optimize waste
+pickup routes and reduce fuel consumption.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('greedyWaste')">View Algorithm</button>
+<div class="code-box" id="greedyWaste">
+Choose nearest full bin
+Move collection vehicle
+Repeat until all bins cleared
+</div>
+
+<hr>
+
+<!-- DP LOAD BALANCE -->
+<p class="sub-head">Dynamic Programming – Load Balancing</p>
+<p>
+Dynamic Programming balances waste loads across multiple vehicles to minimize
+overflows and ensure efficient collection.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('dpLoad')">View Algorithm</button>
+<div class="code-box" id="dpLoad">
+DP[i][w] = minimum trips
+Distribute waste among vehicles
+Optimize load usage
+</div>
+
+<hr>
+
+<!-- PRIORITY QUEUE -->
+<p class="sub-head">Priority Queue – Waste Bin Priority</p>
+<p>
+Priority queues process waste bins based on fill level, ensuring urgent bins are
+emptied first.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('pqWaste')">View Algorithm</button>
+<div class="code-box" id="pqWaste">
+Insert bins by fill level
+Extract highest priority bin
+Schedule pickup
+</div>
+
+<hr>
+
+<!-- SEGMENT TREE -->
+<p class="sub-head">Segment Tree – Pollution Monitoring</p>
+<p>
+Segment Trees track pollution levels across regions and time intervals, enabling
+fast queries and timely environmental actions.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('segmentPollution')">View Algorithm</button>
+<div class="code-box" id="segmentPollution">
+Build tree on pollution data
+Query pollution range
+Update sensor readings
+</div>
+
+</div>
+</div>
+
