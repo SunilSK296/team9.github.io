@@ -499,43 +499,31 @@ p {
 
 </body>
 </html>
-
-
-<!-- ================= TOURIST INFO & NAVIGATION : ALGORITHMS ================= -->
-<!-- ================= ALGORITHMS PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
+<!-- ================= PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
 <div style="background:#121212; padding:40px 0 30px 0;">
-  <h1 style="
-    text-align:center;
-    color:#ffcc00;
-    margin:0;
-    font-size:2.4rem;
-  ">
+  <h1 style="text-align:center;color:#ffcc00;margin:0;font-size:2.4rem;">
     Tourist Info & Navigation – Algorithms
   </h1>
 </div>
 
-<!-- ================= GREY PAGE STYLE ================= -->
+<!-- ================= COMMON STYLES ================= -->
 <style>
 .section-grey{
   width:100%;
-  min-height:100vh;
-  background:#2a2a2a;   /* GREY PAGE */
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  padding:40px 20px;
+  background:#2a2a2a;
+  padding:50px 20px;
   box-sizing:border-box;
 }
 
 .content{
   max-width:800px;
-  width:100%;
-  color:#ffffff;
-  line-height:1.7;
+  margin:auto;
   font-family:'Poppins', sans-serif;
+  line-height:1.7;
 }
 
-/* pastel dark green theme */
+p{ color:#cfeee2; }
+
 .sub-head{
   color:#5fd3a2;
   font-weight:600;
@@ -553,12 +541,6 @@ p {
   font-weight:600;
   cursor:pointer;
   margin:10px 0 16px 0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.algo-btn:hover{
-  transform: translateY(-2px);
-  box-shadow:0 4px 10px rgba(95,211,162,0.4);
 }
 
 .code-box{
@@ -571,133 +553,79 @@ p {
   white-space:pre-wrap;
   margin-bottom:35px;
 }
+
+hr{
+  border:0;
+  height:1px;
+  background:#444;
+  margin:35px 0;
+}
 </style>
 
-<!-- ================= SCRIPT ================= -->
 <script>
 function toggleCode(id){
-  var box = document.getElementById(id);
-  box.style.display = (box.style.display === "block") ? "none" : "block";
+  var box=document.getElementById(id);
+  box.style.display=(box.style.display==="block")?"none":"block";
 }
 </script>
 
-<!-- ================= GREY PAGE CONTENT ================= -->
 <div class="section-grey">
-  <div class="content">
+<div class="content">
 
-    <!-- DIJKSTRA -->
-    <p class="sub-head">Dijkstra – Shortest Path</p>
-    <p>
-      Calculates the shortest route between tourist locations, reducing travel time
-      and improving navigation efficiency.
-    </p>
-
-    <button class="algo-btn" onclick="toggleCode('dijkstra')">View Code</button>
-    <div class="code-box" id="dijkstra">
-ALGORITHM Dijkstra(G, s)
-Initialize(Q)
-for each v in V
-  dv ← ∞
-  pv ← null
-  Insert(Q, v, dv)
-
-ds ← 0
-Decrease(Q, s, ds)
-VT ← ∅
-
-for i ← 0 to |V| − 1
-  u* ← DeleteMin(Q)
-  VT ← VT ∪ {u*}
-
-  for each u adjacent to u*
-    if du* + w(u*, u) < du
-      du ← du* + w(u*, u)
-      pu ← u*
-      Decrease(Q, u, du)
-    </div>
-
-    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
-
-    <!-- BFS DFS -->
-    <p class="sub-head">BFS & DFS – Exploration</p>
-    <p>
-      BFS explores nearby attractions level-by-level, while DFS checks deep
-      connectivity between locations.
-    </p>
-
-    <button class="algo-btn" onclick="toggleCode('bfsdfs')">View Code</button>
-    <div class="code-box" id="bfsdfs">
-BFS(G, s)
-Mark s visited
-Enqueue s
-while queue not empty
-  u ← dequeue
-  for each v adjacent to u
-    if not visited
-      mark visited
-      enqueue v
-
-DFS(G, s)
-Mark s visited
-for each v adjacent to s
-  if not visited
-    DFS(G, v)
-    </div>
-
-    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
-
-    <!-- TRIE KMP -->
-    <p class="sub-head">Trie & KMP – Fast Search</p>
-    <p>
-      Trie enables prefix search of tourist places and KMP helps fast keyword matching.
-    </p>
-
-    <button class="algo-btn" onclick="toggleCode('triekmp')">View Code</button>
-    <div class="code-box" id="triekmp">
-Trie Insert(word)
-for each character c in word
-  if node[c] not exist
-    create node[c]
-  move to node[c]
-mark end
-
-KMP(text, pattern)
-Compute LPS array
-Pattern matching using LPS
-    </div>
-
-    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
-
-    <!-- GREEDY -->
-    <p class="sub-head">Greedy – Crowd Control</p>
-    <p>
-      Chooses the least crowded tourist spot to reduce congestion.
-    </p>
-
-    <button class="algo-btn" onclick="toggleCode('greedy')">View Code</button>
-    <div class="code-box" id="greedy">
-Select place with minimum crowd value
-Recommend to tourists
-    </div>
-
-    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
-
-    <!-- DP -->
-    <p class="sub-head">Dynamic Programming – Tour Planning</p>
-    <p>
-      Helps plan optimal tourist visits within limited time.
-    </p>
-
-    <button class="algo-btn" onclick="toggleCode('dp')">View Code</button>
-    <div class="code-box" id="dp">
-DP[i][t] = maximum satisfaction
-DP[i][t] =
-max(DP[i-1][t],
-    value[i] + DP[i-1][t - time[i]])
-    </div>
-
-  </div>
+<p class="sub-head">Dijkstra – Shortest Path</p>
+<p>Finds the shortest route between tourist locations, reducing travel time and improving navigation.</p>
+<button class="algo-btn" onclick="toggleCode('dijkstra')">View Algorithm</button>
+<div class="code-box" id="dijkstra">
+Initialize distances to ∞
+Set source distance = 0
+Use priority queue
+Relax edges
+Update shortest paths
 </div>
+
+<hr>
+
+<p class="sub-head">BFS & DFS – Exploration</p>
+<p>BFS explores nearby places level-by-level, DFS checks deep connectivity.</p>
+<button class="algo-btn" onclick="toggleCode('bfsdfs')">View Algorithm</button>
+<div class="code-box" id="bfsdfs">
+BFS: Queue based traversal
+DFS: Recursive depth traversal
+</div>
+
+<hr>
+
+<p class="sub-head">Trie & KMP – Fast Search</p>
+<p>Trie speeds up place-name search, KMP efficiently matches keywords.</p>
+<button class="algo-btn" onclick="toggleCode('triekmp')">View Algorithm</button>
+<div class="code-box" id="triekmp">
+Trie: Prefix insertion & search
+KMP: LPS based pattern matching
+</div>
+
+<hr>
+
+<p class="sub-head">Greedy – Crowd Control</p>
+<p>Selects least crowded tourist spot to reduce congestion.</p>
+<button class="algo-btn" onclick="toggleCode('greedy')">View Algorithm</button>
+<div class="code-box" id="greedy">
+Choose minimum crowd value
+Recommend location
+</div>
+
+<hr>
+
+<p class="sub-head">Dynamic Programming – Tour Planning</p>
+<p>Optimizes tourist schedules within limited time.</p>
+<button class="algo-btn" onclick="toggleCode('dp')">View Algorithm</button>
+<div class="code-box" id="dp">
+DP[i][t] = max satisfaction
+Choose optimal visits
+</div>
+
+</div>
+</div>
+
 
 
 <!-- ================= ACCOMMODATION PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
