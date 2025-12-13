@@ -502,27 +502,50 @@ p {
 
 
 <!-- ================= TOURIST INFO & NAVIGATION : ALGORITHMS ================= -->
-<h1 style="
-  text-align:center;
-  color:#ffcc00;
-  margin:70px 0 30px 0;
-  font-size:2.4rem;
-">
-Tourist Info & Navigation – Algorithms
-</h1>
-<div class="section-grey">
-  <div class="content">
+<!-- ================= ALGORITHMS PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
+<div style="background:#121212; padding:40px 0 30px 0;">
+  <h1 style="
+    text-align:center;
+    color:#ffcc00;
+    margin:0;
+    font-size:2.4rem;
+  ">
+    Tourist Info & Navigation – Algorithms
+  </h1>
+</div>
 
+<!-- ================= GREY PAGE STYLE ================= -->
 <style>
+.section-grey{
+  width:100%;
+  min-height:100vh;
+  background:#2a2a2a;   /* GREY PAGE */
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:40px 20px;
+  box-sizing:border-box;
+}
+
+.content{
+  max-width:800px;
+  width:100%;
+  color:#ffffff;
+  line-height:1.7;
+  font-family:'Poppins', sans-serif;
+}
+
 /* pastel dark green theme */
 .sub-head{
-  color:#5fd3a2;          /* sub-heading like Dijkstra */
+  color:#5fd3a2;
   font-weight:600;
   font-size:1.1rem;
+  border-left:4px solid #5fd3a2;
+  padding-left:10px;
 }
 
 .algo-btn{
-  background:#5fd3a2;     /* button pastel dark green */
+  background:#5fd3a2;
   color:#1a1a1a;
   border:none;
   padding:10px 22px;
@@ -530,11 +553,17 @@ Tourist Info & Navigation – Algorithms
   font-weight:600;
   cursor:pointer;
   margin:10px 0 16px 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.algo-btn:hover{
+  transform: translateY(-2px);
+  box-shadow:0 4px 10px rgba(95,211,162,0.4);
 }
 
 .code-box{
   display:none;
-  background:#a9e7cb;     /* pastel dark green code box */
+  background:#a9e7cb;
   color:#1a1a1a;
   padding:16px;
   border-radius:10px;
@@ -544,7 +573,7 @@ Tourist Info & Navigation – Algorithms
 }
 </style>
 
-
+<!-- ================= SCRIPT ================= -->
 <script>
 function toggleCode(id){
   var box = document.getElementById(id);
@@ -552,15 +581,19 @@ function toggleCode(id){
 }
 </script>
 
-<!-- DIJKSTRA -->
-<p class="sub-head">Dijkstra – Shortest Path</p>
-<p>
-Calculates the shortest route between tourist locations, reducing travel time
-and improving navigation efficiency.
-</p>
+<!-- ================= GREY PAGE CONTENT ================= -->
+<div class="section-grey">
+  <div class="content">
 
-<button class="algo-btn" onclick="toggleCode('dijkstra')">View Code</button>
-<div class="code-box" id="dijkstra">
+    <!-- DIJKSTRA -->
+    <p class="sub-head">Dijkstra – Shortest Path</p>
+    <p>
+      Calculates the shortest route between tourist locations, reducing travel time
+      and improving navigation efficiency.
+    </p>
+
+    <button class="algo-btn" onclick="toggleCode('dijkstra')">View Code</button>
+    <div class="code-box" id="dijkstra">
 ALGORITHM Dijkstra(G, s)
 Initialize(Q)
 for each v in V
@@ -581,17 +614,19 @@ for i ← 0 to |V| − 1
       du ← du* + w(u*, u)
       pu ← u*
       Decrease(Q, u, du)
-</div>
+    </div>
 
-<!-- BFS & DFS -->
-<p class="sub-head">BFS & DFS – Exploration</p>
-<p>
-BFS finds nearby attractions level-by-level, while DFS explores deep connectivity
-between locations.
-</p>
+    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
 
-<button class="algo-btn" onclick="toggleCode('bfsdfs')">View Code</button>
-<div class="code-box" id="bfsdfs">
+    <!-- BFS DFS -->
+    <p class="sub-head">BFS & DFS – Exploration</p>
+    <p>
+      BFS explores nearby attractions level-by-level, while DFS checks deep
+      connectivity between locations.
+    </p>
+
+    <button class="algo-btn" onclick="toggleCode('bfsdfs')">View Code</button>
+    <div class="code-box" id="bfsdfs">
 BFS(G, s)
 Mark s visited
 Enqueue s
@@ -607,17 +642,18 @@ Mark s visited
 for each v adjacent to s
   if not visited
     DFS(G, v)
-</div>
+    </div>
 
-<!-- TRIE & KMP -->
-<p class="sub-head">Trie & KMP – Fast Search</p>
-<p>
-Trie enables quick prefix search of place names and KMP efficiently matches
-keywords in tourist data.
-</p>
+    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
 
-<button class="algo-btn" onclick="toggleCode('triekmp')">View Code</button>
-<div class="code-box" id="triekmp">
+    <!-- TRIE KMP -->
+    <p class="sub-head">Trie & KMP – Fast Search</p>
+    <p>
+      Trie enables prefix search of tourist places and KMP helps fast keyword matching.
+    </p>
+
+    <button class="algo-btn" onclick="toggleCode('triekmp')">View Code</button>
+    <div class="code-box" id="triekmp">
 Trie Insert(word)
 for each character c in word
   if node[c] not exist
@@ -628,34 +664,37 @@ mark end
 KMP(text, pattern)
 Compute LPS array
 Pattern matching using LPS
-</div>
+    </div>
 
-<!-- GREEDY -->
-<p class="sub-head">Greedy – Crowd Control</p>
-<p>
-Selects the least crowded tourist place to avoid congestion.
-</p>
+    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
 
-<button class="algo-btn" onclick="toggleCode('greedy')">View Code</button>
-<div class="code-box" id="greedy">
+    <!-- GREEDY -->
+    <p class="sub-head">Greedy – Crowd Control</p>
+    <p>
+      Chooses the least crowded tourist spot to reduce congestion.
+    </p>
+
+    <button class="algo-btn" onclick="toggleCode('greedy')">View Code</button>
+    <div class="code-box" id="greedy">
 Select place with minimum crowd value
 Recommend to tourists
-</div>
+    </div>
 
-<!-- DP -->
-<p class="sub-head">Dynamic Programming – Tour Planning</p>
-<p>
-Optimizes tourist schedules by selecting the best combination of places within
-limited time.
-</p>
+    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
 
-<button class="algo-btn" onclick="toggleCode('dp')">View Code</button>
-<div class="code-box" id="dp">
+    <!-- DP -->
+    <p class="sub-head">Dynamic Programming – Tour Planning</p>
+    <p>
+      Helps plan optimal tourist visits within limited time.
+    </p>
+
+    <button class="algo-btn" onclick="toggleCode('dp')">View Code</button>
+    <div class="code-box" id="dp">
 DP[i][t] = maximum satisfaction
 DP[i][t] =
 max(DP[i-1][t],
     value[i] + DP[i-1][t - time[i]])
-</div>
+    </div>
 
   </div>
 </div>
