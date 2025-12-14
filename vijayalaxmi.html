@@ -72,7 +72,6 @@ body {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* TOURISM CARD */
 .tourism-card {
   border: 1.5px solid rgb(233, 240, 173);
   background-color:#1a1a1a;
@@ -81,41 +80,21 @@ body {
   border-radius:16px;
   max-width:700px;
   margin:20px auto;
-  box-shadow:0 8px 20px rgba(0,0,0,0.4);
 }
 
-/* LAYOUT */
 .tourism-content {
   display:flex;
   align-items:center;
   gap:30px;
 }
 
-/* LEFT TEXT */
-.tourism-left {
-  flex:1;
-}
+.tourism-left { flex:1; }
 
-/* RIGHT IMAGE */
 .tourism-right img {
   width:180px;
   height:180px;
   border-radius:12px;
   object-fit:cover;
-}
-
-/* MOBILE */
-@media (max-width:600px) {
-  .tourism-content {
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .tourism-right img {
-    width:100%;
-    max-width:260px;
-    height:auto;
-  }
 }
 </style>
 </head>
@@ -125,17 +104,13 @@ body {
 <div class="tourism-card">
   <div class="tourism-content">
 
-    <!-- LEFT SIDE TEXT -->
     <div class="tourism-left">
       <h2>Why I Chose the Tourism Sector</h2>
       <p>
-        Tourism drives economic growth, creates jobs, and promotes culture.
-        In smart cities, technology enhances tourist experiences by optimizing routes
-        and managing attractions efficiently.
+        Tourism drives economic growth and promotes culture in smart cities.
       </p>
     </div>
 
-    <!-- RIGHT SIDE IMAGE -->
     <div class="tourism-right">
       <img src="sustainable_tourism.png" alt="Tourism">
     </div>
