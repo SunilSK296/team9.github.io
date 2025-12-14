@@ -1,0 +1,4 @@
+Scenario,Time Complexity,Space Complexity
+Normal Traffic (No Emergency),O(S log S),O(S)
+Emergency Scenario,O(V^2),O(V^2)
+Worst Case,O(V^2),O(V^2)
