@@ -1,160 +1,121 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vijayalaxmi - CITY DESIGN</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
-/* ---------- GLOBAL ---------- */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #121212;
-  color: #fff;
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#121212;
+  color:#fff;
 }
 
 /* ---------- SIDEBAR ---------- */
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 200px;
-  height: 100%;
-  background-color: #1a1a1a;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-  z-index: 1;
+.sidebar{
+  position:fixed;
+  left:0;top:0;
+  width:200px;
+  height:100%;
+  background:#1a1a1a;
+  padding:20px;
 }
-.sidebar h2 { 
-  color:#ffcc00; 
-  text-align:center; 
-  margin-bottom:30px;
+.sidebar h2{color:#ffcc00;text-align:center;}
+.sidebar a{
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  margin:10px 0;
+  padding:8px;
+  border-radius:6px;
 }
-.sidebar a { 
-  display:block; 
-  color:#fff; 
-  text-decoration:none; 
-  margin:10px 0; 
-  padding:8px 10px; 
-  border-radius:6px; 
-  transition: all 0.3s ease; 
-}
-.sidebar a:hover { 
-  background-color:#2a2a72; 
-  transform: scale(1.05);
-}
+.sidebar a:hover{background:#2a2a72;}
 
 /* ---------- MAIN ---------- */
-.main { 
-  margin-left:220px; 
+.main{margin-left:220px;padding:20px;}
+
+/* ---------- SECTIONS ---------- */
+.section{
+  padding:60px 20px;
+  display:flex;
+  justify-content:center;
 }
-
-/* ---------- PAGE SECTIONS ---------- */
-.section {
-  width: 100%;
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.grey-light { background-color: #2a2a2a; color: #fff; }
-.grey-dark { background-color: #1a1a1a; color: #fff; }
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-/* ---------- TOURISM CARD ---------- */
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tourism</title>
-
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  background: #0f0f0f;
-  font-family: Arial, sans-serif;
-}
+.grey-light{background:#2a2a2a;}
+.grey-dark{background:#1a1a1a;}
 
 /* ---------- TOURISM CARD ---------- */
-.tourism-card {
-  border: 1.5px solid rgb(233, 240, 173);
-  background-color:#1a1a1a;
-  color:#f8f8f8;
+.tourism-card{
+  border:1.5px solid rgb(233,240,173);
+  background:#1a1a1a;
   padding:40px 20px;
   border-radius:16px;
   max-width:700px;
-  margin:40px auto;
   box-shadow:0 8px 20px rgba(0,0,0,0.4);
 }
-
-.tourism-content {
+.tourism-content{
   display:flex;
-  align-items:center;
   gap:30px;
+  align-items:center;
 }
-
-.tourism-left {
-  flex:1;
-}
-
-.tourism-right img {
+.tourism-left{flex:1;}
+.tourism-right img{
   width:180px;
   height:180px;
   border-radius:12px;
   object-fit:cover;
 }
 
-/* MOBILE VIEW */
-@media (max-width:600px) {
-  .tourism-content {
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .tourism-right img {
-    width:100%;
-    max-width:260px;
-    height:auto;
-  }
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:700px){
+  .main{margin-left:0;}
+  .sidebar{position:relative;width:100%;height:auto;}
+  .tourism-content{flex-direction:column;text-align:center;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= TOURISM SECTION ================= -->
+<!-- ================= SIDEBAR ================= -->
+<div class="sidebar">
+  <h2>Smart City</h2>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Project</a>
+</div>
 
-<div class="tourism-card">
-  <div class="tourism-content">
+<!-- ================= MAIN ================= -->
+<div class="main">
 
-    <div class="tourism-left">
-      <h2>Why I Chose the Tourism Sector</h2>
-      <p>
-        Tourism drives economic growth, creates jobs, and promotes culture.
-        In smart cities, technology enhances tourist experiences by optimizing
-        routes and managing attractions efficiently.
-      </p>
+<h1 style="text-align:center;color:#ff9800;">Vijayalaxmi</h1>
+
+<!-- ================= TOURISM CARD ================= -->
+<div class="section grey-dark">
+  <div class="tourism-card">
+    <div class="tourism-content">
+
+      <div class="tourism-left">
+        <h2>Why I Chose the Tourism Sector</h2>
+        <p>
+          Tourism drives economic growth, creates jobs, and promotes culture.
+          In smart cities, technology enhances tourist experiences by optimizing
+          routes and managing attractions efficiently.
+        </p>
+      </div>
+
+      <div class="tourism-right">
+        <img src="sustainable_tourism.png" alt="Sustainable Tourism">
+      </div>
+
     </div>
-
-    <div class="tourism-right">
-      <img src="sustainable_tourism.png" alt="Tourism">
-    </div>
-
   </div>
 </div>
 
+</div>
 </body>
 </html>
 
