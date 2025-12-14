@@ -1,7 +1,12 @@
-Module / Algorithm,Purpose in Project,Time Complexity,Space Complexity
-CSV Data Reading,Read traffic and junction data,O(n),O(n)
-Emergency Detection,Scan signals for emergency,O(n),O(1)
-Heap Sort,Prioritize signals by vehicle density,O(n log n),O(1)
-Merge Sort,Restore original signal order,O(n log n),O(n)
-Dijkstra Algorithm,Emergency green corridor routing,O(V^2),O(V)
-Traffic Optimization,Green time calculation,O(n),O(1)
+Function Name,Purpose,Time Complexity,Space Complexity
+readSignalCSV(),Read signal vehicle & emergency data,O(S),O(S)
+readNearbyCSV(),Read nearby junction load,O(N),O(N)
+checkEmergency(),Detect emergency signal,O(S),O(1)
+heapSort(),Sort signals by vehicle density,O(S log S),O(1)
+heapify(),Maintain heap property,O(log S),O(1)
+optimizeTraffic(),Adjust green time using local + neighbor data,O(S log S + N),O(1)
+dijkstra(),Emergency route shortest path,O(V^2),O(V)
+handleEmergency(),Create green corridor,O(V^2),O(V)
+displayJunction(),Display final timings,O(S),O(1)
+
+
