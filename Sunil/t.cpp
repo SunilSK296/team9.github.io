@@ -27,7 +27,6 @@ struct Junction {
     int totalVehicles;
 };
 
-/* ---------- Function Declarations ---------- */
 void readSignalCSV(const string& filename, Junction& j);
 void readNearbyCSV(const string& filename, vector<Junction>& neighbors);
 int checkEmergency(const Junction& j);
@@ -39,7 +38,7 @@ void heapify(vector<Signal>& s, int n, int i);
 void heapSort(vector<Signal>& s);
 void initGraph(vector<vector<int> >& graph);
 
-/* ---------- MAIN ---------- */
+
 int main() {
     Junction current;
     current.id = 0;
@@ -246,3 +245,4 @@ void displayJunction(const Junction& j) {
              << " | Green: " << j.signals[i].greenTime << " sec\n";
     }
 }
+
