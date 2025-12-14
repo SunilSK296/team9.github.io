@@ -1,0 +1,163 @@
+:root {
+  --accent: #2b6cb0;
+  --muted: #666;
+  --bg: #f7fafc;
+  --card: #ffffff;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  background: var(--bg);
+  color: #111;
+}
+
+header {
+  background: linear-gradient(90deg, var(--accent), #4c9bd6);
+  color: white;
+  padding: 28px 20px;
+}
+
+.container {
+  max-width: 980px;
+  margin: 24px auto;
+  padding: 0 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+p.lead {
+  margin: 8px 0 0;
+  opacity: 0.95;
+}
+
+nav.top-nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.06);
+  transition: background 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* section cards */
+.project-section {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 18px 0;
+  box-shadow: 0 6px 18px rgba(20, 20, 30, 0.06);
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+ul.clean {
+  padding-left: 18px;
+}
+
+/* images */
+.image-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.image-row img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: 1px solid #eceff3;
+  background: #f2f6fb;
+}
+
+/* Centered images */
+.center-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+/* responsive */
+@media (max-width: 760px) {
+  .image-row {
+    flex-direction: column;
+  }
+  .container {
+    padding: 0 14px;
+  }
+}
+
+footer {
+  max-width: 980px;
+  margin: 30px auto 60px;
+  padding: 0 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.hint {
+  background: #fff9db;
+  padding: 10px;
+  border-left: 4px solid #ffd54f;
+  border-radius: 6px;
+}
+
+code {
+  background: #f4f7fb;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: monospace;
+}
+
+/* 8 Page Links Section */
+.page-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.page-links a {
+  background: #4c9bd6;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.page-links a:hover {
+  background: #2b6cb0;
+  transform: scale(1.05);
+}
