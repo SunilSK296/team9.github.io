@@ -72,9 +72,92 @@ body {
 
 <style>
 /* ---------- TOURISM CARD ---------- */
-.project-folder
-├── index.html   (this code)
-└── sustainable_tourism.png
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tourism</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #0f0f0f;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------- TOURISM CARD ---------- */
+.tourism-card {
+  border: 1.5px solid rgb(233, 240, 173);
+  background-color:#1a1a1a;
+  color:#f8f8f8;
+  padding:40px 20px;
+  border-radius:16px;
+  max-width:700px;
+  margin:40px auto;
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.tourism-content {
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.tourism-left {
+  flex:1;
+}
+
+.tourism-right img {
+  width:180px;
+  height:180px;
+  border-radius:12px;
+  object-fit:cover;
+}
+
+/* MOBILE VIEW */
+@media (max-width:600px) {
+  .tourism-content {
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .tourism-right img {
+    width:100%;
+    max-width:260px;
+    height:auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= TOURISM SECTION ================= -->
+
+<div class="tourism-card">
+  <div class="tourism-content">
+
+    <div class="tourism-left">
+      <h2>Why I Chose the Tourism Sector</h2>
+      <p>
+        Tourism drives economic growth, creates jobs, and promotes culture.
+        In smart cities, technology enhances tourist experiences by optimizing
+        routes and managing attractions efficiently.
+      </p>
+    </div>
+
+    <div class="tourism-right">
+      <img src="sustainable_tourism.png" alt="Tourism">
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
+
 
 /* ---------- PROBLEMS SECTION ---------- */
 .problems-section {
