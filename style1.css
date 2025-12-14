@@ -115,3 +115,27 @@ footer {
   color: var(--muted);
   font-size: 0.9rem;
 }
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0 24px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #1f4a85;
+  transform: scale(1.05);
+}
+
