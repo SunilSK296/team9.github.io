@@ -9,4 +9,4 @@ AQICalculation,Computes city air quality,Central to anomaly detection
 AnomalyDetection,Classifies severity in real-time,Drives alerts and blocked zones
 CSVReader,Provides data input to system,Ensures system works with real sensors
 DisplayStatus,Shows status to citizens and officials,Important for monitoring and visualization
-Overall System,Combines all modules for smart-city air quality management,Efficient, real-time, and safe routing system
+Overall System,Combines all modules for smart-city air quality management,Efficient and real-time and safe routing system
