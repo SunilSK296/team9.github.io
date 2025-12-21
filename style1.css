@@ -139,3 +139,24 @@ footer {
   transform: scale(1.05);
 }
 
+.aqi-table {
+  width: 60%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.aqi-table th,
+.aqi-table td {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: center;
+}
+
+.aqi-table th {
+  background-color: #2c7be5;
+  color: white;
+}
+
+.aqi-table tr:nth-child(even) {
+  background-color: #e9ecef;
+}
