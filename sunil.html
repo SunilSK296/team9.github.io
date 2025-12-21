@@ -121,6 +121,121 @@
 </div>
     </section>
 
+    <!-- SMART CITY POLLUTION MONITORING -->
+<section id="pollution-monitoring" class="project-section" style="max-width:980px;margin:24px auto;padding:18px;background:#ffffff;border-radius:12px;box-shadow:0 6px 18px rgba(20,20,30,0.06)">
+  <h2><b>2. SMART CITY POLLUTION MONITORING</b></h2>
+
+  <p>
+    <h3><b>Concept: Interconnected Environmental Monitoring Network</b></h3><br>
+    In our smart city, pollution monitoring is designed as an interconnected system that continuously observes
+    environmental conditions across different zones. Sensors installed throughout the city collect real-time data
+    and share it with nearby zones and a central control system. This enables early detection, prediction, and
+    coordinated control of pollution.
+  </p>
+
+  <hr>
+
+  <!-- AIR POLLUTION -->
+  <p>
+    <h3><b>2.1 Air Pollution Monitoring</b></h3><br>
+    The air pollution monitoring system focuses on detecting, analyzing, and predicting air quality variations
+    across the city. Each zone is equipped with sensors that measure pollutants and environmental factors, allowing
+    the system to understand how pollution spreads and affects neighboring areas.
+  </p>
+
+  <p>
+    <b>Data Collected:</b><br>
+    • PM2.5 and PM10 concentration<br>
+    • CO and other harmful gases<br>
+    • Wind speed and wind direction<br>
+    • Temperature and humidity<br>
+    • Pollution spike indicators (threshold-based)<br>
+  </p>
+
+  <p>
+    <h3><b>1. Real-Time Air Quality Data Sharing Between Zones</b></h3><br>
+    • Each zone sends sensor data every few seconds to nearby zones.<br>
+    • The city is modeled as a graph where:<br>
+    &nbsp;&nbsp;a. Zones = Nodes<br>
+    &nbsp;&nbsp;b. Airflow paths = Edges<br>
+    &nbsp;&nbsp;c. Edge weights = pollution transfer intensity<br>
+    This structure helps understand how pollution in one zone influences others.
+  </p>
+
+  <p>
+    <h3><b>2. Air Quality Evaluation & Zone Prioritization</b></h3><br>
+    • AQI (Air Quality Index) is calculated for every zone.<br>
+    • Zones are sorted based on severity using sorting algorithms.
+  </p>
+
+  <p>
+    <b>Algorithms Used:</b><br>
+    • Quick Sort / Merge Sort — Sort zones by AQI value.<br>
+    • Heap / Priority Queue —<br>
+    &nbsp;&nbsp;o Highly polluted zones → highest priority<br>
+    &nbsp;&nbsp;o Moderate zones → medium priority<br>
+    &nbsp;&nbsp;o Clean zones → lowest priority<br>
+  </p>
+
+  <p>
+    <h3><b>3. Pollution Spread Prediction Across Zones</b></h3><br>
+    Pollution does not remain confined to one zone. Wind direction and airflow cause it to spread.
+  </p>
+
+  <p>
+    <b>Graph Algorithms Used:</b><br>
+    • DFS (Depth First Search) — Tracks deep and long-range pollution spread paths.<br>
+    • BFS (Breadth First Search) — Identifies immediate neighboring zones at risk.<br>
+    This allows early warnings and preventive actions.
+  </p>
+
+  <p>
+    <h3><b>4. Sudden Pollution Spike Detection</b></h3><br>
+    Sudden spikes in pollution may occur due to accidents, fires, industrial releases, or traffic surges.
+  </p>
+
+  <p>
+    <b>Algorithm Used:</b><br>
+    • Bellman–Ford Algorithm — Detects abnormal AQI increases across zones and flags dangerous regions.
+  </p>
+
+  <p>
+    <h3><b>5. Pollution-Aware Routing & Decision Support</b></h3><br>
+    Once dangerous zones are detected, safe routing decisions are made.
+  </p>
+
+  <p>
+    <b>Algorithm Used:</b><br>
+    • Modified Dijkstra’s Algorithm — Finds least-polluted paths while avoiding high-risk zones.
+  </p>
+
+  <p>
+    <h3><b>6. Collaboration with Traffic Management System</b></h3><br>
+    • Polluted zones inform traffic signals to reduce vehicle inflow.<br>
+    • Traffic is rerouted through cleaner paths.<br>
+    • Heavy vehicles are restricted in highly polluted zones.<br>
+    This prevents traffic from worsening air quality.
+  </p>
+
+  <p>
+    <h3><b>7. Collaboration with Other Smart City Systems</b></h3><br>
+    • Water Monitoring — Detects industrial pollution affecting air and water together.<br>
+    • Energy Management — Reduces industrial emissions during high pollution periods.<br>
+    • Healthcare Systems — Alerts hospitals and citizens during severe air conditions.<br>
+    • Public Information Systems — Displays live air quality data for citizens.
+  </p>
+
+  <p>
+    <h3><b>Advantages</b></h3><br>
+    • Real-time air quality awareness<br>
+    • Early detection of hazardous conditions<br>
+    • Intelligent coordination with traffic and emergency systems<br>
+    • Improved public health and sustainability
+  </p>
+
+</section>
+
+
     <!-- Future projects -->
     <section id="future-projects" class="project-section">
       <div class="section-head">
