@@ -3,7 +3,7 @@ QuickSort,Prioritizes zones for alert and management,Essential for dashboard sor
 DFS,Helps visualize deep pollution impact,Useful for planning containment
 BFS,Shows level-wise spread for immediate effect,Useful for emergency planning
 Bellman-Ford,Detects sudden spikes,Prevents system from unsafe routing
-DijkstraAvoidingZones,Ensures emergency vehicles and citizens avoid unsafe zones,Critical for smart city routing
+Dijkstra_safe_route,Ensures emergency vehicles and citizens avoid unsafe zones,Critical for smart city routing
 WindTransfer,Models real wind effect on pollution,Improves simulation realism
 AQICalculation,Computes city air quality,Central to anomaly detection
 AnomalyDetection,Classifies severity in real-time,Drives alerts and blocked zones
