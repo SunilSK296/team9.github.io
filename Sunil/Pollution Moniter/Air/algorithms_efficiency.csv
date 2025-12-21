@@ -8,4 +8,4 @@ WindTransfer,O(1), O(1),Simple computation & negligible cost
 AQICalculation,O(1), O(1),Lightweight calculation
 AnomalyDetection,O(1), O(1),Lightweight, real-time
 CSVReader,O(n), O(n),Linear read of all sensor entries
-DisplayStatus,O(n), O(1),Just printing, negligible memory
+DisplayStatus,O(n), O(1),negligible memory
