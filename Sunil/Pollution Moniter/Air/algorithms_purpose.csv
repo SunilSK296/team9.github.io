@@ -4,7 +4,7 @@ DFS,Trace pollution propagation depth-first,Graph edges,Zones visited in order w
 BFS,Trace pollution propagation breadth-first,Graph edges,Zones visited level-wise with pollution percentages
 Bellman-Ford,Detect sudden pollution spikes and mark unsafe zones,Graph edges + AnomalyLevels,Distances and blocked zones
 DijkstraAvoidingZones,Find least polluted / safest routes avoiding unsafe zones,Graph edges + blocked zones,Shortest paths avoiding blocked zones
-WindTransfer,Calculate pollution transfer between zones based on wind direction,Source wind, target wind,Percentage of pollution transferred
+WindTransfer,Calculate pollution transfer between zones based on wind direction/Source wind/target wind,Percentage of pollution transferred
 AQICalculation,Compute Air Quality Index from raw sensor readings,PM2.5, PM10, CO values,AQI value
 AnomalyDetection,Classify real-time anomaly based on AQI,AQI value,Anomaly level (0=Normal,1=Moderate,2=Severe)
 CSVReader,Read sensor data from CSV file,CSV file,Vector of AirSensor objects
