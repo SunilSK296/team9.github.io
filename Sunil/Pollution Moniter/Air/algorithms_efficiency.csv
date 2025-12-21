@@ -6,6 +6,6 @@ Bellman-Ford,O(V*E), O(V),Detect spikes and handle negative edges
 DijkstraAvoidingZones,O((V+E) log V), O(V),Find shortest paths avoiding blocked zones
 WindTransfer,O(1), O(1),Simple computation & negligible cost
 AQICalculation,O(1), O(1),Lightweight calculation
-AnomalyDetection,O(1), O(1),Lightweight, real-time
+AnomalyDetection,O(1), O(1),Lightweight & real-time
 CSVReader,O(n), O(n),Linear read of all sensor entries
 DisplayStatus,O(n), O(1),negligible memory
