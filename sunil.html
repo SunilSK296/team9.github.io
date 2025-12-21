@@ -64,8 +64,8 @@
       • Whether the signal should be extended or reduced<br><br>
       <b>Algorithms Used Here</b><br>
       Used to prioritize lanes:<br>
-      • Quick Sort / Merge Sort — Sorts directions by highest vehicle density → highest gets priority.<br>
-      • Heap Sort — Maintains a priority queue:<br>
+      • Quick Sort — Sorts directions by highest vehicle density → highest gets priority.<br>
+      Maintains a priority queue:<br>
       &nbsp;&nbsp;o Emergency vehicles → highest priority<br>
       &nbsp;&nbsp;o Congested lanes → next priority<br>
       &nbsp;&nbsp;o Low-density lanes → lowest<br>
@@ -85,10 +85,8 @@
       • Sudden congestion spikes<br>
       • Unbalanced flow<br><br>
       <b>Graph Algorithms Here</b><br>
-      • BFS / DFS → To check if any path is blocked and traffic needs rerouting<br>
       • Dijkstra’s Algorithm → Predict travel time between signals<br>
-      • Bellman-Ford → Adjust decisions when sudden congestion appears<br>
-      • Floyd-Warshall → City-wide congestion prediction
+      • Traffic optimizer function manages the traffic flow.
       </p>
 
       <h3><b>4. Emergency Vehicle Priority System</b></h3>
@@ -168,13 +166,39 @@
   <p>
     <h3><b>2. Air Quality Evaluation & Zone Prioritization</b></h3><br>
     • AQI (Air Quality Index) is calculated for every zone.<br>
+    AQI CALCULATION MODEL<br>
+    Formula used: AQI=((PM2.5×3)+(PM10×2)+(CO×4))/9<br>	​
     • Zones are sorted based on severity using sorting algorithms.
+    <div>
+      <h4>AQI Anomaly Levels</h4>
+  <table class="aqi-table">
+    <thead>
+      <tr>
+        <th>AQI Range</th>
+        <th>Anomaly Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>AQI &lt; 100</td>
+        <td>0 (Normal)</td>
+      </tr>
+      <tr>
+        <td>100 ≤ AQI &lt; 180</td>
+        <td>1 (Moderate)</td>
+      </tr>
+      <tr>
+        <td>AQI ≥ 180</td>
+        <td>2 (Severe Spike)</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
   </p>
 
   <p>
     <b>Algorithms Used:</b><br>
-    • Quick Sort / Merge Sort — Sort zones by AQI value.<br>
-    • Heap / Priority Queue —<br>
+    • Quick Sort — Sort zones by AQI value.<br>
     &nbsp;&nbsp;o Highly polluted zones → highest priority<br>
     &nbsp;&nbsp;o Moderate zones → medium priority<br>
     &nbsp;&nbsp;o Clean zones → lowest priority<br>
@@ -196,6 +220,9 @@
   </p>
   <div>
         <img src="img/2_1_2.jpg" width="500" height="400">
+      </div>
+    <div>
+        <img src="img/2_1_6.png" width="600" height="350">
       </div>
 
   <p>
