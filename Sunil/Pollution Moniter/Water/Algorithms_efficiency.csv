@@ -1,0 +1,11 @@
+Algorithm Name,Time Complexity,Space Complexity,Efficiency Level,Reason
+Bellman-Ford,O(V*E),O(V),Moderate,Used only for upstream subzones not entire system
+Greedy Decision Algorithm,O(1),O(1),High,Simple conditional checks
+Max Heap (Priority Queue),O(log N),O(N),High,Efficient handling of emergency priorities
+Quick Sort,O(N log N),O(log N),High,Fast sorting for real-time prioritization
+Threshold-Based Logic,O(1),O(1),Very High,Instant alert detection
+CSV Parsing Algorithm,O(N),O(N),High,Sequential data processing
+Zone Classification Logic,O(N),O(1),High,Static zone mapping
+Flood Detection Logic,O(N),O(1),High,Checks limited upstream subzones
+Fishing Permission Logic,O(1),O(1),Very High,Single-condition decision
+Industrial Alert Logic,O(1),O(1),Very High,Threshold-based alert
