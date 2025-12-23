@@ -1,0 +1,9 @@
+Algorithm/Data Structure,Used In,Purpose,Time Complexity (Average),Time Complexity (Worst),Space Complexity
+Trie,Area Search & Auto-complete,Fast prefix-based search of area names,O(L),O(L),O(N × L)
+Hash Table (unordered_map),Pollution Data Lookup,Instant access to pollution data by area name,O(1),O(N),O(N)
+Heap (Max Heap),Priority Alerts,Handle high-risk pollution and emergency alerts first,O(log N),O(log N),O(N)
+Segment Tree,Pollution Trend Analysis,Range queries over time-series pollution data,O(log N),O(log N),O(4N)
+Union-Find (Disjoint Set),Zone Connectivity Analysis,Determine connected affected zones,O(α(N)),O(α(N)),O(N)
+CSV File Parsing,Real-time Data Input,Read sensor data efficiently,O(N),O(N),O(N)
+String Matching,Area Name Matching,Match user-entered area with stored data,O(L),O(L),O(1)
+Greedy Decision Logic,Alert & Recommendation System,Immediate decision based on thresholds,O(1),O(1),O(1)
