@@ -135,7 +135,7 @@
 
   <!-- AIR POLLUTION -->
   <p>
-    <h3><b>2.1 Air Pollution Monitoring</b></h3><br>
+    <h2><b>2.1 Air Pollution Monitoring</b></h2><br>
     The air pollution monitoring system focuses on detecting, analyzing, and predicting air quality variations
     across the city. Each zone is equipped with sensors that measure pollutants and environmental factors, allowing
     the system to understand how pollution spreads and affects neighboring areas.
@@ -252,22 +252,150 @@
       </div>
     <h3>Real-time code and its input data:</h3>
 <div class="button-group">
-  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution Moniter/Air/AirQ_Moniter.cpp" class="btn" target="_blank">Code (C++)</a><br>
-  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution Moniter/air_sensors.csv" class="btn" target="_blank">Sensor Data</a><br>
+  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Air/AirQ_Moniter.cpp" class="btn" target="_blank">Code (C++)</a><br>
+  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/air_sensors.csv" class="btn" target="_blank">Sensor Data</a><br>
 </div>
 
 <!-- Space and Time Efficiency -->
 <h3>Space and Time Efficiency:</h3>
 <div class="button-group">
-  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution Moniter/Air/algorithms_efficiency.csv" class="btn" target="_blank">Algorithms Efficiency</a><br>
-  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution Moniter/Air/algorithms_purpose.csv" class="btn" target="_blank">Algorithms Purpose</a><br>
-  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution Moniter/Air/system_efficiency.csv" class="btn" target="_blank">Overall system Efficiency</a>
+  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Air/algorithms_efficiency.csv" class="btn" target="_blank">Algorithms Efficiency</a><br>
+  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Air/algorithms_purpose.csv" class="btn" target="_blank">Algorithms Purpose</a><br>
+  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Air/system_efficiency.csv" class="btn" target="_blank">Overall system Efficiency</a>
 </div>
+<hr>
+  <!-- WATER POLLUTION -->
+  <h2><b>Concept:Water Pollution Monitoring System</b></h2>
+  <p>
+    Water is a critical natural resource used for drinking, agriculture, fishing, industry, and power generation.
+    However, rapid industrialization, untreated drainage, climate change, and sudden rainfall events lead to:
+    <br>• Water pollution
+    <br>• Flood risks near dams and rivers
+    <br>• Ecological imbalance
+    <br>• Threats to human life and aquatic species
+    <br><br>
+    This project proposes a Smart Water Pollution and Flood Monitoring System that continuously monitors
+    water quality and water level across different river zones connected to a dam and takes real-time
+    decisions using algorithms.
+  </p>
 
-</section>
+  <h3><b>How the system works:</b></h3>
 
+  <h3><b>1. Real-World Zonal Classification</b></h3>
+  <p>
+    The river–dam system is divided into four main zones, each further divided into 5 subzones for accuracy:
+    <br><br>
+    • <b>Upstream Zone</b> — Natural water inflow from rainfall, hills, and tributaries<br>
+    • <b>Dam Zone</b> — Primary water collection area (drinking & domestic use)<br>
+    • <b>Downstream Zone 1</b> — Agriculture, fishing, non-drinking usage<br>
+    • <b>Downstream Zone 2</b> — Industrial discharge and treated drainage release
+  </p>
+  <div class="center-img">
+    <img src="img/2_1.png" width="400" height="400">
+  </div>
 
-    <!-- Future projects -->
+  <h3><b>2. Subzone-Based Monitoring Concept</b></h3>
+  <p>
+    Each zone is divided into 5 subzones to:
+    <br>• Capture localized pollution
+    <br>• Detect sudden changes early
+    <br>• Reduce error due to single sensor failure
+    <br><br>
+    <b>Why subzones?</b><br>
+    • Sudden spikes may occur in only one part of a zone<br>
+    • Enables precise alerts and responses<br>
+    • Supports graph-based algorithms like Bellman–Ford
+  </p>
+  <div class="center-img">
+    <img src="img/2_2.png" width="400" height="400">
+  </div>
+
+  <h3><b>3. Real-Time Data Collection & Storage</b></h3>
+  <p>
+    Each subzone is equipped with sensors that collect:
+    <br>• Water Level (%)<br>
+    • Pollution Index (TDS, chemicals, biological waste)<br>
+    • Time-based readings<br><br>
+    All sensor data from all zones and subzones is stored in a single CSV file,
+    representing real-time environmental conditions and allowing easy integration
+    with IoT systems.
+  </p>
+
+  <h3><b>4. Sudden Spike & Flood Detection</b></h3>
+  <p>
+    <b>Bellman–Ford Algorithm</b> is used to detect sudden spikes in water level or pollution
+    across upstream subzones.
+    <br><br>
+    <b>Why Bellman–Ford?</b><br>
+    • Handles sudden rises or drops in readings<br>
+    • Detects abnormal spike patterns<br>
+    • Suitable for multi-subzone dependency analysis
+    <br><br>
+    <b>Flood Detection Logic:</b><br>
+    If 3 or more upstream subzones exceed the safe water level threshold,
+    a FLOOD ALERT is generated.
+  </p>
+  <div class="center-img">
+    <img src="img/2_3.png" width="400" height="400">
+  </div>
+
+  <h3><b>5. Dam Water Management Strategy</b></h3>
+  <p>
+    Based on pollution levels at the dam zone:
+    <br>• Low pollution → Store water<br>
+    • Moderate pollution → Partial water release<br>
+    • High pollution → Immediate water release<br><br>
+    <b>Purpose:</b><br>
+    • Maintain clean reservoir water<br>
+    • Prevent long-term contamination<br>
+    • Ensure drinking water safety
+  </p>
+
+  <h3><b>6. Industrial & Drainage Pollution Control</b></h3>
+  <p>
+    Downstream Zone 2 is continuously monitored for:
+    <br>• Chemical discharge<br>
+    • Treated sewage overflow<br><br>
+    <b>Alert Condition:</b><br>
+    If pollution index exceeds the safe threshold, an industrial alert is triggered
+    and notifications are sent to industries and pollution control authorities.
+  </p>
+
+  <h3><b>7. Fishing Zone Identification</b></h3>
+  <p>
+    Fishing activities are permitted only in Downstream Zone 1 when:
+    <br>• Pollution levels are below the safe limit<br>
+    • Oxygen content is sufficient<br><br>
+    <b>Decision Logic:</b><br>
+    Pollution &lt; threshold → Fishing Allowed<br>
+    Pollution ≥ threshold → Fishing Banned
+  </p>
+
+  <h3><b>8. Priority-Based Decision Making</b></h3>
+  <p>
+    A Priority Queue (Max Heap) is used to assign immediate attention to:
+    <br>• Zones with high pollution<br>
+    • Flood-prone upstream areas<br>
+    • Industrial contamination regions<br><br>
+    Highest-risk zones are handled first to ensure quick response.
+  </p>
+
+  <h3>Real-time code and its input data:</h3>
+  <div class="button-group">
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/waterQ.cpp" class="btn" target="_blank">Code (C++)</a><br>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/water_zone_data.csv" class="btn" target="_blank">Sensor Data from all zones</a>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/Algorithms_purpose.csv" class="btn" target="_blank">Algoritms purpose</a>
+  </div>
+
+  <h3>Space and Time Efficiency:</h3>
+  <div class="button-group">
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/Algorithms_efficiency.csv" class="btn" target="_blank">Functions Efficiency</a><br>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/system_efficiency1.csv" class="btn" target="_blank">Overall System Efficiency</a>
+  </div>
+  </section>
+
+  
+        <!-- Future projects -->
     <section id="future-projects" class="project-section">
       <div class="section-head">
         <h2>Other Main Ideas (Add more)</h2>
@@ -282,7 +410,7 @@
         <li>Start with a small grid (3x3 intersections) to test algorithms offline/simulated.</li>
         <li>Use SUMO or a custom simulator for validation before field tests.</li>
       </ul>
-    </section>
+        </section>
 
   </main>
 
