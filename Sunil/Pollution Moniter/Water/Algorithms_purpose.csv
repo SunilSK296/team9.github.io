@@ -1,0 +1,11 @@
+Algorithm Name,Category,Used In Zone,Purpose,Why Used
+Bellman-Ford,Graph Algorithm,Upstream Subzones,Detect sudden spikes in water level and pollution,Handles abnormal changes and multi-subzone dependency
+Greedy Decision Algorithm,Greedy Strategy,Dam Zone,Decide water storage or release based on pollution level,Fast real-time decision making
+Max Heap (Priority Queue),Heap Data Structure,All Zones,Prioritize zones needing immediate action,Processes highest-risk zones first
+Quick Sort,Sorting Algorithm,All Zones,Sort zones based on pollution and water level,Efficient sorting for prioritization
+Threshold-Based Logic,Rule-Based,System Wide,Trigger flood and pollution alerts,Simple and reliable real-time alerting
+CSV Parsing Algorithm,Data Processing,System Wide,Read and process sensor data from CSV,Easy integration with IoT and datasets
+Zone Classification Logic,Design Logic,System Wide,Divide river into zones and subzones,Accurate monitoring and decision making
+Flood Detection Logic,Decision Algorithm,Upstream Zone,Detect flood risk using subzone thresholds,Early flood warning system
+Fishing Permission Logic,Rule-Based,Downstream Zone 1,Allow or ban fishing based on pollution level,Ensures ecological safety
+Industrial Alert Logic,Rule-Based,Downstream Zone 2,Detect industrial/drainage pollution,Regulates pollution discharge
