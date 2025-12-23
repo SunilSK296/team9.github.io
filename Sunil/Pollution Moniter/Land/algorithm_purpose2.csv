@@ -1,0 +1,5 @@
+Algorithm,Purpose
+Bellman-Ford,Detect sudden spikes in pollution or soil toxicity across subzones
+Priority Queue (Max Heap),Prioritize subzones for immediate waste collection based on land quality and pollution
+Dijkstra,Compute shortest path for waste collection vehicle between subzones to minimize travel
+Land Quality Computation,Calculate overall land quality of subzone from pollution, soil toxicity, and heavy metal levels
