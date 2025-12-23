@@ -86,7 +86,7 @@ void floodCheck(vector<SubZone>& upstream) {
             flooded++;
 
     if (flooded >= 3)
-        cout << "🚨 FLOOD ALERT: Upstream water rising rapidly\n";
+        cout << "FLOOD ALERT: Upstream water rising rapidly\n";
 }
 
 /* ===================== DAM CONTROL ===================== */
@@ -98,7 +98,7 @@ void damControl(vector<SubZone>& dam) {
     avg /= dam.size();
 
     if (avg > 30)
-        cout << "⚠️ DAM ALERT: Water polluted, releasing water to refresh reservoir\n";
+        cout << "DAM ALERT: Water polluted, releasing water to refresh reservoir\n";
 }
 
 /* ===================== INDUSTRIAL ALERT ===================== */
@@ -106,7 +106,7 @@ void damControl(vector<SubZone>& dam) {
 void industrialAlert(vector<SubZone>& downstream2) {
     for (auto& z : downstream2) {
         if (z.pollution > 60) {
-            cout << "🚨 INDUSTRIAL ALERT: Pollution spike at " << z.name << "\n";
+            cout << "INDUSTRIAL ALERT: Pollution spike at " << z.name << "\n";
             return;
         }
     }
@@ -121,9 +121,9 @@ void fishingCheck(vector<SubZone>& downstream1) {
             safe++;
 
     if (safe >= 3)
-        cout << "🎣 Fishing Allowed in Downstream-1\n";
+        cout << "Fishing Allowed in Downstream-1\n";
     else
-        cout << "❌ Fishing Banned in Downstream-1\n";
+        cout << "Fishing Banned in Downstream-1\n";
 }
 
 /* ===================== PRIORITY QUEUE (HEAP) ===================== */
@@ -171,7 +171,7 @@ int main() {
     cout << "=== SMART WATER POLLUTION MONITORING SYSTEM ===\n\n";
 
     if (bellmanFordSpike(5, upstreamEdges))
-        cout << "⚠️ Sudden Spike Detected in Upstream Subzones\n";
+        cout << "Sudden Spike Detected in Upstream Subzones\n";
 
     floodCheck(upstream);
     damControl(dam);
