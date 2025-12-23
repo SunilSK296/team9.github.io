@@ -392,6 +392,118 @@
     <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/Algorithms_efficiency.csv" class="btn" target="_blank">Functions Efficiency</a><br>
     <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/system_efficiency1.csv" class="btn" target="_blank">Overall System Efficiency</a>
   </div>
+
+ <hr>
+  <h2><b>Concept: Land Pollution Monitoring System</b></h2>
+  <p>
+    Land is a vital resource for agriculture, habitation, industry, and recreation. However, improper waste management, industrial discharge, chemical spills, and urbanization lead to:
+    <br>• Land pollution
+    <br>• Soil degradation and loss of fertility
+    <br>• Ecological imbalance
+    <br>• Threats to human health and crops
+    <br>
+    This project proposes a <b>Smart Land Pollution and Waste Management System</b> that continuously monitors land quality and pollution across different city zones and takes real-time decisions using algorithms.
+  </p>
+
+  <h3><b>How the system works:</b></h3>
+
+  <h3><b>1. Real-World Zonal Classification</b></h3>
+  <p>
+    The city’s land area is divided into <b>four main zones</b>, each further divided into <b>5 subzones</b> for precision:
+    <br>• Residential Zone — Houses, parks, and urban areas
+    <br>• Industrial Zone — Factories, workshops, hazardous waste areas
+    <br>• Agricultural Zone — Farmland and plantations
+    <br>• Landfill / Depot Zone — Central collection point for waste
+  </p>
+
+  <h3><b>2. Subzone-Based Monitoring Concept</b></h3>
+  <p>
+    Each zone contains 5 subzones to:
+    <br>• Capture localized pollution and soil degradation
+    <br>• Detect sudden changes early
+    <br>• Reduce errors due to single sensor failures
+    <br><br>
+    <b>Why subzones?</b>
+    <br>• Pollution or contamination may occur in only part of a zone
+    <br>• Enables precise alerts and cleanup scheduling
+    <br>• Supports graph-based algorithms like <b>Bellman–Ford</b> for sudden spike detection
+  </p>
+
+  <h3><b>3. Real-Time Data Collection & Storage</b></h3>
+  <p>
+    Each subzone is equipped with sensors that collect:
+    <br>• Pollution Level (0–100 scale)
+    <br>• Soil Toxicity Index
+    <br>• Moisture Content (%)
+    <br>• Heavy Metal Index (Lead, Mercury, Cadmium, etc.)
+    <br>• Time-based readings
+    <br><br>
+    All sensor data from all zones and subzones is stored in a <b>single CSV file</b>, representing real-time environmental conditions and allowing easy integration with IoT or city management systems.
+  </p>
+
+  <h3><b>4. Land Quality & Priority Computation</b></h3>
+  <p>
+    <b>Land Quality Score</b> is computed for each subzone:
+    <br>
+    <code>LandQualityScore = 100 - (0.5*PollutionLevel + 0.3*SoilToxicity + 0.2*HeavyMetalIndex)</code>
+    <br>
+    Scale: 0–100 (higher = better quality)
+    <br>Subzones with <b>LandQualityScore &lt; 50</b> are marked critical
+    <br><br>
+    <b>Algorithms Used:</b>
+    <br>• Bellman–Ford → Detects sudden spikes in pollution or soil toxicity across subzones
+    <br>• Max Heap (Priority Queue) → Determines which subzones need immediate cleanup
+    <br>• Dijkstra Algorithm → Computes shortest path for waste collection vehicle between subzones
+  </p>
+
+  <h3><b>5. Waste Collection Strategy</b></h3>
+  <p>
+    • Waste collection vehicles start at the <b>Landfill/Depot</b>.
+    <br>• <b>Traversal Strategy:</b>
+    <br>&nbsp;&nbsp;1. Select subzone with highest priority from Max Heap
+    <br>&nbsp;&nbsp;2. Move to subzone using shortest path (Dijkstra)
+    <br>&nbsp;&nbsp;3. Mark subzone as visited
+    <br>&nbsp;&nbsp;4. Repeat until all subzones are serviced
+    <br>&nbsp;&nbsp;5. Return to depot
+    <br>• Ensures critical zones are serviced first and all subzones are visited efficiently.
+  </p>
+
+  <h3><b>6. Alerts & Notifications</b></h3>
+  <p>
+    • Critical Land Quality: LandQualityScore &lt; 50 → Immediate cleanup alert
+    <br>• High Pollution: Pollution Level &gt; threshold → Priority cleanup
+    <br>• Industrial Subzones: Hazardous waste detected → Alert authorities
+    <br><br>
+    Notifications are sent to:
+    <br>• Waste management teams
+    <br>• Environmental authorities
+    <br>• City administration
+  </p>
+
+  <h3><b>7. Priority-Based Decision Making</b></h3>
+  <p>
+    A <b>Priority Queue (Max Heap)</b> assigns immediate attention to:
+    <br>• Subzones with high pollution
+    <br>• Subzones with low land quality
+    <br>• Industrial areas with hazardous waste
+    <br><br>
+    Highest-risk subzones are handled first to ensure <b>fast and efficient cleanup</b>.
+  </p>
+
+  <h3>Real-time code and its input data:</h3>
+  <div class="button-group">
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/LandQ.cpp" class="btn" target="_blank">Code (C++)</a><br>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/land_pol_data.csv" class="btn" target="_blank">Land Pollution Data</a>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/algorithm_purpose2.csv" class="btn" target="_blank">Algorithms Purpose</a>
+  </div>
+
+  <!-- Space and Time Efficiency -->
+  <h3>Space and Time Efficiency:</h3>
+  <div class="button-group">
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/algorithms_efficiency2.csv" class="btn" target="_blank">Functions efficiency</a><br>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/system_efficiency2.csv" class="btn" target="_blank">Overall System efficiency</a>
+  </div>
+
   </section>
 
   
