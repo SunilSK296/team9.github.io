@@ -519,8 +519,160 @@
     <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/system_efficiency2.csv" class="btn" target="_blank">Overall System efficiency</a>
   </div>
 
-  </section>
+  <h2>2.4 Smart City Pollution Monitoring App</h2>
 
+  <p>
+    The Smart City Pollution Monitoring App is a unified platform that allows
+    city users to search their area and instantly view real-time pollution
+    information related to air, water, and land. The system integrates
+    algorithm-driven analysis to provide alerts, safety decisions, and
+    optimization recommendations for both citizens and authorities.
+  </p>
+
+  <h3>How the App Works</h3>
+  <p>
+    Users enter their locality or zone name in the search bar. The system
+    automatically identifies the selected area and fetches pollution data from
+    a centralized database. Based on this data, the website displays pollution
+    levels, risk alerts, and suggested actions such as flood warnings, health
+    advisories, or waste cleanup priorities.
+  </p>
+
+  <h3>Pollution Domains Covered</h3>
+  <ul>
+    <li><strong>Air Pollution:</strong> AQI levels, spike detection, and spread analysis</li>
+    <li><strong>Water Pollution:</strong> Flood risk, dam water safety, industrial discharge monitoring</li>
+    <li><strong>Land Pollution:</strong> Soil quality, waste accumulation, cleanup optimization</li>
+  </ul>
+
+  <h3>Algorithms and Data Structures Used</h3>
+
+  <h4>1. Trie</h4>
+  <p>
+    A Trie is used for the search bar auto-completion feature. It enables fast
+    prefix-based searching when users type area or zone names.
+    <br>
+    <strong>Why Trie?</strong> Provides efficient search in O(L) time, where L is
+    the length of the search string, ensuring a smooth user experience.
+  </p>
+
+  <h4>2. Hashing</h4>
+  <p>
+    Hash tables store pollution data for each zone and subzone. Once an area is
+    selected, pollution information is fetched instantly.
+    <br>
+    <strong>Why Hashing?</strong> Allows O(1) average-time data retrieval, which
+    is critical for real-time monitoring systems.
+  </p>
+
+  <h4>3. Sorting Algorithms</h4>
+  <p>
+    Sorting is used to rank zones based on pollution severity, helping authorities
+    identify the most affected regions.
+    <br>
+    <strong>Why Sorting?</strong> Enables prioritized decision-making and clear
+    comparison between polluted areas.
+  </p>
+
+  <h4>4. Bellman–Ford Algorithm</h4>
+  <p>
+    Bellman–Ford is used to detect sudden spikes in pollution levels or water
+    levels across interconnected subzones.
+    <br>
+    <strong>Why Bellman–Ford?</strong> It can detect abnormal changes across
+    multiple dependent nodes and handles sudden increases effectively.
+  </p>
+
+  <h4>5. Heap (Priority Queue)</h4>
+  <p>
+    A Max Heap is used to prioritize alerts such as flood warnings, industrial
+    contamination, or severe air pollution.
+    <br>
+    <strong>Why Heap?</strong> Ensures that the highest-risk situations are
+    handled first.
+  </p>
+
+  <h4>6. BFS / DFS</h4>
+  <p>
+    Graph traversal algorithms are used to analyze pollution spread patterns,
+    such as air pollution spreading through wind direction or water pollution
+    flowing downstream.
+    <br>
+    <strong>Why BFS/DFS?</strong> Efficiently explores connected zones and
+    identifies affected regions.
+  </p>
+
+  <h4>7. Union–Find (Disjoint Set)</h4>
+  <p>
+    Union–Find is used to identify zone connectivity, especially during floods
+    or land contamination events that isolate certain areas.
+    <br>
+    <strong>Why Union–Find?</strong> Quickly determines connected and disconnected
+    components within the city map.
+  </p>
+
+  <h4>8. Dijkstra’s Algorithm</h4>
+  <p>
+    Dijkstra’s algorithm is used to compute the shortest waste collection routes
+    in land pollution management.
+    <br>
+    <strong>Why Dijkstra?</strong> Minimizes distance, time, and fuel consumption
+    for waste management vehicles.
+  </p>
+
+  <h4>9. Segment Tree</h4>
+  <p>
+    Segment Trees are used to analyze pollution trends over time, such as AQI
+    changes or water level variations.
+    <br>
+    <strong>Why Segment Tree?</strong> Supports fast range queries and updates
+    for historical data analysis.
+  </p>
+
+  <h4>10. Lookup Table</h4>
+  <p>
+    Lookup tables map pollution levels to predefined actions such as health
+    advisories or evacuation alerts.
+    <br>
+    <strong>Why Lookup Table?</strong> Enables instant decision-making without
+    recomputation.
+  </p>
+
+  <h3>System Advantages</h3>
+  <ul>
+    <li>Real-time pollution monitoring</li>
+    <li>Fast and optimized decision-making</li>
+    <li>User-friendly area-based search</li>
+    <li>Algorithm-driven accuracy and reliability</li>
+    <li>Scalable for smart city applications</li>
+  </ul>
+
+
+   <div>
+    <img src="img/2_4_1.png" width="450" height="400">
+  </div>
+  
+  <h3>System Workflow</h3>
+
+  <pre style="font-family: monospace; font-size: 15px;">
+User Types Area
+      ↓
+Trie (Auto-complete)
+      ↓
+Hash Table (Fetch Pollution Data)
+      ↓
+Algorithms (Analysis & Optimization)
+      ↓
+Heap (Priority Alerts)
+      ↓
+Segment Tree (Trend Analysis)
+      ↓
+Union–Find (Zone Connectivity)
+      ↓
+Dashboard Display
+  </pre>
+
+  </section>
 
   </main>
 
