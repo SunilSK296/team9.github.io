@@ -1,0 +1,6 @@
+Aspect,Efficiency,Notes
+Data Collection,High,Real-time sensor readings from all subzones stored in single CSV
+Spike Detection,Moderate,Bellman-Ford handles multi-subzone dependency, may be slower for very large graphs
+Priority Assignment,High,Max Heap efficiently selects subzones needing immediate cleanup
+Waste Collection Routing,Moderate,Shortest path (Dijkstra) ensures minimum travel distance
+Overall System,High,Real-time monitoring, alert generation, and cleanup prioritization across all zones
