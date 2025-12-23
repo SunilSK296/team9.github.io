@@ -1,0 +1,5 @@
+Algorithm,Time Complexity,Space Complexity,Notes
+Bellman-Ford,O(V*E),O(V),V=number of subzones, E=edges between subzones
+Priority Queue (Max Heap),O(log n) per insertion, O(n), n=number of subzones
+Dijkstra (using set),O(V^2),O(V),V=number of subzones, efficient for small graphs
+Land Quality Computation,O(1),O(1),Simple formula per subzone
