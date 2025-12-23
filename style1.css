@@ -160,3 +160,26 @@ footer {
 .aqi-table tr:nth-child(even) {
   background-color: #e9ecef;
 }
+
+.code-box {
+    background: #0f172a;
+    color: #e5e7eb;
+    padding: 16px;
+    border-radius: 10px;
+    font-family: monospace;
+    overflow-x: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.code-box pre {
+    margin: 0;
+    white-space: pre-wrap; /* Wrap long lines */
+    word-break: break-word;
+}
+
+.code-box span.keyword {
+    color: #f59e0b; /* amber */
+    font-weight: bold;
+}
