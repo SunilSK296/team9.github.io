@@ -399,6 +399,9 @@
   </div>
 
  <hr>
+
+
+  
   <h2><b>2.3 Land Pollution Monitoring System</b></h2>
   <p>
     Land is a vital resource for agriculture, habitation, industry, and recreation. However, improper waste management, industrial discharge, chemical spills, and urbanization lead to:
@@ -518,6 +521,8 @@
     <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/algorithms_efficiency2.csv" class="btn" target="_blank">Functions efficiency</a><br>
     <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/system_efficiency2.csv" class="btn" target="_blank">Overall System efficiency</a>
   </div>
+
+  <hr>
 
   <h2>2.4 Smart City Pollution Monitoring App</h2>
 
@@ -690,6 +695,82 @@ Dashboard Display
   </p>
     
   </section>
+    <section id="air-traffic-collaboration" class="project-section">
+  <h2><b>Smart Traffic Optimization using Air Pollution Data</b></h2>
+
+  <h3><b>Concept: Traffic Management Integrated with Air Pollution Monitoring</b></h3>
+  <p>
+    In a smart city, traffic congestion is one of the major contributors to air pollution,
+    especially increased CO₂ levels. Instead of managing traffic only based on vehicle density,
+    this system collaborates <b>Air Pollution Monitoring</b> with <b>Traffic Management</b>.
+    <br><br>
+    Each traffic zone continuously receives CO₂ data from air quality sensors.
+    When pollution in a zone crosses a safe threshold, the traffic optimizer automatically:
+    <br>• Reduces vehicle inflow into the polluted zone  
+    <br>• Reroutes traffic to nearby cleaner zones  
+    <br>• Adjusts green signal timings to disperse congestion  
+    <br><br>
+    This collaboration helps in reducing pollution hotspots while maintaining smooth traffic flow.
+  </p>
+
+  <h3><b>Simple Traffic Optimization Logic (C++ Prototype)</b></h3>
+  <p>
+    The following C++ code demonstrates a basic prototype where traffic decisions are made
+    based on CO₂ levels in a zone.
+  </p>
+
+  <!-- Code Box -->
+  <div class="code-box">
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+// Traffic optimizer based on CO2 level
+void trafficOptimizer(string zone, int vehicleCount, float co2Level)
+{
+    cout &lt;&lt; "Zone: " &lt;&lt; zone &lt;&lt; endl;
+    cout &lt;&lt; "CO2 Level: " &lt;&lt; co2Level &lt;&lt; " ppm" &lt;&lt; endl;
+
+    if (co2Level &gt; 180.0)
+    {
+        cout &lt;&lt; "Status: HIGH POLLUTION\n";
+        cout &lt;&lt; "Action: Reduce green time\n";
+        cout &lt;&lt; "Action: Reroute traffic to nearby zones\n";
+    }
+    else if (co2Level &gt; 120.0)
+    {
+        cout &lt;&lt; "Status: MODERATE POLLUTION\n";
+        cout &lt;&lt; "Action: Maintain flow but avoid congestion\n";
+    }
+    else
+    {
+        cout &lt;&lt; "Status: SAFE\n";
+        cout &lt;&lt; "Action: Normal traffic flow\n";
+    }
+
+    cout &lt;&lt; "---------------------------------\n";
+}
+
+int main()
+{
+    // Example sensor inputs
+    trafficOptimizer("Zone A", 120, 195.5);
+    trafficOptimizer("Zone B", 80, 135.2);
+    trafficOptimizer("Zone C", 60, 90.0);
+
+    return 0;
+}
+</code></pre>
+  </div>
+
+  <h3><b>How This Collaboration Helps</b></h3>
+  <p>
+    • Prevents long-term pollution buildup at busy junctions<br>
+    • Protects public health by responding to air quality in real time<br>
+    • Optimizes traffic without completely blocking movement<br>
+    • Enables future extensions using graph algorithms and AI models
+  </p>
+</section>
+
 
   </main>
 
