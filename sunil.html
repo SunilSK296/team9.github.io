@@ -265,7 +265,7 @@
 </div>
 <hr>
   <!-- WATER POLLUTION -->
-  <h2><b>Concept:Water Pollution Monitoring System</b></h2>
+  <h2><b>2.2 Water Pollution Monitoring System</b></h2>
   <p>
     Water is a critical natural resource used for drinking, agriculture, fishing, industry, and power generation.
     However, rapid industrialization, untreated drainage, climate change, and sudden rainfall events lead to:
@@ -290,8 +290,8 @@
     • <b>Downstream Zone 1</b> — Agriculture, fishing, non-drinking usage<br>
     • <b>Downstream Zone 2</b> — Industrial discharge and treated drainage release
   </p>
-  <div class="center-img">
-    <img src="img/2_1.png" width="400" height="400">
+  <div>
+    <img src="img/2_2_1.png" width="600" height="400">
   </div>
 
   <h3><b>2. Subzone-Based Monitoring Concept</b></h3>
@@ -306,9 +306,6 @@
     • Enables precise alerts and responses<br>
     • Supports graph-based algorithms like Bellman–Ford
   </p>
-  <div class="center-img">
-    <img src="img/2_2.png" width="400" height="400">
-  </div>
 
   <h3><b>3. Real-Time Data Collection & Storage</b></h3>
   <p>
@@ -320,6 +317,9 @@
     representing real-time environmental conditions and allowing easy integration
     with IoT systems.
   </p>
+  <div>
+    <img src="img/2_2_2.jpg" width="600" height="400">
+  </div>
 
   <h3><b>4. Sudden Spike & Flood Detection</b></h3>
   <p>
@@ -335,10 +335,9 @@
     If 3 or more upstream subzones exceed the safe water level threshold,
     a FLOOD ALERT is generated.
   </p>
-  <div class="center-img">
-    <img src="img/2_3.png" width="400" height="400">
+  <div>
+    <img src="img/2_2_3.jpeg" width="400" height="300">
   </div>
-
   <h3><b>5. Dam Water Management Strategy</b></h3>
   <p>
     Based on pollution levels at the dam zone:
@@ -360,6 +359,9 @@
     If pollution index exceeds the safe threshold, an industrial alert is triggered
     and notifications are sent to industries and pollution control authorities.
   </p>
+   <div>
+    <img src="img/2_2_4.jpeg" width="400" height="300">
+  </div>
 
   <h3><b>7. Fishing Zone Identification</b></h3>
   <p>
@@ -370,6 +372,9 @@
     Pollution &lt; threshold → Fishing Allowed<br>
     Pollution ≥ threshold → Fishing Banned
   </p>
+   <div>
+    <img src="img/2_2_5.jpg" width="600" height="400">
+  </div>
 
   <h3><b>8. Priority-Based Decision Making</b></h3>
   <p>
@@ -394,7 +399,7 @@
   </div>
 
  <hr>
-  <h2><b>Concept: Land Pollution Monitoring System</b></h2>
+  <h2><b>2.3 Land Pollution Monitoring System</b></h2>
   <p>
     Land is a vital resource for agriculture, habitation, industry, and recreation. However, improper waste management, industrial discharge, chemical spills, and urbanization lead to:
     <br>• Land pollution
@@ -404,6 +409,9 @@
     <br>
     This project proposes a <b>Smart Land Pollution and Waste Management System</b> that continuously monitors land quality and pollution across different city zones and takes real-time decisions using algorithms.
   </p>
+   <div>
+    <img src="img/2_3_1.jpg" width="550" height="400">
+  </div>
 
   <h3><b>How the system works:</b></h3>
 
@@ -423,22 +431,25 @@
     <br>• Detect sudden changes early
     <br>• Reduce errors due to single sensor failures
     <br><br>
-    <b>Why subzones?</b>
+    <b>Importance of subzones</b>
     <br>• Pollution or contamination may occur in only part of a zone
     <br>• Enables precise alerts and cleanup scheduling
     <br>• Supports graph-based algorithms like <b>Bellman–Ford</b> for sudden spike detection
   </p>
+   <div>
+    <img src="img/2_3_2.png" width="600" height="400">
+  </div>
 
   <h3><b>3. Real-Time Data Collection & Storage</b></h3>
   <p>
-    Each subzone is equipped with sensors that collect:
+    Each subzone's:
     <br>• Pollution Level (0–100 scale)
     <br>• Soil Toxicity Index
     <br>• Moisture Content (%)
     <br>• Heavy Metal Index (Lead, Mercury, Cadmium, etc.)
     <br>• Time-based readings
     <br><br>
-    All sensor data from all zones and subzones is stored in a <b>single CSV file</b>, representing real-time environmental conditions and allowing easy integration with IoT or city management systems.
+    All sensor data from all zones and subzones is stored in a single CSV file, representing real-time environmental conditions and allowing easy integration with IoT or city management systems.
   </p>
 
   <h3><b>4. Land Quality & Priority Computation</b></h3>
@@ -467,6 +478,10 @@
     <br>&nbsp;&nbsp;5. Return to depot
     <br>• Ensures critical zones are serviced first and all subzones are visited efficiently.
   </p>
+
+   <div>
+    <img src="img/2_3_3.jpeg" width="400" height="400">
+  </div>
 
   <h3><b>6. Alerts & Notifications</b></h3>
   <p>
@@ -506,23 +521,6 @@
 
   </section>
 
-  
-        <!-- Future projects -->
-    <section id="future-projects" class="project-section">
-      <div class="section-head">
-        <h2>Other Main Ideas (Add more)</h2>
-        <div class="meta">Add new sections below or duplicate this block</div>
-      </div>
-    </section>
-
-    <section id="notes" class="project-section">
-      <h2>Notes &amp; Next steps</h2>
-      <ul class="clean">
-        <li>Dataset &amp; sensors: list sensor types and sampling rate (2–5s) before prototyping.</li>
-        <li>Start with a small grid (3x3 intersections) to test algorithms offline/simulated.</li>
-        <li>Use SUMO or a custom simulator for validation before field tests.</li>
-      </ul>
-        </section>
 
   </main>
 
